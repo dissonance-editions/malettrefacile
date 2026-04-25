@@ -11,7 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL, changeFrequency: "weekly", priority: 1 },
     { url: `${BASE_URL}/lettres`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/generateur`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/tarifs`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/tarifs`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/login`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/mentions-legales`, changeFrequency: "yearly", priority: 0.2 },
   ];
 

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, Send, Sparkles } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Tarifs",
   description:
-    "Accédez gratuitement à tous nos modèles de lettres. Personnalisez-les avec l'IA à partir de 1,99€.",
+    "Modèles gratuits, personnalisation IA à l'unité ou Premium illimité avec envoi postal inclus.",
 };
 
 const plans = [
@@ -14,12 +14,12 @@ const plans = [
     name: "Gratuit",
     price: "0€",
     period: "",
-    description: "Accès aux modèles bruts",
+    description: "Pour copier ou télécharger un modèle",
     features: [
       "200+ modèles de lettres",
       "Contexte juridique détaillé",
       "FAQ par lettre",
-      "Copier-coller du modèle",
+      "Téléchargement PDF / DOCX",
     ],
     cta: "Commencer gratuitement",
     ctaHref: "/lettres",
@@ -32,7 +32,7 @@ const plans = [
     description: "Personnalisation IA ponctuelle",
     features: [
       "Tout le plan Gratuit",
-      "Personnalisation IA",
+      "Personnalisation IA d'une lettre",
       "Export PDF formaté",
       "Adapté à votre situation",
     ],
@@ -42,18 +42,34 @@ const plans = [
   },
   {
     name: "Premium",
-    price: "4,99€",
+    price: "9,99€",
     period: "/ mois",
-    description: "Lettres illimitées",
+    description: "Pour gérer toutes vos démarches",
     features: [
-      "Tout le plan À l'unité",
-      "Lettres illimitées",
-      "Historique de vos lettres",
-      "Priorité de génération",
+      "Personnalisation IA illimitée",
+      "2 lettres simples postées / mois",
+      "1 recommandé / mois",
+      "-20 % sur les envois supplémentaires",
+      "Historique de vos courriers",
+      "Suivi des envois en temps réel",
     ],
     cta: "Passer au Premium",
-    ctaHref: "/generateur",
+    ctaHref: "/login?next=/compte",
     highlighted: true,
+  },
+];
+
+const mailPrices = [
+  { type: "Lettre simple", price: "1,99 €", desc: "Envoi standard, sans suivi" },
+  {
+    type: "Recommandé",
+    price: "7,99 €",
+    desc: "Avec preuve d'envoi et suivi",
+  },
+  {
+    type: "Recommandé AR",
+    price: "9,99 €",
+    desc: "Preuve d'envoi + de réception (valeur juridique)",
   },
 ];
 
@@ -69,11 +85,12 @@ export default function TarifsPage() {
           Des tarifs simples et transparents
         </h1>
         <p className="mt-3 text-base text-neutral-500">
-          Accédez gratuitement à tous les modèles. Payez uniquement pour la
-          personnalisation IA.
+          Téléchargez gratuitement, personnalisez avec l'IA, ou faites poster
+          votre lettre par nos soins.
         </p>
       </div>
 
+      {/* Plans */}
       <div className="mt-10 grid gap-6 sm:grid-cols-3">
         {plans.map((plan) => (
           <div
@@ -86,7 +103,7 @@ export default function TarifsPage() {
           >
             {plan.highlighted && (
               <span className="mb-4 inline-flex self-start rounded-full bg-primary-600 px-3 py-0.5 text-xs font-medium text-white">
-                Populaire
+                Recommandé
               </span>
             )}
             <p className="text-sm font-semibold text-neutral-800">
@@ -124,6 +141,38 @@ export default function TarifsPage() {
           </div>
         ))}
       </div>
+
+      {/* Postal mail pricing */}
+      <section className="mt-16 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
+        <div className="flex items-start gap-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-success-50">
+            <Send className="h-5 w-5 text-success-500" />
+          </div>
+          <div className="flex-1">
+            <h2 className="text-lg font-bold text-neutral-900">
+              Envoi postal à la carte
+            </h2>
+            <p className="mt-1 text-sm text-neutral-500">
+              Pour les non-Premium ou en complément du quota inclus.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {mailPrices.map((m) => (
+            <div
+              key={m.type}
+              className="rounded-xl border border-neutral-200 p-4"
+            >
+              <p className="text-sm font-semibold text-neutral-800">{m.type}</p>
+              <p className="mt-1 text-2xl font-bold text-primary-600">
+                {m.price}
+              </p>
+              <p className="mt-1 text-xs text-neutral-500">{m.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <p className="mt-8 text-center text-xs text-neutral-400">
         Paiement sécurisé par Stripe. Annulation à tout moment. Sans

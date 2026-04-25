@@ -1,10 +1,15 @@
+"use client";
+
 import Link from "next/link";
-import { FileText, Menu, X } from "lucide-react";
+import { FileText, User as UserIcon } from "lucide-react";
+import { useAuth } from "@/lib/auth";
 
 export default function Header() {
+  const { user, loading } = useAuth();
+
   return (
     <header className="border-b border-neutral-200 bg-white">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         {/* Logo */}
         <Link
           href="/"
@@ -17,7 +22,7 @@ export default function Header() {
         </Link>
 
         {/* Nav desktop */}
-        <nav className="hidden items-center gap-8 sm:flex">
+        <nav className="hidden items-center gap-6 sm:flex">
           <Link
             href="/lettres"
             className="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors"
@@ -36,11 +41,32 @@ export default function Header() {
           >
             Tarifs
           </Link>
+
+          {/* Auth area */}
+          {!loading && !user && (
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors"
+            >
+              <UserIcon className="h-4 w-4" />
+              Se connecter
+            </Link>
+          )}
+          {!loading && user && (
+            <Link
+              href="/compte"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm font-medium text-neutral-700 hover:border-primary-300 transition-colors"
+            >
+              <UserIcon className="h-4 w-4" />
+              Mon compte
+            </Link>
+          )}
+
           <Link
             href="/generateur"
             className="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 transition-colors"
           >
-            Personnaliser une lettre ✨
+            Personnaliser ✨
           </Link>
         </nav>
       </div>

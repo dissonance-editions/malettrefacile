@@ -1,0 +1,53 @@
+{
+  "slug": "compte-bancaire",
+  "category": "resiliation",
+  "title": "Lettre de résiliation de compte bancaire",
+  "metaTitle": "Modèle de lettre de clôture de compte bancaire gratuit (2026)",
+  "metaDescription": "Clôturez votre compte bancaire avec notre modèle gratuit. Mobilité bancaire, frais, délais. Personnalisable en ligne avec notre générateur IA.",
+  "context": "La clôture d'un compte bancaire est un droit du client à tout moment, sans frais ni justificatif (article L312-1-1 du Code monétaire et financier). La banque doit procéder à la clôture dans un délai raisonnable, généralement sous 30 jours.\n\nDepuis la loi Macron de 2015, le service de mobilité bancaire (article L312-1-7 du Code monétaire et financier) permet à votre nouvelle banque de prendre en charge gratuitement le transfert de vos prélèvements et virements récurrents vers le nouveau compte, en moins de 22 jours ouvrés.\n\nAvant la clôture : régularisez le solde (positif ou nul), restituez les moyens de paiement (chéquier, carte), vérifiez qu'aucune opération n'est en cours. La banque ne peut facturer la clôture (gratuité légale).",
+  "legalBasis": "Art. L312-1-1 et L312-1-7 du Code monétaire et financier",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (recommandée pour preuve), ou directement en agence",
+  "template": "[Prénom Nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de la banque]\nAgence de [Ville de l'agence]\n[Adresse de l'agence]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Demande de clôture de mon compte bancaire n° [Numéro de compte]\n\nMadame, Monsieur,\n\nPar la présente, je vous informe de ma décision de clôturer mon compte bancaire n° [Numéro de compte] (IBAN : [IBAN]), ouvert dans votre établissement le [Date d'ouverture].\n\nConformément à l'article L312-1-1 du Code monétaire et financier, je vous demande de bien vouloir procéder à cette clôture sans délai et sans frais.\n\nJe vous prie de bien vouloir transférer le solde créditeur de mon compte sur le compte suivant :\n- IBAN : [IBAN du nouveau compte]\n- BIC : [BIC du nouveau compte]\n- Titulaire : [Nom du titulaire]\n\nVous trouverez joints à ce courrier :\n- Mon chéquier non utilisé (s'il y a lieu)\n- Ma carte bancaire découpée\n\nJe vous remercie de me confirmer par écrit la date effective de clôture, ainsi que de me transmettre le solde de tout compte. Je vous prie également de cesser toute facturation à compter de la date de clôture.\n\nDans l'attente de votre confirmation, veuillez agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_banque", "label": "Nom de la banque", "placeholder": "BNP Paribas / LCL / Société Générale" },
+    { "name": "ville_agence", "label": "Ville de l'agence", "placeholder": "Paris" },
+    { "name": "adresse_agence", "label": "Adresse de l'agence", "placeholder": "" },
+    { "name": "numero_compte", "label": "Numéro de compte", "placeholder": "00012345678" },
+    { "name": "iban", "label": "IBAN", "placeholder": "FR76 1234 5678 9012 3456 7890 123" },
+    { "name": "date_ouverture", "label": "Date d'ouverture", "placeholder": "01/01/2018" },
+    { "name": "iban_nouveau", "label": "IBAN du nouveau compte", "placeholder": "FR76 ..." },
+    { "name": "bic_nouveau", "label": "BIC du nouveau compte", "placeholder": "BNPAFRPP" },
+    { "name": "nom_titulaire", "label": "Nom du titulaire", "placeholder": "Jean Dupont" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "" }
+  ],
+  "faq": [
+    {
+      "q": "La clôture est-elle gratuite ?",
+      "a": "Oui, la clôture d'un compte bancaire est gratuite par la loi (article L312-1-1 du Code monétaire et financier). Aucuns frais ne peuvent être facturés."
+    },
+    {
+      "q": "Combien de temps prend la clôture ?",
+      "a": "La banque doit procéder à la clôture dans un délai raisonnable, généralement 30 jours. Le service de mobilité bancaire (avec votre nouvelle banque) garantit le transfert des opérations sous 22 jours ouvrés."
+    },
+    {
+      "q": "Et si mon compte est à découvert ?",
+      "a": "Vous devez d'abord régulariser le solde négatif. La banque peut refuser la clôture tant que le compte n'est pas équilibré."
+    },
+    {
+      "q": "Que faire de mes prélèvements et virements ?",
+      "a": "Demandez à votre nouvelle banque le service de mobilité bancaire : elle se chargera gratuitement de transférer tous vos prélèvements et virements récurrents (salaire, factures, etc.) vers le nouveau compte."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Code monétaire et financier — Art. L312-1-1 (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037552263/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F2398" }
+  ],
+  "estimatedSearchVolume": 4000,
+  "difficulty": "low"
+}

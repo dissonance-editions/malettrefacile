@@ -138,6 +138,8 @@ export default async function LetterPage({ params }: Props) {
               <LetterTemplate
                 template={letter.template}
                 letterSlug={`${categorie}/${slug}`}
+                letterTitle={letter.title}
+                variables={letter.variables}
               />
             </div>
           </section>

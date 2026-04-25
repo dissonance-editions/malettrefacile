@@ -1,0 +1,49 @@
+{
+  "slug": "forfait-mobile",
+  "category": "resiliation",
+  "title": "Lettre de résiliation de forfait mobile",
+  "metaTitle": "Modèle de lettre de résiliation forfait mobile gratuit (2026)",
+  "metaDescription": "Résiliez votre forfait mobile (Orange, Free, SFR, Bouygues) avec notre modèle gratuit. Loi Chatel, portabilité RIO. Personnalisable en ligne.",
+  "context": "La résiliation d'un forfait mobile est encadrée par la loi Chatel et le Code de la consommation. Hors période d'engagement (24 mois en général), la résiliation est gratuite. En cours d'engagement, vous devez payer les mensualités restantes jusqu'à la fin de la 1ère année (au tarif plein), puis le quart des mensualités restantes de la 2ème année.\n\nLe préavis maximal de résiliation est de 10 jours après réception de la demande par l'opérateur (article L224-39 du Code de la consommation).\n\nSi vous changez d'opérateur en conservant votre numéro, demandez votre code RIO au 3179 (gratuit) avant de résilier. La résiliation se fait alors automatiquement par le nouvel opérateur lors de la portabilité.",
+  "legalBasis": "Art. L224-33 et suivants du Code de la consommation, Loi Chatel n°2008-3 du 3 janvier 2008",
+  "sendingMethod": "Lettre recommandée avec accusé de réception, espace client, ou portabilité automatique via le nouvel opérateur",
+  "template": "[Prénom Nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'opérateur]\nService Résiliation\n[Adresse de l'opérateur]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Résiliation de ma ligne mobile [Numéro de ligne]\n\nMadame, Monsieur,\n\nPar la présente, je vous informe de ma décision de résilier mon contrat de forfait mobile n° [Numéro de contrat], correspondant à la ligne [Numéro de ligne], souscrit le [Date de souscription].\n\nConformément à l'article L224-39 du Code de la consommation, je vous demande de bien vouloir prendre en compte cette résiliation dans un délai maximal de 10 jours à compter de la réception de la présente.\n\nJe vous remercie de me confirmer par écrit la date effective de résiliation et de me transmettre une facture finale détaillée. Je vous prie également de procéder au remboursement de toute somme indûment perçue au-delà de la date de résiliation.\n\nDans l'attente de votre confirmation, veuillez agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_operateur", "label": "Nom de l'opérateur", "placeholder": "Orange / Free / SFR / Bouygues" },
+    { "name": "adresse_operateur", "label": "Adresse de l'opérateur", "placeholder": "" },
+    { "name": "numero_contrat", "label": "Numéro de contrat", "placeholder": "MOB-123456" },
+    { "name": "numero_ligne", "label": "Numéro de ligne mobile", "placeholder": "06 12 34 56 78" },
+    { "name": "date_souscription", "label": "Date de souscription", "placeholder": "01/06/2023" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "" }
+  ],
+  "faq": [
+    {
+      "q": "Comment garder mon numéro de mobile ?",
+      "a": "Demandez votre code RIO en composant le 3179 depuis votre mobile (gratuit). Communiquez ce code à votre nouvel opérateur lors de la souscription : il s'occupera de la résiliation et de la portabilité."
+    },
+    {
+      "q": "Quels sont les frais de résiliation anticipée ?",
+      "a": "En cas d'engagement 24 mois, vous payez les mensualités restantes jusqu'à la fin de la 1ère année, puis 25% des mensualités restantes de la 2ème année. Hors engagement, la résiliation est gratuite (sauf frais forfaitaires de quelques euros)."
+    },
+    {
+      "q": "Puis-je résilier sans frais avant la fin de l'engagement ?",
+      "a": "Oui, dans certains cas : surendettement, perte d'emploi (CDI), maladie ou invalidité empêchant l'utilisation du service. Un justificatif est demandé."
+    },
+    {
+      "q": "Quel est le délai de prise d'effet ?",
+      "a": "10 jours maximum à compter de la réception de votre demande, selon l'article L224-39 du Code de la consommation."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Code de la consommation — Art. L224-39 (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037547019/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F31898" }
+  ],
+  "estimatedSearchVolume": 14000,
+  "difficulty": "low"
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "abonnement-presse",
+  "category": "resiliation",
+  "title": "Lettre de résiliation d'abonnement presse ou magazine",
+  "metaTitle": "Modèle de lettre de résiliation abonnement presse gratuit (2026)",
+  "metaDescription": "Résiliez votre abonnement à un journal ou magazine avec notre modèle gratuit. Loi Chatel, tacite reconduction. Personnalisable en ligne.",
+  "context": "La résiliation d'un abonnement à un journal ou magazine est encadrée par les conditions générales de l'éditeur et par la loi Chatel (article L215-1 du Code de la consommation) en cas de tacite reconduction.\n\nL'éditeur doit vous informer entre 3 mois et 1 mois avant l'échéance de votre faculté de ne pas reconduire l'abonnement. À défaut, vous pouvez résilier à tout moment, sans pénalités, et obtenir le remboursement des sommes prélevées après la date de résiliation effective.\n\nPour les abonnements numériques souscrits en ligne, vous bénéficiez en plus d'un délai de rétractation de 14 jours après la souscription (sauf si l'exécution a commencé avec votre accord exprès).",
+  "legalBasis": "Art. L215-1 du Code de la consommation (loi Chatel), Art. L221-18 (rétractation à distance)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception, ou résiliation en ligne via l'espace abonné",
+  "template": "[Prénom Nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'éditeur]\nService Abonnements\n[Adresse de l'éditeur]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Résiliation de mon abonnement n° [Numéro d'abonné]\n\nMadame, Monsieur,\n\nPar la présente, je vous informe de ma décision de résilier mon abonnement à [Nom du journal ou magazine], souscrit le [Date de souscription] sous le numéro [Numéro d'abonné].\n\nJe vous demande de bien vouloir prendre en compte cette résiliation et de l'appliquer à compter de [Date de prise d'effet souhaitée / la prochaine échéance].\n\nJe vous remercie de me confirmer par écrit la date effective de résiliation, ainsi que de procéder, le cas échéant, au remboursement de la fraction d'abonnement non consommée, conformément à l'article L215-1 du Code de la consommation.\n\nJe vous prie également de cesser tout prélèvement automatique à compter de cette date.\n\nDans l'attente de votre confirmation, veuillez agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_editeur", "label": "Nom de l'éditeur", "placeholder": "Le Monde / Télérama" },
+    { "name": "adresse_editeur", "label": "Adresse de l'éditeur", "placeholder": "" },
+    { "name": "nom_publication", "label": "Nom du journal/magazine", "placeholder": "Le Monde" },
+    { "name": "numero_abonne", "label": "Numéro d'abonné", "placeholder": "ABO-123456" },
+    { "name": "date_souscription", "label": "Date de souscription", "placeholder": "01/01/2024" },
+    { "name": "date_prise_effet", "label": "Date de prise d'effet", "placeholder": "01/06/2026" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "" }
+  ],
+  "faq": [
+    {
+      "q": "Puis-je résilier à tout moment ?",
+      "a": "Cela dépend de votre contrat. Hors période d'engagement, oui. Pendant l'engagement, vous devez attendre l'échéance, sauf si l'éditeur ne vous a pas informé de la faculté de non-reconduction (loi Chatel)."
+    },
+    {
+      "q": "Vais-je être remboursé des numéros non lus ?",
+      "a": "Si la résiliation est conforme à la loi Chatel (information manquante de l'éditeur), oui. Sinon, l'abonnement va généralement à terme."
+    },
+    {
+      "q": "Comment arrêter les prélèvements automatiques ?",
+      "a": "Demandez à votre banque de révoquer le mandat SEPA après confirmation de la résiliation par l'éditeur."
+    },
+    {
+      "q": "Et pour un abonnement numérique souscrit en ligne ?",
+      "a": "Vous avez 14 jours pour vous rétracter sans motif après la souscription, sauf si vous avez expressément renoncé à ce droit pour bénéficier de l'accès immédiat au contenu."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Code de la consommation — Art. L215-1 (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032224291/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F19255" }
+  ],
+  "estimatedSearchVolume": 6000,
+  "difficulty": "low"
+}

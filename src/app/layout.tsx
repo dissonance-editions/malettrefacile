@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/lib/auth";
 
 export const metadata: Metadata = {
   title: {
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | MaLettreFacile",
   },
   description:
-    "200+ modèles de lettres et courriers types gratuits : résiliation, démission, mise en demeure, contestation. Personnalisez chaque lettre avec notre générateur IA.",
+    "200+ modèles de lettres et courriers types gratuits : résiliation, démission, mise en demeure, contestation. Personnalisez chaque lettre avec notre générateur IA et envoyez-la directement par voie postale.",
   metadataBase: new URL("https://malettrefacile.fr"),
   openGraph: {
     type: "website",
@@ -45,9 +46,11 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col bg-neutral-50">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

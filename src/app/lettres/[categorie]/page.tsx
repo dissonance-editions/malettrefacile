@@ -28,10 +28,12 @@ export default async function CategoryPage({ params }: Props) {
   const cat = getCategoryBySlug(categorie);
   if (!cat) notFound();
 
-  const letters = getLettersByCategory(categorie);
+  const letters = getLettersByCategory(categorie).sort(
+    (a, b) => b.estimatedSearchVolume - a.estimatedSearchVolume
+  );
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs
         items={[
           { label: "Accueil", href: "/" },
@@ -40,7 +42,8 @@ export default async function CategoryPage({ params }: Props) {
         ]}
       />
 
-      <div className="mt-6">
+      {/* Header */}
+      <div className="mt-6 max-w-3xl">
         <span className="text-3xl">{cat.icon}</span>
         <h1 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
           {cat.name}
@@ -48,22 +51,25 @@ export default async function CategoryPage({ params }: Props) {
         <p className="mt-2 text-base leading-relaxed text-neutral-500">
           {cat.description}
         </p>
+        <p className="mt-3 text-sm text-neutral-400">
+          {letters.length} modèle{letters.length > 1 ? "s" : ""} disponible
+          {letters.length > 1 ? "s" : ""}
+        </p>
       </div>
 
+      {/* Grid 5 columns desktop / 2 mobile / 3 tablet */}
       {letters.length > 0 ? (
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {letters
-            .sort((a, b) => b.estimatedSearchVolume - a.estimatedSearchVolume)
-            .map((letter) => (
-              <LetterCard
-                key={letter.slug}
-                title={letter.title}
-                category={letter.category}
-                slug={letter.slug}
-                description={letter.context.slice(0, 120) + "…"}
-                volume={letter.estimatedSearchVolume}
-              />
-            ))}
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {letters.map((letter) => (
+            <LetterCard
+              key={letter.slug}
+              title={letter.title}
+              category={letter.category}
+              slug={letter.slug}
+              description={letter.context.slice(0, 90) + "…"}
+              volume={letter.estimatedSearchVolume}
+            />
+          ))}
         </div>
       ) : (
         <div className="mt-12 rounded-xl border border-neutral-200 bg-white p-8 text-center">

@@ -29,15 +29,53 @@ export interface Letter {
   relatedLinks: RelatedLink[];
   estimatedSearchVolume: number;
   difficulty: string;
+  /** Lucide icon name (e.g. "Heart", "Wifi", "Car"). Defaults to "FileText". */
+  icon?: string;
 }
 
-// In production, these will come from JSON files or Supabase.
-// For now, we use a static registry.
+// Icon registry — maps slug to Lucide icon name
+export const letterIcons: Record<string, string> = {
+  "mutuelle-sante": "Heart",
+  "box-internet": "Wifi",
+  "assurance-auto": "Car",
+  "forfait-mobile": "Smartphone",
+  "assurance-habitation": "Home",
+  "salle-de-sport": "Dumbbell",
+  "abonnement-presse": "Newspaper",
+  "assurance-emprunteur": "Landmark",
+  "compte-bancaire": "CreditCard",
+  "credit-consommation": "PiggyBank",
+  "demission-cdi": "Briefcase",
+};
+
+// === RÉSILIATION ===
 import resiliationMutuelle from "@/content/lettres/resiliation/resiliation-mutuelle-sante.json";
+import boxInternet from "@/content/lettres/resiliation/box-internet.json";
+import assuranceAuto from "@/content/lettres/resiliation/assurance-auto.json";
+import forfaitMobile from "@/content/lettres/resiliation/forfait-mobile.json";
+import assuranceHabitation from "@/content/lettres/resiliation/assurance-habitation.json";
+import salleDeSport from "@/content/lettres/resiliation/salle-de-sport.json";
+import abonnementPresse from "@/content/lettres/resiliation/abonnement-presse.json";
+import assuranceEmprunteur from "@/content/lettres/resiliation/assurance-emprunteur.json";
+import compteBancaire from "@/content/lettres/resiliation/compte-bancaire.json";
+import creditConsommation from "@/content/lettres/resiliation/credit-consommation.json";
+
+// === EMPLOI ===
 import demissionCdi from "@/content/lettres/emploi/demission-cdi.json";
 
 const allLetters: Letter[] = [
+  // Résiliation
   resiliationMutuelle as Letter,
+  boxInternet as Letter,
+  assuranceAuto as Letter,
+  forfaitMobile as Letter,
+  assuranceHabitation as Letter,
+  salleDeSport as Letter,
+  abonnementPresse as Letter,
+  assuranceEmprunteur as Letter,
+  compteBancaire as Letter,
+  creditConsommation as Letter,
+  // Emploi
   demissionCdi as Letter,
 ];
 

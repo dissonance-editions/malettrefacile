@@ -13,7 +13,7 @@ export const categories: Category[] = [
     description:
       "Résiliez vos contrats d'assurance, mutuelle, box internet, abonnement téléphone et bien plus.",
     icon: "✂️",
-    letterCount: 40,
+    letterCount: 10,
   },
   {
     slug: "emploi",

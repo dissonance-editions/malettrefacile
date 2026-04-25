@@ -1,0 +1,49 @@
+{
+  "slug": "assurance-auto",
+  "category": "resiliation",
+  "title": "Lettre de résiliation d'assurance auto",
+  "metaTitle": "Modèle de lettre de résiliation assurance auto gratuit (2026)",
+  "metaDescription": "Résiliez votre assurance auto avec notre modèle gratuit. Loi Hamon, échéance annuelle, vente du véhicule. Personnalisable en ligne.",
+  "context": "La résiliation d'un contrat d'assurance auto est encadrée par la loi Hamon (loi du 17 mars 2014). Après la première année de souscription, vous pouvez résilier votre contrat à tout moment, sans frais ni justificatif. La résiliation prend effet un mois après la réception de votre demande par l'assureur.\n\nAvant la fin de la première année, vous pouvez résilier dans certains cas : à l'échéance annuelle (avec un préavis de 2 mois, sauf disposition contractuelle plus favorable — loi Chatel), en cas de changement de situation (déménagement, mariage, retraite, changement de profession), en cas de vente ou de destruction du véhicule, ou en cas d'augmentation de tarif non prévue.\n\nSi vous changez d'assureur, votre nouvel assureur peut effectuer les démarches de résiliation à votre place (mandat de résiliation).",
+  "legalBasis": "Art. L113-15-2 du Code des assurances, Loi Hamon n°2014-344 du 17 mars 2014",
+  "sendingMethod": "Lettre recommandée avec accusé de réception, ou support durable accepté par l'assureur (email, espace client)",
+  "template": "[Prénom Nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'assureur]\nService Résiliation\n[Adresse de l'assureur]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Résiliation de mon contrat d'assurance auto n° [Numéro de contrat]\n\nMadame, Monsieur,\n\nPar la présente, je vous informe de ma décision de résilier mon contrat d'assurance automobile n° [Numéro de contrat], souscrit le [Date de souscription] pour le véhicule immatriculé [Numéro d'immatriculation].\n\nCette résiliation intervient dans le cadre de la loi Hamon du 17 mars 2014, qui me permet de résilier à tout moment après la première année de souscription, sans frais ni justificatif.\n\nJe vous prie de bien vouloir prendre acte de cette résiliation et de me confirmer par écrit la date d'effet, qui doit intervenir au maximum un mois après la réception de ce courrier.\n\nJe vous remercie également de me transmettre un relevé d'information conformément à l'article A121-1 du Code des assurances, ainsi que de procéder au remboursement de l'éventuel trop-perçu de cotisations au prorata de la période non courue.\n\nDans l'attente de votre confirmation, veuillez agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_assureur", "label": "Nom de l'assureur", "placeholder": "MAIF / MAAF / Allianz" },
+    { "name": "adresse_assureur", "label": "Adresse de l'assureur", "placeholder": "" },
+    { "name": "numero_contrat", "label": "Numéro de contrat", "placeholder": "AUTO-123456" },
+    { "name": "date_souscription", "label": "Date de souscription", "placeholder": "01/01/2023" },
+    { "name": "immatriculation", "label": "Immatriculation du véhicule", "placeholder": "AB-123-CD" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "" }
+  ],
+  "faq": [
+    {
+      "q": "Puis-je résilier mon assurance auto à tout moment ?",
+      "a": "Oui, après un an de souscription, sans frais ni justificatif, grâce à la loi Hamon. Avant un an, des cas de résiliation existent (changement de situation, vente du véhicule, augmentation de tarif)."
+    },
+    {
+      "q": "Quel est le délai de prise d'effet ?",
+      "a": "Un mois après la réception de votre demande par l'assureur."
+    },
+    {
+      "q": "Comment ne pas être à découvert d'assurance ?",
+      "a": "Si vous changez d'assureur, le nouveau peut s'occuper des démarches et synchroniser la prise d'effet de votre nouveau contrat avec la résiliation de l'ancien."
+    },
+    {
+      "q": "Que faire en cas de vente du véhicule ?",
+      "a": "Vous pouvez résilier sans attendre la première année. Joignez la copie du certificat de cession à votre courrier. La résiliation prend effet 10 jours après notification."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Code des assurances — Art. L113-15-2 (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028740664/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F2655" }
+  ],
+  "estimatedSearchVolume": 16000,
+  "difficulty": "low"
+}

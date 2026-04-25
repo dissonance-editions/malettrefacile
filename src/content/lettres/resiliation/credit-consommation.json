@@ -1,0 +1,49 @@
+{
+  "slug": "credit-consommation",
+  "category": "resiliation",
+  "title": "Lettre de rétractation d'un crédit à la consommation",
+  "metaTitle": "Modèle de lettre de rétractation crédit conso gratuit (2026)",
+  "metaDescription": "Rétractez-vous d'un crédit à la consommation dans le délai légal de 14 jours avec notre modèle gratuit. Article L312-19. Personnalisable en ligne.",
+  "context": "Tout consommateur ayant souscrit un crédit à la consommation dispose d'un délai de rétractation de 14 jours calendaires à compter de l'acceptation de l'offre de crédit (article L312-19 du Code de la consommation). Ce droit s'applique à tous les crédits à la consommation : prêt personnel, crédit affecté, crédit renouvelable.\n\nLa rétractation est libre : aucun motif n'est à fournir, aucune pénalité n'est due. Si les fonds ont déjà été débloqués, vous devez les rembourser dans un délai de 30 jours après la rétractation, majorés des intérêts au taux du contrat (très faibles sur quelques jours).\n\nLe formulaire de rétractation est obligatoirement joint à votre offre de crédit (annexe à l'offre préalable). Vous pouvez aussi rédiger une simple lettre. L'envoi en recommandé est fortement recommandé pour conserver une preuve de la date d'envoi.",
+  "legalBasis": "Art. L312-19 et suivants du Code de la consommation",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (impératif pour preuve de la date)",
+  "template": "[Prénom Nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'organisme prêteur]\nService Crédit à la consommation\n[Adresse de l'organisme]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Rétractation de mon contrat de crédit à la consommation n° [Numéro de contrat]\n\nMadame, Monsieur,\n\nPar la présente, j'exerce mon droit de rétractation concernant le contrat de crédit à la consommation n° [Numéro de contrat], d'un montant de [Montant du crédit] €, accepté le [Date d'acceptation de l'offre].\n\nConformément à l'article L312-19 du Code de la consommation, je dispose d'un délai de 14 jours calendaires à compter de l'acceptation de l'offre pour me rétracter, sans avoir à justifier de motif.\n\nJe vous demande de bien vouloir prendre acte de cette rétractation et d'annuler le contrat. [Si fonds débloqués : Je m'engage à vous rembourser le capital perçu, soit [Montant] €, majoré des intérêts au taux contractuel, dans un délai de 30 jours conformément à l'article L312-25 du Code de la consommation.]\n\nJe vous remercie de me confirmer par écrit la prise en compte de ma rétractation et l'annulation du contrat.\n\nVeuillez agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_organisme", "label": "Nom de l'organisme prêteur", "placeholder": "Cofidis / Sofinco / Cetelem" },
+    { "name": "adresse_organisme", "label": "Adresse de l'organisme", "placeholder": "" },
+    { "name": "numero_contrat", "label": "Numéro de contrat", "placeholder": "CRED-123456" },
+    { "name": "montant_credit", "label": "Montant du crédit", "placeholder": "5 000" },
+    { "name": "date_acceptation", "label": "Date d'acceptation de l'offre", "placeholder": "20/04/2026" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "" }
+  ],
+  "faq": [
+    {
+      "q": "Quel est le délai pour me rétracter ?",
+      "a": "14 jours calendaires (week-ends et jours fériés compris) à compter du jour suivant l'acceptation de l'offre de crédit. Comptez large pour l'envoi : le cachet de la poste fait foi."
+    },
+    {
+      "q": "Dois-je justifier ma rétractation ?",
+      "a": "Non. La rétractation est un droit absolu, aucune justification n'est exigée."
+    },
+    {
+      "q": "Et si les fonds ont déjà été versés ?",
+      "a": "Vous devez rembourser le capital perçu dans les 30 jours suivant la rétractation, majoré des intérêts au taux contractuel pour la période de mise à disposition (généralement quelques euros)."
+    },
+    {
+      "q": "Puis-je me rétracter d'un crédit immobilier ?",
+      "a": "Non, pas dans les mêmes conditions. Le crédit immobilier obéit à des règles spécifiques (délai de réflexion de 10 jours minimum entre la réception de l'offre et son acceptation)."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Code de la consommation — Art. L312-19 (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032227250/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F2410" }
+  ],
+  "estimatedSearchVolume": 3000,
+  "difficulty": "low"
+}
