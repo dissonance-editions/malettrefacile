@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check, Download } from "lucide-react";
+import { Copy, Check, Sparkles, Download, Send } from "lucide-react";
+import Link from "next/link";
 import FillAndDownloadModal from "./FillAndDownloadModal";
 
 interface LetterVariable {
@@ -90,6 +91,22 @@ export default function LetterTemplate({
             <Download className="h-4 w-4" />
             Compléter et télécharger
           </button>
+
+          <Link
+            href={`/envoi/nouveau?lettre=${letterSlug}`}
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-success-500 px-3 py-2 text-sm font-medium text-white shadow-sm hover:opacity-90 transition-opacity"
+          >
+            <Send className="h-4 w-4" />
+            Envoyer par La Poste
+          </Link>
+
+          <Link
+            href={`/generateur?lettre=${letterSlug}`}
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 transition-colors sm:ml-auto"
+          >
+            <Sparkles className="h-4 w-4" />
+            Personnaliser avec l'IA
+          </Link>
         </div>
       </div>
 
