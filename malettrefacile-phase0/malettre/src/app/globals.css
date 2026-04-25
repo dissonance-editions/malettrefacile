@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* Bleu institutionnel */
+  --color-primary-50: #eff5ff;
+  --color-primary-100: #dbe8fe;
+  --color-primary-200: #bfd4fe;
+  --color-primary-300: #93b6fc;
+  --color-primary-400: #6090f8;
+  --color-primary-500: #3b6ef4;
+  --color-primary-600: #1a56db;
+  --color-primary-700: #1848c5;
+  --color-primary-800: #193da0;
+  --color-primary-900: #1a377e;
+  --color-primary-950: #14244d;
+
+  /* Gris neutres */
+  --color-neutral-50: #f8f9fa;
+  --color-neutral-100: #f1f3f5;
+  --color-neutral-200: #e9ecef;
+  --color-neutral-300: #dee2e6;
+  --color-neutral-400: #ced4da;
+  --color-neutral-500: #adb5bd;
+  --color-neutral-600: #868e96;
+  --color-neutral-700: #495057;
+  --color-neutral-800: #343a40;
+  --color-neutral-900: #212529;
+
+  /* Vert succès */
+  --color-success-500: #16a34a;
+  --color-success-50: #f0fdf4;
+
+  /* Orange attention */
+  --color-warning-500: #ea580c;
+  --color-warning-50: #fff7ed;
+
+  --font-sans: "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base styles */
+body {
+  @apply text-neutral-800 antialiased;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Letter template styling */
+.letter-template {
+  @apply whitespace-pre-line leading-relaxed text-neutral-800;
+  font-size: 0.95rem;
+}
+
+.letter-template .variable {
+  @apply bg-primary-100 text-primary-700 px-1 py-0.5 rounded font-medium;
+}
+
+/* FAQ accordion */
+.faq-answer {
+  @apply overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+/* Breadcrumb separator */
+.breadcrumb-sep::before {
+  content: "›";
+  @apply mx-2 text-neutral-400;
+}
