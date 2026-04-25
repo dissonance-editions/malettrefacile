@@ -1,13 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, Download, Loader2, Check, Eye, EyeOff } from "lucide-react";
+import { X, Mail, Loader2, Check, Eye, EyeOff } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 
-// Client browser Supabase pour signUp/signIn dans la modale.
-// Partage le meme auth storage (localStorage) que l'AuthProvider.
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
@@ -28,7 +26,7 @@ interface Props {
   variables: LetterVariable[];
 }
 
-type Step = "form" | "account" | "format" | "downloading" | "done";
+type Step = "form" | "account" | "format" | "sending" | "done";
 type Format = "pdf" | "docx";
 type AuthMode = "signup" | "login";
 
@@ -47,7 +45,7 @@ export default function FillAndDownloadModal({
   const [format, setFormat] = useState<Format>("pdf");
   const [error, setError] = useState<string | null>(null);
 
-  // Account step state
+  // Account step
   const [authMode, setAuthMode] = useState<AuthMode>("signup");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -56,7 +54,6 @@ export default function FillAndDownloadModal({
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [authSubmitting, setAuthSubmitting] = useState(false);
 
-  // Reset state on open
   useEffect(() => {
     if (open) {
       setStep("form");
@@ -71,7 +68,6 @@ export default function FillAndDownloadModal({
     }
   }, [open]);
 
-  // Skip account step if already logged in
   useEffect(() => {
     if (step === "account" && !authLoading && user) {
       setEmail(user.email ?? "");
@@ -79,7 +75,6 @@ export default function FillAndDownloadModal({
     }
   }, [step, user, authLoading]);
 
-  // Block body scroll when open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -150,13 +145,15 @@ export default function FillAndDownloadModal({
           await supabase.auth.signInWithPassword({ email, password });
         if (signInError) throw signInError;
       }
-
       setStep("format");
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Une erreur est survenue.";
 
-      if (message.includes("already registered") || message.includes("already been registered")) {
+      if (
+        message.includes("already registered") ||
+        message.includes("already been registered")
+      ) {
         setError("Ce compte existe déjà. Connectez-vous ci-dessous.");
         setAuthMode("login");
       } else if (message.includes("Invalid login")) {
@@ -173,8 +170,9 @@ export default function FillAndDownloadModal({
     }
   }
 
-  async function handleDownload() {
-    setStep("downloading");
+  async function handleSendEmail() {
+    setStep("sending");
+    setError(null);
 
     try {
       const response = await fetch("/api/download", {
@@ -192,24 +190,16 @@ export default function FillAndDownloadModal({
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Erreur lors de la génération du document");
-      }
+      const data = await response.json();
 
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `${letterSlug}.${format}`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      if (!response.ok) {
+        throw new Error(data.error || "Erreur lors de l'envoi de l'email");
+      }
 
       setStep("done");
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : "Erreur lors du téléchargement"
+        err instanceof Error ? err.message : "Erreur lors de l'envoi de l'email"
       );
       setStep("format");
     }
@@ -223,10 +213,10 @@ export default function FillAndDownloadModal({
         return "Étape 2/3 — Votre compte";
       case "format":
         return "Étape 3/3 — Format";
-      case "downloading":
-        return "Génération en cours...";
+      case "sending":
+        return "Envoi en cours...";
       case "done":
-        return "Téléchargement réussi";
+        return "Email envoyé";
     }
   }
 
@@ -238,7 +228,6 @@ export default function FillAndDownloadModal({
         return () => setStep("form");
       case "format":
         return () => {
-          // Si connecte on ne peut pas revenir a account
           if (user) setStep("form");
           else setStep("account");
         };
@@ -282,7 +271,7 @@ export default function FillAndDownloadModal({
           {step === "form" && (
             <>
               <p className="text-sm leading-relaxed text-neutral-600">
-                Renseignez vos informations. Les champs marqués d'un astérisque
+                Renseignez vos informations. Les champs marqués d&apos;un astérisque
                 sont les plus importants. Vous pouvez laisser certains champs
                 vides — ils seront simplement omis dans la lettre finale.
               </p>
@@ -312,12 +301,11 @@ export default function FillAndDownloadModal({
             <form onSubmit={handleAuth}>
               <p className="text-sm leading-relaxed text-neutral-600">
                 {authMode === "signup"
-                  ? "Créez votre compte gratuit pour télécharger votre lettre et retrouver vos documents."
-                  : "Connectez-vous à votre compte pour télécharger votre lettre."}
+                  ? "Créez votre compte gratuit pour recevoir votre lettre par email."
+                  : "Connectez-vous à votre compte pour recevoir votre lettre par email."}
               </p>
 
               <div className="mt-5 space-y-4">
-                {/* Email */}
                 <div>
                   <label className="block text-xs font-medium text-neutral-700">
                     Adresse email
@@ -333,7 +321,6 @@ export default function FillAndDownloadModal({
                   />
                 </div>
 
-                {/* Password */}
                 <div>
                   <label className="block text-xs font-medium text-neutral-700">
                     Mot de passe
@@ -367,10 +354,8 @@ export default function FillAndDownloadModal({
                   </div>
                 </div>
 
-                {/* Checkboxes (signup only) */}
                 {authMode === "signup" && (
                   <>
-                    {/* CGV — obligatoire */}
                     <label className="flex items-start gap-2 cursor-pointer">
                       <input
                         type="checkbox"
@@ -399,7 +384,6 @@ export default function FillAndDownloadModal({
                       </span>
                     </label>
 
-                    {/* Marketing — optionnel, décochée par défaut */}
                     <label className="flex items-start gap-2 cursor-pointer">
                       <input
                         type="checkbox"
@@ -417,7 +401,6 @@ export default function FillAndDownloadModal({
                 )}
               </div>
 
-              {/* Toggle signup/login */}
               <p className="mt-5 text-center text-xs text-neutral-500">
                 {authMode === "signup" ? (
                   <>
@@ -460,7 +443,8 @@ export default function FillAndDownloadModal({
           {step === "format" && (
             <>
               <p className="text-sm leading-relaxed text-neutral-600">
-                Choisissez le format de téléchargement.
+                Choisissez le format dans lequel vous souhaitez recevoir votre
+                lettre par email.
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <button
@@ -500,15 +484,23 @@ export default function FillAndDownloadModal({
                   </p>
                 </button>
               </div>
+              <p className="mt-4 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-xs text-neutral-600">
+                <Mail className="mb-0.5 mr-1 inline h-3.5 w-3.5" />
+                La lettre sera envoyée en pièce jointe à{" "}
+                <strong>{email}</strong>.
+              </p>
             </>
           )}
 
-          {/* STEP 4 — DOWNLOADING */}
-          {step === "downloading" && (
+          {/* STEP 4 — SENDING */}
+          {step === "sending" && (
             <div className="flex flex-col items-center py-12">
               <Loader2 className="h-10 w-10 animate-spin text-primary-600" />
               <p className="mt-4 text-sm font-medium text-neutral-700">
-                Génération de votre lettre...
+                Envoi de votre lettre par email...
+              </p>
+              <p className="mt-1 text-xs text-neutral-500">
+                Cela prend quelques secondes.
               </p>
             </div>
           )}
@@ -520,16 +512,20 @@ export default function FillAndDownloadModal({
                 <Check className="h-6 w-6 text-success-500" />
               </div>
               <p className="mt-4 text-base font-semibold text-neutral-900">
-                Téléchargement réussi !
+                Votre lettre est dans votre boîte mail
               </p>
               <p className="mt-2 max-w-md text-sm leading-relaxed text-neutral-500">
-                Votre lettre a été téléchargée. Votre compte est créé avec
-                l&apos;adresse <strong>{email}</strong>.
+                Nous venons d&apos;envoyer votre lettre en pièce jointe à{" "}
+                <strong>{email}</strong>. Vous devriez la recevoir dans les
+                prochaines minutes.
+              </p>
+              <p className="mt-4 max-w-md text-xs text-neutral-400">
+                💡 Si vous ne voyez rien, vérifiez votre dossier{" "}
+                <strong>spam</strong> ou <strong>courrier indésirable</strong>.
               </p>
             </div>
           )}
 
-          {/* Error */}
           {error && (
             <div className="mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
               {error}
@@ -538,7 +534,7 @@ export default function FillAndDownloadModal({
         </div>
 
         {/* Footer */}
-        {step !== "downloading" && step !== "done" && (
+        {step !== "sending" && step !== "done" && (
           <div className="flex items-center justify-between gap-3 border-t border-neutral-200 bg-neutral-50 px-6 py-4">
             <button
               onClick={getBackAction()}
@@ -571,11 +567,11 @@ export default function FillAndDownloadModal({
 
             {step === "format" && (
               <button
-                onClick={handleDownload}
+                onClick={handleSendEmail}
                 className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 transition-colors"
               >
-                <Download className="h-4 w-4" />
-                Télécharger ({format.toUpperCase()})
+                <Mail className="h-4 w-4" />
+                Recevoir par email ({format.toUpperCase()})
               </button>
             )}
           </div>

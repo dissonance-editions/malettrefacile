@@ -45,7 +45,6 @@ export default function LetterCard({
   category,
   slug,
   description,
-  volume,
 }: Props) {
   const iconName = letterIcons[slug] || "FileText";
   const Icon = iconMap[iconName] || FileText;
@@ -73,12 +72,7 @@ export default function LetterCard({
       )}
 
       {/* Footer */}
-      <div className="mt-auto flex items-center justify-between pt-4">
-        {volume && (
-          <span className="text-xs text-neutral-400">
-            {volume.toLocaleString("fr-FR")} rech./mois
-          </span>
-        )}
+      <div className="mt-auto flex items-center justify-end pt-4">
         <span className="inline-flex items-center gap-1 text-xs font-medium text-primary-600 group-hover:gap-2 transition-all">
           Voir
           <ArrowRight className="h-3 w-3" />
