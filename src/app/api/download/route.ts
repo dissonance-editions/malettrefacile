@@ -6,6 +6,14 @@ import {
   TextRun,
 } from "docx";
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
+import { createClient } from "@supabase/supabase-js";
+
+// Client admin (service role) pour inserer dans la table leads
+// en bypassant les RLS. Uniquement cote serveur.
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
 
 interface LetterVariable {
   name: string;
@@ -177,10 +185,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // === TODO Phase 1.5: persist lead to Supabase ===
-    // await saveLeadToSupabase({ email, letterSlug, emailOptIn, format });
-    // === TODO Phase 1.5: send email copy via Resend / Postmark ===
-    // await sendLetterByEmail({ email, letterTitle, fileBuffer, format });
+    // Persist lead to Supabase (non-bloquant : on log l'erreur mais on
+    // ne bloque pas le telechargement si l'insert echoue)
+    try {
+      await supabaseAdmin.from("leads").insert({
+        email,
+        letter_slug: letterSlug,
+        opt_in_marketing: emailOptIn,
+        format,
+      });
+    } catch (leadErr) {
+      console.error("Lead insert error (non-blocking):", leadErr);
+    }
 
     const filled = fillTemplate(template, variables, values);
 
