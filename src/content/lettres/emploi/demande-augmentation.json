@@ -1,0 +1,58 @@
+{
+  "slug": "demande-augmentation",
+  "category": "emploi",
+  "title": "Lettre de demande d'augmentation de salaire",
+  "metaTitle": "Modèle de lettre de demande d'augmentation gratuit (2026)",
+  "metaDescription": "Modèle de lettre pour demander une augmentation de salaire à votre employeur. Argumentaire structuré, ton professionnel, prêt à personnaliser.",
+  "context": "La demande d'augmentation est un moment clé de la vie professionnelle qui se prépare. Le courrier sert à formaliser une demande déjà évoquée à l'oral ou à amorcer le dialogue de manière professionnelle. Il permet de poser un argumentaire écrit et de fixer un cadre d'échange avec votre hiérarchie.\n\nLa demande doit s'appuyer sur des éléments concrets : prise de responsabilités, résultats mesurables, comparaison avec le marché de votre métier, ancienneté dans l'entreprise. Évitez de motiver votre demande par des contraintes personnelles (loyer, enfants) qui n'entrent pas dans le champ professionnel. Un courrier bien construit double vos chances d'obtenir un rendez-vous et débouche plus souvent sur une réponse positive.",
+  "legalBasis": "Aucune obligation légale. La rémunération relève du contrat de travail, modifiable d'un commun accord (art. L1221-1 du Code du travail).",
+  "sendingMethod": "Email à votre manager direct, doublé éventuellement d'une remise en main propre lors d'un entretien dédié",
+  "template": "[Prénom Nom]\n[Poste occupé]\n[Service]\n\n[Nom du manager]\n[Fonction du manager]\n[Nom de l'entreprise]\n\nÀ [Ville], le [Date]\n\nObjet : Demande d'entretien — évolution de ma rémunération\n\n[Madame / Monsieur] [Nom du manager],\n\nJe sollicite, par la présente, un entretien afin d'échanger avec vous sur l'évolution de ma rémunération.\n\nDepuis mon arrivée en [Date d'embauche] au poste de [Poste occupé], mes missions se sont sensiblement étoffées. Je gère désormais [Nouvelles responsabilités] et j'ai contribué à [Réalisation concrète chiffrée]. Mon implication a notamment permis [Résultat mesurable apporté à l'entreprise].\n\nMa rémunération actuelle, fixée à [Salaire actuel] bruts annuels, n'a pas évolué depuis [Date dernière augmentation]. Au regard de mon ancienneté de [Ancienneté] dans l'entreprise, du périmètre élargi de mes fonctions et des grilles de marché observées pour des postes équivalents, je souhaiterais qu'une augmentation me portant à [Salaire souhaité] bruts annuels puisse être envisagée.\n\nJe reste bien sûr ouvert(e) à toute alternative que vous jugeriez plus adaptée (prime, augmentation progressive, avantages annexes) et serais ravi(e) d'en discuter avec vous lors d'un entretien à votre convenance.\n\nDans l'attente de votre retour, je vous prie d'agréer, [Madame / Monsieur], l'expression de mes salutations respectueuses.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "poste", "label": "Poste occupé", "placeholder": "Chargé(e) de marketing" },
+    { "name": "service", "label": "Service", "placeholder": "Direction Marketing" },
+    { "name": "civilite_manager", "label": "Madame / Monsieur", "placeholder": "Madame" },
+    { "name": "nom_manager", "label": "Nom du manager", "placeholder": "Martin" },
+    { "name": "fonction_manager", "label": "Fonction du manager", "placeholder": "Directrice Marketing" },
+    { "name": "nom_entreprise", "label": "Nom de l'entreprise", "placeholder": "Société DUPONT SAS" },
+    { "name": "date_embauche", "label": "Date d'embauche", "placeholder": "mars 2022" },
+    { "name": "nouvelles_responsabilites", "label": "Nouvelles responsabilités", "placeholder": "le pilotage des campagnes digitales et la coordination de l'équipe junior" },
+    { "name": "realisation", "label": "Réalisation concrète chiffrée", "placeholder": "le lancement de notre nouvelle ligne produits avec un dépassement des objectifs de 18 %" },
+    { "name": "resultat", "label": "Résultat mesurable apporté", "placeholder": "une croissance de 25 % du chiffre d'affaires de la marque sur l'année écoulée" },
+    { "name": "salaire_actuel", "label": "Salaire actuel", "placeholder": "38 000 €" },
+    { "name": "date_derniere_augmentation", "label": "Date dernière augmentation", "placeholder": "mon embauche" },
+    { "name": "anciennete", "label": "Ancienneté", "placeholder": "deux ans" },
+    { "name": "salaire_souhaite", "label": "Salaire souhaité", "placeholder": "44 000 €" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "À quel moment de l'année demander une augmentation ?",
+      "a": "Le meilleur moment se situe avant les arbitrages budgétaires de votre entreprise (souvent en fin d'année civile ou avant les entretiens annuels). Évitez les périodes de tension financière ou de réorganisation."
+    },
+    {
+      "q": "Faut-il négocier à l'oral ou par écrit ?",
+      "a": "Les deux. Une demande écrite (lettre ou email) formalise et permet à votre manager de préparer sa réponse. Elle ne remplace pas un entretien où vous pourrez argumenter et négocier."
+    },
+    {
+      "q": "Comment justifier le montant demandé ?",
+      "a": "Appuyez-vous sur trois leviers : vos résultats concrets et chiffrés, l'évolution de votre périmètre, et les grilles de marché (consultables sur APEC, Glassdoor, ou via votre fédération professionnelle)."
+    },
+    {
+      "q": "Que faire en cas de refus ?",
+      "a": "Demandez les raisons précises et un calendrier (« à quelles conditions et dans quel délai ? »). Vous pouvez aussi négocier des alternatives : prime, jours de télétravail, formation, évolution de poste."
+    },
+    {
+      "q": "Quelle augmentation moyenne demander ?",
+      "a": "Une augmentation classique se situe entre 3 et 8 %. Pour une promotion ou une prise de responsabilités significative, des augmentations de 10 à 20 % sont possibles, surtout si vous étiez sous-payé(e) par rapport au marché."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Grilles de salaires APEC", "url": "https://www.apec.fr/tous-nos-outils/barometres/" },
+    { "label": "Code du travail (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072050/LEGISCTA000006177833/" }
+  ],
+  "estimatedSearchVolume": 5000,
+  "difficulty": "medium"
+}

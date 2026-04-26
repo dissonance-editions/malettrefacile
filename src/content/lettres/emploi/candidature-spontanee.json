@@ -1,0 +1,61 @@
+{
+  "slug": "candidature-spontanee",
+  "category": "emploi",
+  "title": "Lettre de candidature spontanée",
+  "metaTitle": "Modèle de lettre de candidature spontanée gratuit (2026)",
+  "metaDescription": "Modèle de candidature spontanée prêt à personnaliser pour postuler dans une entreprise sans offre publiée. Structure éprouvée et conseils inclus.",
+  "context": "La candidature spontanée consiste à proposer ses services à une entreprise sans répondre à une offre. Elle vise à se faire connaître d'employeurs ciblés, à anticiper un recrutement futur, ou à intégrer un vivier RH. Selon plusieurs études de l'APEC, près de 30 % des recrutements cadres se font hors annonce — la candidature spontanée a donc un vrai potentiel.\n\nUne candidature spontanée efficace cible une entreprise précise et un type de poste précis, démontre une bonne connaissance du secteur, et propose une plus-value claire. Elle évite les formulations floues du type « tout poste correspondant à mon profil ». Plus elle est ciblée, plus elle a de chances d'aboutir à un échange.",
+  "legalBasis": "Aucun cadre légal spécifique. Document de communication libre.",
+  "sendingMethod": "Email avec CV en pièce jointe ou courrier postal adressé au service RH (ou directement au manager du service visé)",
+  "template": "[Prénom Nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'entreprise]\nÀ l'attention du service des Ressources Humaines\n[Adresse de l'entreprise]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Candidature spontanée pour un poste de [Type de poste visé]\n\nMadame, Monsieur,\n\n[Nom de l'entreprise] occupe une place que j'apprécie particulièrement dans le secteur [Secteur d'activité], notamment pour [Raison concrète : positionnement, projet récent, valeurs]. C'est pourquoi je me permets de vous adresser ma candidature spontanée pour rejoindre vos équipes en tant que [Type de poste visé].\n\n[Diplôme ou expérience clé], j'ai exercé [Nombre d'années] années dans [Domaine d'expertise], notamment chez [Employeur précédent] où j'ai [Réalisation concrète]. Mon parcours m'a permis de maîtriser [Compétences principales] et de développer une réelle capacité à [Soft skill pertinent].\n\nJe suis convaincu(e) que mes compétences et mon engagement pourraient contribuer à [Apport potentiel à l'entreprise]. Je serais ravi(e) de pouvoir vous rencontrer afin d'échanger sur les opportunités existantes ou à venir au sein de votre structure.\n\nVous trouverez ci-joint mon curriculum vitae détaillé.\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_entreprise", "label": "Nom de l'entreprise", "placeholder": "Société DUPONT SAS" },
+    { "name": "adresse_entreprise", "label": "Adresse de l'entreprise", "placeholder": "" },
+    { "name": "type_poste", "label": "Type de poste visé", "placeholder": "Assistant(e) RH" },
+    { "name": "secteur", "label": "Secteur d'activité", "placeholder": "des ressources humaines" },
+    { "name": "raison_concrete", "label": "Raison concrète d'intérêt", "placeholder": "votre engagement en faveur de la formation continue" },
+    { "name": "diplome_experience", "label": "Diplôme ou expérience clé", "placeholder": "Titulaire d'un master en gestion des ressources humaines" },
+    { "name": "nb_annees", "label": "Nombre d'années", "placeholder": "trois" },
+    { "name": "domaine", "label": "Domaine d'expertise", "placeholder": "le recrutement et la formation" },
+    { "name": "employeur_precedent", "label": "Employeur précédent", "placeholder": "le cabinet RH PARTNERS" },
+    { "name": "realisation", "label": "Réalisation concrète", "placeholder": "piloté le recrutement de 40 collaborateurs sur deux ans" },
+    { "name": "competences", "label": "Compétences principales", "placeholder": "le sourcing, la conduite d'entretiens et la gestion administrative du personnel" },
+    { "name": "soft_skill", "label": "Soft skill pertinent", "placeholder": "écouter et accompagner les collaborateurs au quotidien" },
+    { "name": "apport", "label": "Apport potentiel à l'entreprise", "placeholder": "à votre politique de recrutement et de fidélisation des talents" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Comment savoir à qui adresser une candidature spontanée ?",
+      "a": "Trouvez le nom du responsable des ressources humaines ou du manager du service visé via LinkedIn ou le site de l'entreprise. Si rien n'est public, le service RH générique reste une option valable."
+    },
+    {
+      "q": "Faut-il joindre un CV à une candidature spontanée ?",
+      "a": "Oui, systématiquement. La lettre seule ne suffit pas : elle doit donner envie de lire votre CV qui détaille votre parcours."
+    },
+    {
+      "q": "Quel délai de réponse espérer ?",
+      "a": "Comptez 2 à 4 semaines. Au-delà d'un mois sans nouvelles, vous pouvez relancer poliment par email pour rappeler votre intérêt."
+    },
+    {
+      "q": "Faut-il viser un poste précis ou rester ouvert ?",
+      "a": "Plus vous êtes précis, plus votre candidature est crédible. Évitez « tout poste correspondant à mon profil » : nommez clairement le type de poste que vous visez."
+    },
+    {
+      "q": "Combien d'entreprises cibler par mois ?",
+      "a": "La qualité prime sur la quantité. Visez 5 à 10 entreprises bien ciblées par mois, avec une lettre personnalisée pour chacune, plutôt que 50 candidatures génériques."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Guide France Travail", "url": "https://www.francetravail.fr/candidat/la-candidature-spontanee.html" },
+    { "label": "Conseils APEC", "url": "https://www.apec.fr/candidat/recherche-emploi/preparer-sa-candidature/la-candidature-spontanee.html" }
+  ],
+  "estimatedSearchVolume": 30000,
+  "difficulty": "low"
+}

@@ -2,6 +2,8 @@ export interface LetterVariable {
   name: string;
   label: string;
   placeholder: string;
+  /** Si défini, override l'auto-detection des champs requis */
+  required?: boolean;
 }
 
 export interface FaqItem {
@@ -35,6 +37,7 @@ export interface Letter {
 
 // Icon registry — maps slug to Lucide icon name
 export const letterIcons: Record<string, string> = {
+  // Résiliation
   "mutuelle-sante": "Heart",
   "box-internet": "Wifi",
   "assurance-auto": "Car",
@@ -45,7 +48,14 @@ export const letterIcons: Record<string, string> = {
   "assurance-emprunteur": "Landmark",
   "compte-bancaire": "CreditCard",
   "credit-consommation": "PiggyBank",
+  // Emploi
   "demission-cdi": "Briefcase",
+  "rupture-conventionnelle": "Handshake",
+  "lettre-motivation": "FileEdit",
+  "candidature-spontanee": "Send",
+  "demande-augmentation": "TrendingUp",
+  "conge-parental": "Baby",
+  "conge-sans-solde": "CalendarOff",
 };
 
 // === RÉSILIATION ===
@@ -62,6 +72,12 @@ import creditConsommation from "@/content/lettres/resiliation/credit-consommatio
 
 // === EMPLOI ===
 import demissionCdi from "@/content/lettres/emploi/demission-cdi.json";
+import ruptureConventionnelle from "@/content/lettres/emploi/rupture-conventionnelle.json";
+import lettreMotivation from "@/content/lettres/emploi/lettre-motivation.json";
+import candidatureSpontanee from "@/content/lettres/emploi/candidature-spontanee.json";
+import demandeAugmentation from "@/content/lettres/emploi/demande-augmentation.json";
+import congeParental from "@/content/lettres/emploi/conge-parental.json";
+import congeSansSolde from "@/content/lettres/emploi/conge-sans-solde.json";
 
 const allLetters: Letter[] = [
   // Résiliation
@@ -77,6 +93,12 @@ const allLetters: Letter[] = [
   creditConsommation as Letter,
   // Emploi
   demissionCdi as Letter,
+  ruptureConventionnelle as Letter,
+  lettreMotivation as Letter,
+  candidatureSpontanee as Letter,
+  demandeAugmentation as Letter,
+  congeParental as Letter,
+  congeSansSolde as Letter,
 ];
 
 export function getLetterBySlug(

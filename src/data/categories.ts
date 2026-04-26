@@ -21,7 +21,7 @@ export const categories: Category[] = [
     description:
       "Démission, rupture conventionnelle, congé parental, candidature spontanée, demande d'augmentation.",
     icon: "💼",
-    letterCount: 35,
+    letterCount: 7,
   },
   {
     slug: "immobilier",
@@ -29,7 +29,7 @@ export const categories: Category[] = [
     description:
       "Préavis de départ, restitution de caution, contestation de charges, mise en demeure travaux.",
     icon: "🏠",
-    letterCount: 30,
+    letterCount: 0,
   },
   {
     slug: "administratif",
@@ -37,7 +37,7 @@ export const categories: Category[] = [
     description:
       "Contestation d'amende, délai de paiement impôts, recours gracieux, demandes à la CAF.",
     icon: "🏛️",
-    letterCount: 35,
+    letterCount: 0,
   },
   {
     slug: "consommation",
@@ -45,7 +45,7 @@ export const categories: Category[] = [
     description:
       "Rétractation, mise en demeure, contestation de facture, réclamation livraison, remboursement.",
     icon: "🛒",
-    letterCount: 30,
+    letterCount: 0,
   },
   {
     slug: "voisinage",
@@ -53,7 +53,7 @@ export const categories: Category[] = [
     description:
       "Nuisances sonores, empiètement, clôture mitoyenne, signalement au maire.",
     icon: "🏘️",
-    letterCount: 15,
+    letterCount: 0,
   },
   {
     slug: "famille",
@@ -61,7 +61,7 @@ export const categories: Category[] = [
     description:
       "Déclaration de décès, succession, pension alimentaire, changement de nom.",
     icon: "👨‍👩‍👧‍👦",
-    letterCount: 15,
+    letterCount: 0,
   },
 ];
 

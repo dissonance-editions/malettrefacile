@@ -1,0 +1,60 @@
+{
+  "slug": "lettre-motivation",
+  "category": "emploi",
+  "title": "Lettre de motivation pour un emploi",
+  "metaTitle": "Modèle de lettre de motivation gratuit personnalisable (2026)",
+  "metaDescription": "Modèle de lettre de motivation prêt à l'emploi pour postuler à une offre. Personnalisable, structure professionnelle, conseils de rédaction inclus.",
+  "context": "La lettre de motivation accompagne votre CV pour postuler à une offre d'emploi. Elle a trois objectifs : montrer que vous avez compris le poste et l'entreprise, mettre en avant les expériences et compétences qui font de vous un bon candidat, et donner envie au recruteur de vous rencontrer.\n\nElle se structure classiquement en trois parties : « vous » (l'entreprise et le poste qui vous intéressent), « moi » (vos atouts pour ce poste précis), « nous » (la rencontre que vous souhaitez). Une bonne lettre fait une page maximum, est personnalisée pour chaque candidature, et démontre une réelle connaissance de l'entreprise visée.",
+  "legalBasis": "Aucun cadre légal spécifique. La lettre de motivation est un document libre.",
+  "sendingMethod": "Email avec CV en pièce jointe, plateforme de candidature en ligne, ou courrier postal selon les instructions de l'offre",
+  "template": "[Prénom Nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'entreprise]\nÀ l'attention de [Nom du destinataire]\n[Adresse de l'entreprise]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Candidature au poste de [Intitulé du poste]\n\nMadame, Monsieur,\n\nVotre annonce parue [Source de l'annonce] pour le poste de [Intitulé du poste] au sein de [Nom de l'entreprise] a retenu toute mon attention. Votre [Élément précis sur l'entreprise : projet, valeurs, marché] correspond pleinement aux missions dans lesquelles je souhaite m'investir aujourd'hui.\n\nFort(e) de [Nombre d'années] années d'expérience en [Domaine d'expertise], j'ai notamment [Réalisation concrète chiffrée si possible]. Mon parcours chez [Employeur précédent] m'a permis de développer [Compétences clés liées au poste], compétences directement mobilisables au service de votre équipe.\n\nAu-delà de mes compétences techniques, je crois apporter [Qualité personnelle pertinente] et le sens du collectif, deux atouts qui me semblent essentiels dans le contexte que vous décrivez. Rejoindre [Nom de l'entreprise] représenterait pour moi l'opportunité de m'investir durablement dans une structure dont je partage les ambitions.\n\nJe serais ravi(e) de pouvoir échanger avec vous lors d'un entretien afin de vous exposer plus en détail ma motivation et mes réalisations.\n\nDans cette attente, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_entreprise", "label": "Nom de l'entreprise", "placeholder": "Société Recrutement SAS" },
+    { "name": "nom_destinataire", "label": "Nom du destinataire", "placeholder": "Madame Martin" },
+    { "name": "adresse_entreprise", "label": "Adresse de l'entreprise", "placeholder": "" },
+    { "name": "intitule_poste", "label": "Intitulé du poste", "placeholder": "Chargé(e) de communication" },
+    { "name": "source_annonce", "label": "Source de l'annonce", "placeholder": "sur LinkedIn le 15 mars" },
+    { "name": "element_entreprise", "label": "Élément précis sur l'entreprise", "placeholder": "engagement RSE et votre rayonnement européen" },
+    { "name": "nb_annees", "label": "Nombre d'années", "placeholder": "cinq" },
+    { "name": "domaine", "label": "Domaine d'expertise", "placeholder": "communication digitale" },
+    { "name": "realisation", "label": "Réalisation concrète chiffrée", "placeholder": "piloté un site qui a triplé son audience en 18 mois" },
+    { "name": "employeur_precedent", "label": "Employeur précédent", "placeholder": "Agence COMM&CO" },
+    { "name": "competences", "label": "Compétences clés liées au poste", "placeholder": "la gestion de projet et la coordination éditoriale" },
+    { "name": "qualite", "label": "Qualité personnelle pertinente", "placeholder": "une grande capacité d'écoute" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quelle longueur idéale pour une lettre de motivation ?",
+      "a": "Une page A4 maximum, soit environ 250 à 350 mots. L'objectif est de donner envie au recruteur de lire votre CV, pas de tout dire."
+    },
+    {
+      "q": "Faut-il toujours adresser sa lettre à une personne nommée ?",
+      "a": "Oui dans la mesure du possible. Trouvez le nom du recruteur sur LinkedIn ou sur le site de l'entreprise. Sinon, « Madame, Monsieur » reste correct."
+    },
+    {
+      "q": "Comment commencer ma lettre de motivation ?",
+      "a": "Évitez « Je me permets de vous écrire ». Préférez une accroche directe qui montre votre intérêt pour l'entreprise : « Votre annonce... a retenu mon attention » ou « Le poste que vous proposez correspond à mon parcours en... »."
+    },
+    {
+      "q": "Faut-il personnaliser pour chaque candidature ?",
+      "a": "Absolument. Une lettre générique est immédiatement repérée. Mentionnez le nom de l'entreprise, des éléments précis sur leur activité, et faites le lien avec votre profil."
+    },
+    {
+      "q": "Quelle formule de politesse utiliser ?",
+      "a": "« Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées » est un classique sûr. Évitez « Cordialement » qui est trop familier dans une lettre formelle."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Guide France Travail", "url": "https://www.francetravail.fr/candidat/lettre-de-motivation.html" },
+    { "label": "Conseils APEC", "url": "https://www.apec.fr/candidat/recherche-emploi/preparer-sa-candidature/la-lettre-de-motivation.html" }
+  ],
+  "estimatedSearchVolume": 50000,
+  "difficulty": "low"
+}
