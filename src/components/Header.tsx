@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FileText } from "lucide-react";
+import AccountMenu from "./AccountMenu";
 
 export default function Header() {
   return (
@@ -18,20 +19,21 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Nav desktop */}
-        <nav className="hidden items-center gap-6 sm:flex">
+        {/* Nav */}
+        <nav className="flex items-center gap-3 sm:gap-6">
           <Link
             href="/lettres"
-            className="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors"
+            className="hidden text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors sm:block"
           >
             Toutes les lettres
           </Link>
           <Link
             href="/tarifs"
-            className="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors"
+            className="hidden text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors sm:block"
           >
             Tarifs
           </Link>
+          <AccountMenu />
         </nav>
       </div>
     </header>

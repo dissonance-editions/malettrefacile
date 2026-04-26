@@ -1,37 +1,117 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { LogOut, Mail, Sparkles, FileText, Loader2, Send } from "lucide-react";
+import { useRouter } from "next/navigation";
+import {
+  User as UserIcon,
+  Crown,
+  FileText,
+  LogOut,
+  Loader2,
+  Mail,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
 import { useAuth } from "@/lib/auth";
+import { createClient } from "@supabase/supabase-js";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export default function AccountPage() {
-  const { user, loading, signOut } = useAuth();
-  const router = useRouter();
-  const [recentMailings, setRecentMailings] = useState<unknown[]>([]);
-  const [profileLoading, setProfileLoading] = useState(true);
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+);
 
+type Plan = "free" | "premium";
+
+interface Lead {
+  id: string;
+  letter_slug: string;
+  format: string;
+  created_at: string;
+}
+
+export default function ComptePage() {
+  const { user, loading: authLoading } = useAuth();
+  const router = useRouter();
+  const [plan, setPlan] = useState<Plan>("free");
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [loadingData, setLoadingData] = useState(true);
+  const [signingOut, setSigningOut] = useState(false);
+
+  // Redirect si non connecté
   useEffect(() => {
-    if (!loading && !user) {
+    if (!authLoading && !user) {
       router.push("/login?next=/compte");
     }
-  }, [user, loading, router]);
+  }, [authLoading, user, router]);
 
+  // Fetch profile + leads
   useEffect(() => {
-    if (user) {
-      // TODO: fetch profile + recent mailings
-      setProfileLoading(false);
-    }
+    if (!user) return;
+    let cancelled = false;
+
+    (async () => {
+      setLoadingData(true);
+
+      const [{ data: profile }, { data: leadsData }] = await Promise.all([
+        supabase.from("profiles").select("plan").eq("id", user.id).single(),
+        supabase
+          .from("leads")
+          .select("id, letter_slug, format, created_at")
+          .eq("email", user.email)
+          .order("created_at", { ascending: false })
+          .limit(50),
+      ]);
+
+      if (cancelled) return;
+
+      if (profile?.plan) setPlan(profile.plan as Plan);
+      if (leadsData) setLeads(leadsData as Lead[]);
+      setLoadingData(false);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [user]);
 
-  if (loading || !user) {
+  async function handleSignOut() {
+    setSigningOut(true);
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+  }
+
+  if (authLoading || !user) {
     return (
-      <div className="flex flex-1 items-center justify-center py-24">
+      <div className="mx-auto flex min-h-[40vh] max-w-5xl items-center justify-center px-4">
         <Loader2 className="h-6 w-6 animate-spin text-neutral-400" />
       </div>
     );
+  }
+
+  const isPremium = plan === "premium";
+  const initial = (user.email ?? "?").charAt(0).toUpperCase();
+
+  function formatDate(iso: string) {
+    return new Date(iso).toLocaleDateString("fr-FR", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  }
+
+  function formatLetterSlug(slug: string) {
+    // "resiliation/mutuelle-sante" -> "Résiliation - Mutuelle santé"
+    const parts = slug.split("/");
+    return parts
+      .map((p) =>
+        p
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase())
+      )
+      .join(" — ");
   }
 
   return (
@@ -40,118 +120,156 @@ export default function AccountPage() {
         items={[{ label: "Accueil", href: "/" }, { label: "Mon compte" }]}
       />
 
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Mon compte</h1>
-          <p className="mt-1 text-sm text-neutral-500">{user.email}</p>
-        </div>
-        <button
-          onClick={async () => {
-            await signOut();
-            router.push("/");
-          }}
-          className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm hover:bg-neutral-50 transition-colors"
-        >
-          <LogOut className="h-4 w-4" />
-          Se déconnecter
-        </button>
-      </div>
-
-      {/* Plan card */}
-      <div className="mt-8 grid gap-4 sm:grid-cols-3">
-        <div className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-neutral-400">
-            Plan actuel
-          </p>
-          <p className="mt-2 text-lg font-bold text-neutral-900">Gratuit</p>
-          <Link
-            href="/tarifs"
-            className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700"
+      {/* En-tête compte */}
+      <header className="mt-6 flex items-start justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <span
+            className={`flex h-14 w-14 items-center justify-center rounded-full text-xl font-bold text-white shadow-sm ${
+              isPremium
+                ? "bg-gradient-to-br from-amber-400 to-orange-500"
+                : "bg-primary-600"
+            }`}
           >
-            Passer au Premium →
-          </Link>
-        </div>
-        <div className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-neutral-400">
-            Lettres simples ce mois
-          </p>
-          <p className="mt-2 text-lg font-bold text-neutral-900">0 / 0</p>
-          <p className="mt-2 text-xs text-neutral-500">
-            Quota inclus dans le Premium.
-          </p>
-        </div>
-        <div className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-neutral-400">
-            Recommandés ce mois
-          </p>
-          <p className="mt-2 text-lg font-bold text-neutral-900">0 / 0</p>
-          <p className="mt-2 text-xs text-neutral-500">
-            Quota inclus dans le Premium.
-          </p>
-        </div>
-      </div>
-
-      {/* Quick actions */}
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        <Link
-          href="/lettres"
-          className="group flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 shadow-sm hover:border-primary-300 hover:shadow-md transition-all"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50">
-            <FileText className="h-5 w-5 text-primary-600" />
-          </div>
+            {initial}
+          </span>
           <div>
-            <p className="text-sm font-semibold text-neutral-800">
-              Parcourir les lettres
-            </p>
-            <p className="mt-0.5 text-xs leading-relaxed text-neutral-500">
-              200+ modèles gratuits, classés par catégorie.
-            </p>
-          </div>
-        </Link>
-        <Link
-          href="/envoi/nouveau"
-          className="group flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 shadow-sm hover:border-primary-300 hover:shadow-md transition-all"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50">
-            <Send className="h-5 w-5 text-primary-600" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-neutral-800">
-              Envoyer une lettre
-            </p>
-            <p className="mt-0.5 text-xs leading-relaxed text-neutral-500">
-              On l'imprime et on la poste pour vous.
+            <h1 className="text-2xl font-bold text-neutral-900">Mon compte</h1>
+            <p className="mt-0.5 flex items-center gap-1.5 text-sm text-neutral-500">
+              <Mail className="h-3.5 w-3.5" />
+              {user.email}
             </p>
           </div>
-        </Link>
-      </div>
+        </div>
 
-      {/* Mailings history */}
-      <div className="mt-10">
-        <h2 className="text-base font-bold text-neutral-900">
-          Mes envois récents
+        <button
+          onClick={handleSignOut}
+          disabled={signingOut}
+          className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-red-600 hover:border-red-200 hover:bg-red-50 transition-colors disabled:opacity-60"
+        >
+          {signingOut ? (
+            <Loader2 className="h-4 w-4 animate-spin" />
+          ) : (
+            <LogOut className="h-4 w-4" />
+          )}
+          <span className="hidden sm:inline">Se déconnecter</span>
+        </button>
+      </header>
+
+      {/* Statut du plan */}
+      <section className="mt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
+          Votre formule
         </h2>
-        {profileLoading ? (
+
+        {isPremium ? (
+          <div className="mt-3 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 p-6">
+            <div className="flex items-center gap-2">
+              <Crown className="h-5 w-5 text-amber-500" />
+              <span className="rounded-full bg-amber-500 px-3 py-0.5 text-xs font-semibold text-white">
+                Premium
+              </span>
+            </div>
+            <p className="mt-3 text-sm text-amber-900">
+              Vous bénéficiez de la personnalisation IA illimitée, de l&apos;envoi
+              postal automatisé et du support prioritaire.
+            </p>
+            <Link
+              href="/tarifs"
+              className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-700 hover:text-amber-900"
+            >
+              Gérer mon abonnement
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        ) : (
+          <div className="mt-3 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-2">
+              <UserIcon className="h-5 w-5 text-neutral-500" />
+              <span className="rounded-full bg-neutral-100 px-3 py-0.5 text-xs font-semibold text-neutral-700">
+                Compte gratuit
+              </span>
+            </div>
+            <p className="mt-3 text-sm text-neutral-600">
+              Vous avez accès à tous les modèles de lettres en téléchargement
+              libre. Les fonctionnalités avancées (personnalisation IA, envoi
+              postal automatisé) arriveront prochainement.
+            </p>
+            <div
+              title="Bientôt disponible"
+              className="mt-4 inline-flex cursor-not-allowed items-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white opacity-60"
+            >
+              <Sparkles className="h-4 w-4" />
+              Passer au Premium
+              <span className="ml-1 rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide">
+                Bientôt
+              </span>
+            </div>
+          </div>
+        )}
+      </section>
+
+      {/* Historique des lettres */}
+      <section id="historique" className="mt-12 scroll-mt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
+          Mes lettres téléchargées
+        </h2>
+
+        {loadingData ? (
           <div className="mt-4 flex justify-center py-8">
             <Loader2 className="h-5 w-5 animate-spin text-neutral-400" />
           </div>
-        ) : recentMailings.length === 0 ? (
+        ) : leads.length === 0 ? (
           <div className="mt-4 rounded-xl border border-dashed border-neutral-300 bg-neutral-50 p-8 text-center">
-            <Mail className="mx-auto h-8 w-8 text-neutral-300" />
-            <p className="mt-2 text-sm text-neutral-500">
-              Aucun envoi pour l'instant.
+            <FileText className="mx-auto h-8 w-8 text-neutral-400" />
+            <p className="mt-3 text-sm font-medium text-neutral-700">
+              Aucune lettre téléchargée pour le moment
+            </p>
+            <p className="mt-1 text-sm text-neutral-500">
+              Parcourez notre catalogue et téléchargez votre première lettre
+              gratuitement.
             </p>
             <Link
-              href="/envoi/nouveau"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700"
+              href="/lettres"
+              className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 transition-colors"
             >
-              <Sparkles className="h-4 w-4" />
-              Envoyer ma première lettre
+              Parcourir les lettres
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        ) : null}
-      </div>
+        ) : (
+          <div className="mt-4 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
+            <ul className="divide-y divide-neutral-100">
+              {leads.map((lead) => (
+                <li
+                  key={lead.id}
+                  className="flex items-center justify-between gap-3 px-5 py-4"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-50">
+                      <FileText className="h-4 w-4 text-primary-600" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-medium text-neutral-800">
+                        {formatLetterSlug(lead.letter_slug)}
+                      </p>
+                      <p className="text-xs text-neutral-500">
+                        {formatDate(lead.created_at)} ·{" "}
+                        {lead.format.toUpperCase()}
+                      </p>
+                    </div>
+                  </div>
+                  <Link
+                    href={`/lettres/${lead.letter_slug}`}
+                    className="shrink-0 text-xs font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                  >
+                    Voir
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
     </div>
   );
 }
