@@ -64,6 +64,14 @@ export const letterIcons: Record<string, string> = {
   "demande-travaux-proprietaire": "Wrench",
   "contestation-etat-des-lieux": "ClipboardCheck",
   "demande-logement-social": "Building2",
+  // Administratif
+  "contestation-amende": "ShieldAlert",
+  "delai-paiement-impots": "Calculator",
+  "recours-gracieux": "Scale",
+  "changement-situation-caf": "UserCheck",
+  "demande-extrait-casier": "ScrollText",
+  "demande-acte-naissance": "FileCheck",
+  "recours-hierarchique": "Flag",
 };
 
 // === RÉSILIATION ===
@@ -86,6 +94,15 @@ import candidatureSpontanee from "@/content/lettres/emploi/candidature-spontanee
 import demandeAugmentation from "@/content/lettres/emploi/demande-augmentation.json";
 import congeParental from "@/content/lettres/emploi/conge-parental.json";
 import congeSansSolde from "@/content/lettres/emploi/conge-sans-solde.json";
+
+// === ADMINISTRATIF ===
+import contestationAmende from "@/content/lettres/administratif/contestation-amende.json";
+import delaiPaiementImpots from "@/content/lettres/administratif/delai-paiement-impots.json";
+import recoursGracieux from "@/content/lettres/administratif/recours-gracieux.json";
+import changementSituationCaf from "@/content/lettres/administratif/changement-situation-caf.json";
+import demandeExtraitCasier from "@/content/lettres/administratif/demande-extrait-casier.json";
+import demandeActeNaissance from "@/content/lettres/administratif/demande-acte-naissance.json";
+import recoursHierarchique from "@/content/lettres/administratif/recours-hierarchique.json";
 
 // === IMMOBILIER ===
 import preavis1Mois from "@/content/lettres/immobilier/preavis-1-mois.json";
@@ -116,6 +133,14 @@ const allLetters: Letter[] = [
   demandeAugmentation as Letter,
   congeParental as Letter,
   congeSansSolde as Letter,
+  // Administratif
+  contestationAmende as Letter,
+  demandeActeNaissance as Letter,
+  recoursGracieux as Letter,
+  delaiPaiementImpots as Letter,
+  demandeExtraitCasier as Letter,
+  changementSituationCaf as Letter,
+  recoursHierarchique as Letter,
   // Immobilier
   preavis1Mois as Letter,
   preavis3Mois as Letter,

@@ -1,0 +1,58 @@
+{
+  "slug": "recours-gracieux",
+  "category": "administratif",
+  "title": "Lettre de recours gracieux administratif",
+  "metaTitle": "Modèle de recours gracieux administratif gratuit (2026)",
+  "metaDescription": "Contestez une décision administrative avec notre modèle de recours gracieux. Délais, procédure et bases légales CRPA inclus.",
+  "context": "Le recours gracieux est une voie de recours administrative préalable consistant à demander à l'auteur d'une décision de la retirer ou de la modifier. Il peut être exercé à l'encontre de toute décision administrative (refus d'aide, sanction, rejet de demande de permis, etc.) dans un délai de deux mois à compter de la notification de la décision.\n\nExercer un recours gracieux interrompt le délai de recours contentieux devant le tribunal administratif. Un nouveau délai de deux mois pour saisir le juge court à compter de la réponse de l'administration ou, en l'absence de réponse, à l'expiration d'un délai de deux mois (silence valant rejet selon l'art. L231-4 du CRPA).\n\nLe recours gracieux doit exposer clairement les griefs juridiques et factuels qui s'opposent à la décision contestée, et demander son retrait ou sa modification. Il constitue souvent un préalable stratégique avant tout contentieux et peut permettre d'éviter une procédure judiciaire longue et coûteuse.",
+  "legalBasis": "Art. L411-2 et L412-1 du Code des relations entre le public et l'administration (CRPA) ; Art. R421-1 et R421-2 du Code de justice administrative",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour interrompre le délai de recours contentieux et conserver une preuve de dépôt)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'administration]\nÀ l'attention de [Destinataire]\n[Adresse de l'administration]\n[Code postal — Ville de l'administration]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Recours gracieux contre la décision du [Date de la décision] — Référence [Référence du dossier]\n\nMadame, Monsieur,\n\nPar courrier en date du [Date de la décision], vous avez pris la décision suivante à mon égard : [Nature de la décision contestée].\n\nJe me permets de former contre cette décision un recours gracieux, conformément aux articles L411-2 et L412-1 du Code des relations entre le public et l'administration.\n\nÀ l'appui de ce recours, je fais valoir les éléments suivants :\n\n[Motifs et arguments de la contestation]\n\nEn conséquence, je vous demande de bien vouloir procéder au retrait ou à la modification de votre décision du [Date de la décision] et de me faire connaître votre position dans les meilleurs délais.\n\nJe joins à ce courrier les pièces justificatives suivantes :\n- Copie de la décision contestée\n- [Pièces jointes]\n\nDans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations respectueuses.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_administration", "label": "Nom de l'administration", "placeholder": "Mairie de Paris — Direction des affaires sociales" },
+    { "name": "destinataire", "label": "Destinataire", "placeholder": "Monsieur le Directeur des affaires sociales" },
+    { "name": "adresse_administration", "label": "Adresse de l'administration", "placeholder": "5 rue de Lobau" },
+    { "name": "code_postal_ville_administration", "label": "Code postal — Ville de l'administration", "placeholder": "75004 — Paris" },
+    { "name": "date_decision", "label": "Date de la décision", "placeholder": "15/03/2026" },
+    { "name": "reference_dossier", "label": "Référence du dossier", "placeholder": "2026-ADM-12345" },
+    { "name": "nature_decision", "label": "Nature de la décision contestée", "placeholder": "refus d'attribution de l'aide au logement" },
+    { "name": "motifs_arguments", "label": "Motifs et arguments de la contestation", "placeholder": "Je remplis les conditions de ressources fixées à l'article... et la décision ne prend pas en compte les justificatifs transmis le..." },
+    { "name": "pieces_jointes", "label": "Pièces jointes", "placeholder": "Avis d'imposition, justificatifs de ressources, accusé de réception du dossier initial" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quelle est la différence entre recours gracieux et recours hiérarchique ?",
+      "a": "Le recours gracieux s'adresse à l'auteur même de la décision, tandis que le recours hiérarchique est adressé à son supérieur hiérarchique. Les deux peuvent être exercés simultanément et interrompent le délai de recours contentieux."
+    },
+    {
+      "q": "Quel est le délai pour exercer un recours gracieux ?",
+      "a": "2 mois à compter de la notification de la décision. Si la décision ne mentionne pas les voies et délais de recours, le délai est d'un an (règle du délai raisonnable issue de la jurisprudence du Conseil d'État)."
+    },
+    {
+      "q": "Que faire si l'administration ne répond pas à mon recours gracieux ?",
+      "a": "Le silence de l'administration pendant 2 mois vaut décision implicite de rejet (art. L231-4 CRPA). Un nouveau délai de 2 mois court alors pour saisir le tribunal administratif."
+    },
+    {
+      "q": "Le recours gracieux suspend-il l'exécution de la décision ?",
+      "a": "Non. Le recours gracieux n'a pas d'effet suspensif. Si vous souhaitez suspendre l'exécution d'une décision, il faut demander un référé-suspension devant le tribunal administratif."
+    },
+    {
+      "q": "Peut-on saisir directement le tribunal administratif sans recours gracieux préalable ?",
+      "a": "Oui, en règle générale. Sauf cas de recours administratif préalable obligatoire (RAPO) prévu par un texte spécifique, le recours gracieux reste facultatif. Il est toutefois conseillé car il peut permettre d'éviter un contentieux long et coûteux."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "CRPA — Art. L411-2 (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031370114/" },
+    { "label": "Recours gracieux ou hiérarchique — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F2474" },
+    { "label": "Annuaire des juridictions administratives", "url": "https://www.conseil-etat.fr/tribunaux-cours/annuaire-des-juridictions" }
+  ],
+  "estimatedSearchVolume": 10000,
+  "difficulty": "medium"
+}

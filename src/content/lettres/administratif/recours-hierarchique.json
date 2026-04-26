@@ -1,0 +1,59 @@
+{
+  "slug": "recours-hierarchique",
+  "category": "administratif",
+  "title": "Lettre de recours hiérarchique administratif",
+  "metaTitle": "Modèle de recours hiérarchique administratif gratuit (2026)",
+  "metaDescription": "Contestez une décision administrative auprès du supérieur hiérarchique avec ce modèle gratuit. CRPA, délais et procédure inclus.",
+  "context": "Le recours hiérarchique consiste à saisir le supérieur hiérarchique de l'auteur d'une décision administrative pour lui demander d'annuler ou de modifier cette décision. Il se distingue du recours gracieux, qui s'adresse à l'auteur même de la décision. Les deux recours peuvent être exercés simultanément ou successivement.\n\nComme le recours gracieux, le recours hiérarchique interrompt le délai de recours contentieux de deux mois devant le tribunal administratif. Un nouveau délai de deux mois court à partir de la réponse de l'autorité supérieure ou, en l'absence de réponse, à l'expiration d'un délai de deux mois (silence valant rejet implicite selon le CRPA).\n\nLe recours hiérarchique est particulièrement pertinent lorsque la décision contestée procède d'une erreur d'interprétation des instructions de l'autorité supérieure, d'un dépassement de compétences ou d'une violation des circulaires ministérielles en vigueur.",
+  "legalBasis": "Art. L411-2 et L412-1 du Code des relations entre le public et l'administration (CRPA) ; Art. R421-1 et R421-2 du Code de justice administrative",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour interrompre le délai de recours contentieux et conserver une preuve de dépôt)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'autorité hiérarchique]\nÀ l'attention de [Destinataire de l'autorité]\n[Adresse de l'autorité]\n[Code postal — Ville de l'autorité]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Recours hiérarchique contre la décision de [Nom de l'autorité initiale] du [Date de la décision] — Réf. [Référence du dossier]\n\nMadame, Monsieur,\n\nPar décision en date du [Date de la décision], [Nom de l'autorité initiale] a pris la décision suivante à mon égard : [Nature de la décision contestée].\n\nPar la présente, je forme un recours hiérarchique contre cette décision, conformément aux articles L411-2 et L412-1 du Code des relations entre le public et l'administration, et vous demande d'user de votre pouvoir hiérarchique pour faire annuler ou modifier cette décision.\n\nÀ l'appui de ce recours, je fais valoir les éléments suivants :\n\n[Motifs du recours hiérarchique]\n\nEn conséquence, je vous demande de bien vouloir :\n1. Annuler la décision susmentionnée, ou\n2. La modifier dans le sens indiqué ci-dessus.\n\nJe joins à ce courrier les pièces suivantes :\n- Copie de la décision contestée\n- [Autres pièces jointes]\n\nDans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations respectueuses.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_autorite_hierarchique", "label": "Nom de l'autorité hiérarchique", "placeholder": "Ministère du Travail — Direction régionale de l'économie" },
+    { "name": "destinataire_autorite", "label": "Destinataire de l'autorité", "placeholder": "Monsieur le Ministre du Travail" },
+    { "name": "adresse_autorite", "label": "Adresse de l'autorité", "placeholder": "127 rue de Grenelle" },
+    { "name": "code_postal_ville_autorite", "label": "Code postal — Ville de l'autorité", "placeholder": "75007 — Paris" },
+    { "name": "nom_autorite_initiale", "label": "Nom de l'autorité initiale", "placeholder": "l'Inspection du travail de Paris" },
+    { "name": "date_decision", "label": "Date de la décision", "placeholder": "15/03/2026" },
+    { "name": "reference_dossier", "label": "Référence du dossier", "placeholder": "2026-IT-75-12345" },
+    { "name": "nature_decision", "label": "Nature de la décision contestée", "placeholder": "refus d'autorisation de licenciement pour inaptitude" },
+    { "name": "motifs_recours", "label": "Motifs du recours hiérarchique", "placeholder": "La décision ne tient pas compte des éléments médicaux joints au dossier et contredit la circulaire ministérielle du 12 janvier 2026..." },
+    { "name": "autres_pieces_jointes", "label": "Autres pièces jointes", "placeholder": "Rapports médicaux, courrier de l'autorité initiale, circulaire ministérielle applicable" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quelle est la différence entre recours gracieux et recours hiérarchique ?",
+      "a": "Le recours gracieux s'adresse à l'auteur de la décision, lui demandant de la réviser lui-même. Le recours hiérarchique s'adresse au supérieur hiérarchique de cet auteur. Les deux peuvent être exercés simultanément et interrompent tous deux le délai de recours contentieux."
+    },
+    {
+      "q": "Qui est le supérieur hiérarchique d'une autorité administrative ?",
+      "a": "Cela dépend de l'autorité concernée : pour une décision d'un service préfectoral, le supérieur peut être le préfet ou le ministre. Pour une décision communale, le préfet peut exercer un contrôle de légalité. Renseignez-vous auprès de l'administration ou d'un juriste."
+    },
+    {
+      "q": "Le recours hiérarchique est-il obligatoire avant de saisir le tribunal administratif ?",
+      "a": "Non, sauf exceptions légales (recours administratif préalable obligatoire — RAPO prévu par des textes spécifiques). Il est facultatif mais stratégiquement utile pour tenter une résolution amiable et interrompre le délai de recours contentieux."
+    },
+    {
+      "q": "Quel délai pour former un recours hiérarchique ?",
+      "a": "2 mois à compter de la notification de la décision contestée. Ce délai court même si vous n'avez pas d'abord exercé un recours gracieux."
+    },
+    {
+      "q": "Que se passe-t-il si le recours hiérarchique est rejeté ou sans réponse ?",
+      "a": "Vous disposez de 2 mois à compter de la décision de rejet (ou du silence de l'autorité pendant 2 mois, valant rejet implicite) pour saisir le tribunal administratif compétent. C'est alors la seule voie de recours restante."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "CRPA — Recours administratifs (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000031366350/LEGISCTA000031367739/" },
+    { "label": "Recours gracieux ou hiérarchique — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F2474" },
+    { "label": "Annuaire des juridictions administratives", "url": "https://www.conseil-etat.fr/tribunaux-cours/annuaire-des-juridictions" }
+  ],
+  "estimatedSearchVolume": 3000,
+  "difficulty": "medium"
+}

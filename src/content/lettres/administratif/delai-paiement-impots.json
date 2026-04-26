@@ -1,0 +1,60 @@
+{
+  "slug": "delai-paiement-impots",
+  "category": "administratif",
+  "title": "Lettre de demande de délai de paiement aux impôts",
+  "metaTitle": "Modèle de lettre délai de paiement impôts gratuit (2026)",
+  "metaDescription": "Demandez un délai de paiement ou un échelonnement de votre dette fiscale avec ce modèle gratuit. Procédure DGFiP et bases légales incluses.",
+  "context": "Lorsque vous ne pouvez pas régler votre dette fiscale en une seule fois, vous pouvez demander à la Direction générale des Finances publiques (DGFiP) un délai de paiement ou un étalement de votre dette. Cette demande doit être adressée au Service des impôts des particuliers (SIP) compétent le plus tôt possible, idéalement avant l'échéance.\n\nLa DGFiP dispose d'un pouvoir discrétionnaire d'appréciation. Pour mettre toutes les chances de votre côté, exposez clairement votre situation financière, proposez un échéancier réaliste et joignez tout justificatif de difficulté (perte d'emploi, accident de vie, séparation, maladie grave...).\n\nAttention : une demande de délai ne suspend pas automatiquement les pénalités de retard (10 %) ni les intérêts de retard (0,20 %/mois) qui courent dès le lendemain de la date d'exigibilité. Vous pouvez cependant demander simultanément une remise gracieuse des pénalités au titre de l'article L247 du LPF.",
+  "legalBasis": "Art. L247 et R*247-1 du Livre des procédures fiscales (LPF) ; Art. 1929 quater du Code général des impôts (CGI)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception adressée au Service des impôts des particuliers (SIP) de votre domicile, ou via la messagerie sécurisée de votre espace impots.gouv.fr",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\nDirection générale des Finances publiques\n[Nom du service des impôts]\n[Adresse du service]\n[Code postal — Ville du service]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Demande de délai de paiement — Numéro fiscal [Numéro fiscal (SPI)]\nRéférence : Avis d'imposition [Référence de l'avis]\n\nMadame, Monsieur,\n\nJe me permets de vous adresser la présente afin de solliciter un délai de paiement concernant ma dette fiscale d'un montant de [Montant de la dette] euros, au titre de [Nature de l'impôt] pour l'année [Année d'imposition].\n\nEn effet, je me trouve actuellement dans l'impossibilité de régler cette somme en une seule fois en raison de : [Motif des difficultés financières]\n\nAfin de régulariser ma situation dans les meilleurs délais, je me permets de vous proposer l'échelonnement suivant : [Proposition d'échéancier]\n\nJe m'engage à respecter scrupuleusement cet échéancier et à tenir le service informé de toute évolution de ma situation.\n\nJe joins à ce courrier les pièces justificatives suivantes :\n- Copie de mon dernier avis d'imposition\n- [Pièces justificatives]\n\nDans l'attente de votre accord, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations respectueuses.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_service_impots", "label": "Nom du service des impôts", "placeholder": "Service des impôts des particuliers de Paris 2e" },
+    { "name": "adresse_service", "label": "Adresse du service", "placeholder": "10 rue Molière" },
+    { "name": "code_postal_ville_service", "label": "Code postal — Ville du service", "placeholder": "75001 — Paris" },
+    { "name": "numero_fiscal", "label": "Numéro fiscal (SPI)", "placeholder": "1234567890123" },
+    { "name": "reference_avis", "label": "Référence de l'avis", "placeholder": "2025 12345678901" },
+    { "name": "montant_dette", "label": "Montant de la dette", "placeholder": "1 240" },
+    { "name": "nature_impot", "label": "Nature de l'impôt", "placeholder": "impôt sur le revenu" },
+    { "name": "annee_imposition", "label": "Année d'imposition", "placeholder": "2024" },
+    { "name": "motif_difficultes", "label": "Motif des difficultés financières", "placeholder": "perte d'emploi en janvier 2026, en attente de versement des allocations chômage" },
+    { "name": "proposition_echeancier", "label": "Proposition d'échéancier", "placeholder": "versements mensuels de 200 € à compter du 1er mai 2026 jusqu'à apurement total" },
+    { "name": "pieces_justificatives", "label": "Pièces justificatives", "placeholder": "Attestation Pôle Emploi, relevés de compte bancaire des 3 derniers mois" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Peut-on demander un délai de paiement à la DGFiP ?",
+      "a": "Oui. La DGFiP peut accorder un plan d'étalement selon votre situation financière. La demande doit être motivée et accompagnée de justificatifs. La DGFiP répond généralement dans le mois. Il n'y a pas de droit automatique : c'est une décision discrétionnaire."
+    },
+    {
+      "q": "Les pénalités continuent-elles de courir pendant le délai accordé ?",
+      "a": "Oui, les intérêts de retard (0,20 %/mois) et les majorations de 10 % continuent en principe. Vous pouvez cependant demander simultanément une remise gracieuse des pénalités (art. L247 LPF), distincte de la demande de délai."
+    },
+    {
+      "q": "Que faire si la DGFiP refuse ma demande de délai ?",
+      "a": "Vous pouvez formuler un recours gracieux auprès du directeur départemental des finances publiques. En dernier recours, le Médiateur des ministères économiques et financiers peut être saisi."
+    },
+    {
+      "q": "Existe-t-il un service en ligne pour demander un délai de paiement ?",
+      "a": "Oui. Pour les particuliers, la demande peut être déposée directement via l'espace personnel sur impots.gouv.fr, rubrique « Messagerie sécurisée » > « Je signale une difficulté de paiement ». C'est la voie la plus rapide."
+    },
+    {
+      "q": "Un délai de paiement peut-il être refusé sans justification ?",
+      "a": "La DGFiP dispose d'un pouvoir discrétionnaire. Un refus peut survenir en cas d'antécédents de non-paiement répétés, d'absence de justificatifs sérieux ou si le montant de la dette est jugé compatible avec vos revenus actuels."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. L247 LPF (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006315107/" },
+    { "label": "Difficultés de paiement — impots.gouv.fr", "url": "https://www.impots.gouv.fr/particulier/les-difficultes-de-paiement" },
+    { "label": "Délai de paiement — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F17583" }
+  ],
+  "estimatedSearchVolume": 8000,
+  "difficulty": "low"
+}

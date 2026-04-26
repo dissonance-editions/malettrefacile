@@ -1,0 +1,59 @@
+{
+  "slug": "contestation-amende",
+  "category": "administratif",
+  "title": "Lettre de contestation d'amende",
+  "metaTitle": "Modèle de lettre de contestation d'amende gratuit (2026)",
+  "metaDescription": "Contestez une amende radar ou de stationnement avec notre modèle gratuit. Délais, procédure et bases légales expliqués.",
+  "context": "Toute personne peut contester une amende forfaitaire (excès de vitesse, franchissement de feu rouge, etc.) auprès de l'Officier du Ministère Public (OMP) dans un délai de 45 jours à compter de la date figurant sur l'avis de contravention (90 jours si domicile à l'étranger). Vous ne devez pas payer l'amende avant d'avoir contesté : le paiement vaut reconnaissance de l'infraction et rend toute contestation irrecevable.\n\nPour une amende forfaitaire majorée (AFM), vous disposez de 30 jours à compter de sa notification pour la contester devant le même OMP. Si votre requête est rejetée, le tribunal de police peut être saisi.\n\nAttention : la contestation n'est recevable que si vous n'étiez pas l'auteur de l'infraction (usurpation de plaque, vol du véhicule, cession du véhicule avant les faits, force majeure, erreur matérielle sur l'avis). Un désaccord de principe sur la vitesse ou le signalement ne constitue pas un motif recevable.",
+  "legalBasis": "Art. 529-2, 529-10 et R49-10 du Code de procédure pénale ; Art. L130-9 du Code de la route",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (obligatoire pour interrompre les délais de prescription)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\nOfficier du Ministère Public\n[Tribunal compétent]\n[Adresse du tribunal]\n[Code postal — Ville du tribunal]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Contestation de l'avis de contravention n°[Numéro de l'avis]\n\nMadame, Monsieur l'Officier du Ministère Public,\n\nJ'ai l'honneur de contester l'avis de contravention n°[Numéro de l'avis] dressé le [Date de l'infraction], pour les faits suivants : [Nature de l'infraction], relevés à [Lieu de l'infraction] sur le véhicule immatriculé [Immatriculation du véhicule].\n\nMotif de la contestation :\n[Motif de la contestation]\n\nJe vous demande en conséquence de bien vouloir prononcer mon exonération de cette amende.\n\nJe joins à ce courrier les pièces justificatives suivantes :\n- Copie de l'avis de contravention\n- [Pièces justificatives]\n\nDans l'attente de votre décision, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations respectueuses.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "tribunal", "label": "Tribunal compétent", "placeholder": "Tribunal judiciaire de Paris" },
+    { "name": "adresse_tribunal", "label": "Adresse du tribunal", "placeholder": "4 boulevard du Palais" },
+    { "name": "code_postal_ville_tribunal", "label": "Code postal — Ville du tribunal", "placeholder": "75001 — Paris" },
+    { "name": "numero_avis", "label": "Numéro de l'avis", "placeholder": "1234567890123" },
+    { "name": "date_infraction", "label": "Date de l'infraction", "placeholder": "01/03/2026" },
+    { "name": "nature_infraction", "label": "Nature de l'infraction", "placeholder": "excès de vitesse (56 km/h pour 50 km/h autorisés)" },
+    { "name": "lieu_infraction", "label": "Lieu de l'infraction", "placeholder": "RN7 — commune de Fontainebleau (77)" },
+    { "name": "immatriculation", "label": "Immatriculation du véhicule", "placeholder": "AB-123-CD" },
+    { "name": "motif_contestation", "label": "Motif de la contestation", "placeholder": "le véhicule avait été cédé à titre onéreux le 15/02/2026 avant la date de l'infraction" },
+    { "name": "pieces_justificatives", "label": "Pièces justificatives", "placeholder": "Acte de cession du véhicule, copie de la carte grise barrée" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Dans quel délai doit-on contester une amende ?",
+      "a": "45 jours à compter de la date figurant sur l'avis de contravention (90 jours pour les personnes domiciliées à l'étranger). Passé ce délai, l'amende est majorée automatiquement et toute contestation devient irrecevable."
+    },
+    {
+      "q": "Faut-il payer l'amende avant de contester ?",
+      "a": "Non. Si vous contestez dans les 45 jours, vous ne devez surtout pas payer. Le paiement vaut reconnaissance de l'infraction et rend la contestation impossible."
+    },
+    {
+      "q": "Quels motifs permettent de contester une amende radar ?",
+      "a": "Les motifs recevables sont : vol ou usurpation de plaque, cession du véhicule avant l'infraction, force majeure, erreur matérielle sur l'avis (mauvaise plaque, date erronée). Un simple désaccord sur la vitesse mesurée n'est pas un motif suffisant."
+    },
+    {
+      "q": "Que se passe-t-il si l'OMP rejette ma contestation ?",
+      "a": "L'OMP peut renvoyer l'affaire devant le tribunal de police ou de proximité. Vous serez convoqué à une audience où vous pourrez présenter vos arguments et être assisté d'un avocat."
+    },
+    {
+      "q": "Comment trouver le tribunal compétent pour ma contestation ?",
+      "a": "Le tribunal compétent est celui du lieu de l'infraction. Vous pouvez le trouver sur annuaire.justice.fr en saisissant la commune concernée."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. 529-2 CPP (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006577826/" },
+    { "label": "Contester une amende — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F1409" },
+    { "label": "Amendes.gouv.fr", "url": "https://www.amendes.gouv.fr/" }
+  ],
+  "estimatedSearchVolume": 25000,
+  "difficulty": "medium"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "changement-situation-caf",
+  "category": "administratif",
+  "title": "Lettre de déclaration de changement de situation à la CAF",
+  "metaTitle": "Modèle de lettre changement de situation CAF gratuit (2026)",
+  "metaDescription": "Déclarez votre changement de situation à la CAF avec ce modèle gratuit. Obligations légales, délais et situations concernées expliqués.",
+  "context": "Tout allocataire est tenu de déclarer sans délai à la Caisse d'allocations familiales (CAF) tout changement dans sa situation familiale, professionnelle ou financière susceptible d'affecter ses droits aux prestations. Cette obligation découle de l'article L114-13 du Code de la sécurité sociale ; son non-respect est assimilé à une fraude et peut entraîner le remboursement des indus, voire des sanctions pénales.\n\nLes changements à déclarer comprennent notamment : déménagement, changement de situation maritale (mariage, PACS, séparation, divorce), naissance ou décès d'un enfant à charge, modification des revenus (hausse ou baisse), reprise ou cessation d'activité professionnelle, changement de statut (étudiant, retraité...), placement d'un enfant en institution.\n\nLa déclaration peut être effectuée directement en ligne via votre espace allocataire sur caf.fr. Cette lettre est utile si vous ne disposez pas d'accès en ligne ou si vous souhaitez conserver une preuve écrite de votre déclaration avec accusé de réception.",
+  "legalBasis": "Art. L114-13 et L583-3 du Code de la sécurité sociale ; Art. R553-2 du Code de la sécurité sociale",
+  "sendingMethod": "Lettre recommandée avec accusé de réception ou dépôt en main propre à l'accueil CAF contre récépissé",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\nCaisse d'Allocations Familiales\n[Nom de la CAF]\n[Adresse de la CAF]\n[Code postal — Ville de la CAF]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Déclaration de changement de situation — Numéro d'allocataire [Numéro d'allocataire]\n\nMadame, Monsieur,\n\nAllocataire auprès de votre caisse sous le numéro [Numéro d'allocataire], je vous informe, conformément à l'article L114-13 du Code de la sécurité sociale, d'un changement de situation intervenu le [Date du changement].\n\nNature du changement :\n[Nature du changement de situation]\n\nJe vous adresse ci-joint les pièces justificatives correspondantes :\n- [Pièces justificatives]\n\nJe vous demande de bien vouloir prendre en compte ce changement dans le calcul de mes droits et de me confirmer la mise à jour de mon dossier.\n\nJe reste à votre disposition pour tout renseignement complémentaire.\n\nDans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations respectueuses.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_caf", "label": "Nom de la CAF", "placeholder": "CAF de Paris" },
+    { "name": "adresse_caf", "label": "Adresse de la CAF", "placeholder": "14 rue de Lisbonne" },
+    { "name": "code_postal_ville_caf", "label": "Code postal — Ville de la CAF", "placeholder": "75008 — Paris" },
+    { "name": "numero_allocataire", "label": "Numéro d'allocataire", "placeholder": "1234567A" },
+    { "name": "date_changement", "label": "Date du changement", "placeholder": "01/04/2026" },
+    { "name": "nature_changement", "label": "Nature du changement de situation", "placeholder": "séparation de mon conjoint et déménagement à la nouvelle adresse indiquée ci-dessus" },
+    { "name": "pieces_justificatives", "label": "Pièces justificatives", "placeholder": "Justificatif de domicile récent, attestation de séparation ou ordonnance" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quels changements dois-je obligatoirement déclarer à la CAF ?",
+      "a": "Tous les changements pouvant modifier vos droits : déménagement, mariage, PACS, séparation, divorce, naissance ou décès d'un enfant, modification de revenus, reprise ou perte d'emploi, départ d'un enfant du foyer, invalidité, hospitalisation longue durée."
+    },
+    {
+      "q": "Dans quel délai dois-je déclarer un changement à la CAF ?",
+      "a": "La loi impose une déclaration sans délai. En pratique, vous devez informer la CAF dès que le changement survient, et au plus tard dans le mois suivant l'événement pour éviter tout indu ou rappel ultérieur."
+    },
+    {
+      "q": "Que risque-t-on si on oublie de déclarer un changement à la CAF ?",
+      "a": "Si la CAF détecte ultérieurement le changement non déclaré, elle peut exiger le remboursement des prestations indûment perçues (parfois sur plusieurs années) avec majoration. En cas de fraude avérée, des poursuites pénales sont possibles (art. L114-13 CSS)."
+    },
+    {
+      "q": "Peut-on déclarer un changement de situation directement en ligne ?",
+      "a": "Oui. La CAF propose la déclaration en ligne via caf.fr (rubrique « Mon compte » > « Mes démarches » > « Déclarer un changement de situation »). C'est la voie la plus rapide et la plus sécurisée."
+    },
+    {
+      "q": "La CAF recalcule-t-elle automatiquement mes droits après la déclaration ?",
+      "a": "Oui. La CAF recalcule vos droits à la suite de votre déclaration. En cas de diminution, vous recevrez un courrier d'information. En cas d'augmentation, les nouvelles prestations sont versées à partir du mois suivant la déclaration."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. L114-13 CSS (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000020607344/" },
+    { "label": "Déclarer un changement — caf.fr", "url": "https://www.caf.fr/allocataires/droits-et-prestations/s-informer-sur-les-aides/logement-et-cadre-de-vie/vous-changez-de-situation-familiale" },
+    { "label": "Allocations familiales — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/N20360" }
+  ],
+  "estimatedSearchVolume": 5000,
+  "difficulty": "low"
+}

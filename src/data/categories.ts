@@ -37,7 +37,7 @@ export const categories: Category[] = [
     description:
       "Contestation d'amende, délai de paiement impôts, recours gracieux, demandes à la CAF.",
     icon: "🏛️",
-    letterCount: 0,
+    letterCount: 7,
   },
   {
     slug: "consommation",
