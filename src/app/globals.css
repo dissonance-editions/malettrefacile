@@ -43,6 +43,32 @@ body {
   font-feature-settings: "kern" 1, "liga" 1;
 }
 
+/* === Cursors universels sur les éléments cliquables ===
+   Tailwind v4 ne met pas cursor-pointer par défaut sur les boutons.
+   On le force globalement pour le confort UX. */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+input[type="button"]:not(:disabled),
+input[type="submit"]:not(:disabled),
+input[type="reset"]:not(:disabled),
+input[type="checkbox"]:not(:disabled),
+input[type="radio"]:not(:disabled),
+label:has(input[type="checkbox"]:not(:disabled)),
+label:has(input[type="radio"]:not(:disabled)),
+summary,
+a[href] {
+  cursor: pointer;
+}
+
+/* Disabled = curseur "interdit" */
+button:disabled,
+[role="button"][aria-disabled="true"],
+input[type="button"]:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled {
+  cursor: not-allowed;
+}
+
 /* Letter template styling */
 .letter-template {
   @apply whitespace-pre-line leading-relaxed text-neutral-800;
