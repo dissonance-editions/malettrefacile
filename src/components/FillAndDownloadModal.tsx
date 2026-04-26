@@ -15,6 +15,8 @@ interface LetterVariable {
   name: string;
   label: string;
   placeholder: string;
+  /** Si défini, override l'heuristique d'auto-detection */
+  required?: boolean;
 }
 
 interface Props {
@@ -29,6 +31,30 @@ interface Props {
 type Step = "form" | "account" | "format" | "sending" | "done";
 type Format = "pdf" | "docx";
 type AuthMode = "signup" | "login";
+
+/**
+ * Determine si un champ est obligatoire.
+ * Si la variable a `required: true` ou `required: false` -> on respecte.
+ * Sinon heuristique sur le label : champs perso de base toujours requis.
+ */
+function isRequiredField(variable: LetterVariable): boolean {
+  if (typeof variable.required === "boolean") return variable.required;
+
+  const label = variable.label.toLowerCase().trim();
+
+  // Liste des labels typiquement obligatoires (heuristique)
+  const requiredPatterns: RegExp[] = [
+    /^pr[eé]nom(\s*(et|\/|\s)\s*nom)?$/,
+    /^nom(\s*(et|\/|\s)\s*pr[eé]nom)?$/,
+    /^nom\s*complet$/,
+    /^adresse$/,
+    /^code\s*postal(\s*[-—–\s]\s*ville)?$/,
+    /^ville$/,
+    /^date(\s*du\s*courrier)?$/,
+  ];
+
+  return requiredPatterns.some((p) => p.test(label));
+}
 
 export default function FillAndDownloadModal({
   open,
@@ -45,7 +71,6 @@ export default function FillAndDownloadModal({
   const [format, setFormat] = useState<Format>("pdf");
   const [error, setError] = useState<string | null>(null);
 
-  // Account step
   const [authMode, setAuthMode] = useState<AuthMode>("signup");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -53,6 +78,10 @@ export default function FillAndDownloadModal({
   const [acceptCgv, setAcceptCgv] = useState(false);
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [authSubmitting, setAuthSubmitting] = useState(false);
+
+  // Split variables required / optional (memoise via derivation simple)
+  const requiredVariables = variables.filter(isRequiredField);
+  const optionalVariables = variables.filter((v) => !isRequiredField(v));
 
   useEffect(() => {
     if (open) {
@@ -90,15 +119,21 @@ export default function FillAndDownloadModal({
     setValues((v) => ({ ...v, [name]: value }));
   }
 
-  function isFormValid() {
-    const filled = variables.filter((v) => values[v.name]?.trim()).length;
-    return filled >= Math.ceil(variables.length / 2);
+  function getMissingRequiredLabels(): string[] {
+    return requiredVariables
+      .filter((v) => !values[v.name]?.trim())
+      .map((v) => v.label);
   }
 
   function handleNextFromForm() {
-    if (!isFormValid()) {
+    const missing = getMissingRequiredLabels();
+    if (missing.length > 0) {
+      const list =
+        missing.length === 1
+          ? `« ${missing[0]} »`
+          : missing.map((m) => `« ${m} »`).join(", ");
       setError(
-        "Merci de remplir au moins la moitié des champs pour générer votre lettre."
+        `Merci de renseigner les champs essentiels : ${list}.`
       );
       return;
     }
@@ -236,6 +271,34 @@ export default function FillAndDownloadModal({
     }
   }
 
+  // Helper render input
+  function renderInput(variable: LetterVariable, isRequired: boolean) {
+    return (
+      <div key={variable.name}>
+        <label className="flex items-center gap-1 text-xs font-medium text-neutral-700">
+          {variable.label}
+          {isRequired && (
+            <span className="text-red-500" aria-label="champ obligatoire">
+              *
+            </span>
+          )}
+        </label>
+        <input
+          type="text"
+          value={values[variable.name] || ""}
+          onChange={(e) => handleChange(variable.name, e.target.value)}
+          placeholder={variable.placeholder}
+          required={isRequired}
+          className={`mt-1 w-full rounded-lg border bg-white px-3 py-2 text-sm text-neutral-800 placeholder-neutral-400 outline-none transition-colors focus:ring-1 ${
+            isRequired
+              ? "border-neutral-300 focus:border-primary-500 focus:ring-primary-500"
+              : "border-neutral-200 focus:border-primary-500 focus:ring-primary-500"
+          }`}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
@@ -271,28 +334,49 @@ export default function FillAndDownloadModal({
           {step === "form" && (
             <>
               <p className="text-sm leading-relaxed text-neutral-600">
-                Renseignez vos informations. Les champs marqués d&apos;un astérisque
-                sont les plus importants. Vous pouvez laisser certains champs
-                vides — ils seront simplement omis dans la lettre finale.
+                Renseignez vos informations. Les champs marqués d&apos;un{" "}
+                <span className="font-medium text-red-500">*</span> sont
+                indispensables. Les autres sont optionnels — laissez-les vides
+                s&apos;ils ne s&apos;appliquent pas à votre situation.
               </p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                {variables.map((variable) => (
-                  <div key={variable.name}>
-                    <label className="block text-xs font-medium text-neutral-700">
-                      {variable.label}
-                    </label>
-                    <input
-                      type="text"
-                      value={values[variable.name] || ""}
-                      onChange={(e) =>
-                        handleChange(variable.name, e.target.value)
-                      }
-                      placeholder={variable.placeholder}
-                      className="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-800 placeholder-neutral-400 outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
-                    />
+
+              {/* Section : Informations essentielles */}
+              {requiredVariables.length > 0 && (
+                <div className="mt-6">
+                  <div className="flex items-baseline justify-between">
+                    <h3 className="text-xs font-semibold uppercase tracking-wide text-neutral-700">
+                      Informations essentielles
+                    </h3>
+                    <span className="text-[11px] text-red-500">
+                      Champs requis
+                    </span>
                   </div>
-                ))}
-              </div>
+                  <div className="mt-3 grid gap-4 rounded-xl border border-primary-100 bg-primary-50/40 p-4 sm:grid-cols-2">
+                    {requiredVariables.map((v) => renderInput(v, true))}
+                  </div>
+                </div>
+              )}
+
+              {/* Section : Informations complémentaires */}
+              {optionalVariables.length > 0 && (
+                <div className="mt-6">
+                  <div className="flex items-baseline justify-between">
+                    <h3 className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                      Informations complémentaires
+                    </h3>
+                    <span className="text-[11px] text-neutral-400">
+                      Optionnel
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs text-neutral-500">
+                    Ajoutez ces informations si elles vous concernent. Sinon
+                    elles seront simplement omises de la lettre.
+                  </p>
+                  <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                    {optionalVariables.map((v) => renderInput(v, false))}
+                  </div>
+                </div>
+              )}
             </>
           )}
 
