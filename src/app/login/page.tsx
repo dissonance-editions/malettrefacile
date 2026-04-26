@@ -12,14 +12,8 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
-import { createClient } from "@supabase/supabase-js";
 import { useAuth } from "@/lib/auth";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-);
 
 type Mode = "login" | "signup" | "forgot" | "forgot_sent";
 
@@ -27,7 +21,8 @@ function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get("next") || "/compte";
-  const { user, loading: authLoading } = useAuth();
+  const { user, loading: authLoading, signIn, signUp, resetPassword } =
+    useAuth();
 
   const [mode, setMode] = useState<Mode>("login");
   const [email, setEmail] = useState("");
@@ -38,7 +33,6 @@ function LoginContent() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Si deja connecte, redirige direct
   useEffect(() => {
     if (!authLoading && user) {
       router.push(next);
@@ -54,28 +48,18 @@ function LoginContent() {
       return;
     }
 
-    // Branche : mot de passe oublie
     if (mode === "forgot") {
       setSubmitting(true);
-      try {
-        const redirectTo = `${window.location.origin}/reset-password`;
-        const { error: resetError } =
-          await supabase.auth.resetPasswordForEmail(email, { redirectTo });
-        if (resetError) throw resetError;
+      const { error: resetError } = await resetPassword(email);
+      if (resetError) {
+        setError(resetError);
+      } else {
         setMode("forgot_sent");
-      } catch (err: unknown) {
-        setError(
-          err instanceof Error
-            ? err.message
-            : "Une erreur est survenue. Réessayez."
-        );
-      } finally {
-        setSubmitting(false);
       }
+      setSubmitting(false);
       return;
     }
 
-    // Branche : login / signup
     if (!password || password.length < 6) {
       setError("Le mot de passe doit contenir au moins 6 caractères.");
       return;
@@ -89,50 +73,28 @@ function LoginContent() {
 
     setSubmitting(true);
 
-    try {
-      if (mode === "signup") {
-        const { error: signUpError } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              cgv_accepted_at: new Date().toISOString(),
-              marketing_opt_in: marketingOptIn,
-            },
-          },
-        });
-        if (signUpError) throw signUpError;
-      } else {
-        const { error: signInError } =
-          await supabase.auth.signInWithPassword({ email, password });
-        if (signInError) throw signInError;
+    const result =
+      mode === "signup"
+        ? await signUp(email, password, {
+            cgvAccepted: acceptCgv,
+            marketingOptIn,
+          })
+        : await signIn(email, password);
+
+    if (result.error) {
+      setError(result.error);
+      // Si signup detecte que le compte existe deja, on bascule en login
+      if (result.error.includes("existe déjà")) {
+        setMode("login");
       }
+    } else {
       router.push(next);
       router.refresh();
-    } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : "Une erreur est survenue.";
-      if (
-        message.includes("already registered") ||
-        message.includes("already been registered")
-      ) {
-        setError("Ce compte existe déjà. Connectez-vous ci-dessous.");
-        setMode("login");
-      } else if (message.includes("Invalid login")) {
-        setError("Email ou mot de passe incorrect.");
-      } else if (message.includes("Email not confirmed")) {
-        setError(
-          "Votre email n'est pas encore confirmé. Vérifiez votre boîte de réception."
-        );
-      } else {
-        setError(message);
-      }
-    } finally {
-      setSubmitting(false);
     }
+
+    setSubmitting(false);
   }
 
-  // Si en cours de check auth ou deja connecte (en cours de redirect)
   if (authLoading || user) {
     return (
       <div className="mx-auto flex min-h-[40vh] max-w-md items-center justify-center px-4">
@@ -158,7 +120,6 @@ function LoginContent() {
       />
 
       <div className="mt-8 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8">
-        {/* === FORGOT SENT === */}
         {mode === "forgot_sent" && (
           <>
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-success-50">
@@ -189,10 +150,8 @@ function LoginContent() {
           </>
         )}
 
-        {/* === LOGIN / SIGNUP / FORGOT FORM === */}
         {mode !== "forgot_sent" && (
           <>
-            {/* Header */}
             <div
               className={`flex h-12 w-12 items-center justify-center rounded-xl ${
                 mode === "forgot" ? "bg-amber-50" : "bg-primary-50"
@@ -221,7 +180,6 @@ function LoginContent() {
             </p>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-              {/* Email */}
               <div>
                 <label className="block text-xs font-medium text-neutral-700">
                   Adresse email
@@ -237,7 +195,6 @@ function LoginContent() {
                 />
               </div>
 
-              {/* Password (sauf forgot) */}
               {mode !== "forgot" && (
                 <div>
                   <div className="flex items-center justify-between">
@@ -287,7 +244,6 @@ function LoginContent() {
                 </div>
               )}
 
-              {/* Checkboxes signup */}
               {mode === "signup" && (
                 <>
                   <label className="flex items-start gap-2 cursor-pointer">
@@ -334,7 +290,6 @@ function LoginContent() {
                 </>
               )}
 
-              {/* Forgot extra info */}
               {mode === "forgot" && (
                 <p className="text-xs text-neutral-500">
                   Vous recevrez un email contenant un lien sécurisé valable
@@ -342,14 +297,12 @@ function LoginContent() {
                 </p>
               )}
 
-              {/* Error */}
               {error && (
                 <div className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
                   {error}
                 </div>
               )}
 
-              {/* Submit */}
               <button
                 type="submit"
                 disabled={submitting}
@@ -363,7 +316,6 @@ function LoginContent() {
                     : "Me connecter"}
               </button>
 
-              {/* Back from forgot */}
               {mode === "forgot" && (
                 <button
                   type="button"
@@ -379,7 +331,6 @@ function LoginContent() {
               )}
             </form>
 
-            {/* Toggle login / signup (sauf forgot) */}
             {mode !== "forgot" && (
               <p className="mt-5 text-center text-xs text-neutral-500">
                 {mode === "signup" ? (

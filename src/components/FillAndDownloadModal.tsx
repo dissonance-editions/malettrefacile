@@ -12,13 +12,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
-import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-);
 
 interface LetterVariable {
   name: string;
@@ -66,7 +60,13 @@ export default function FillAndDownloadModal({
   template,
   variables,
 }: Props) {
-  const { user, loading: authLoading } = useAuth();
+  const {
+    user,
+    loading: authLoading,
+    signIn,
+    signUp,
+    resetPassword,
+  } = useAuth();
 
   const [step, setStep] = useState<Step>("form");
   const [values, setValues] = useState<Record<string, string>>({});
@@ -81,7 +81,6 @@ export default function FillAndDownloadModal({
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [authSubmitting, setAuthSubmitting] = useState(false);
 
-  // Forgot password state
   const [forgotEmail, setForgotEmail] = useState("");
   const [forgotSubmitting, setForgotSubmitting] = useState(false);
 
@@ -165,47 +164,24 @@ export default function FillAndDownloadModal({
 
     setAuthSubmitting(true);
 
-    try {
-      if (authMode === "signup") {
-        const { error: signUpError } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              cgv_accepted_at: new Date().toISOString(),
-              marketing_opt_in: marketingOptIn,
-            },
-          },
-        });
-        if (signUpError) throw signUpError;
-      } else {
-        const { error: signInError } =
-          await supabase.auth.signInWithPassword({ email, password });
-        if (signInError) throw signInError;
-      }
-      setStep("format");
-    } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : "Une erreur est survenue.";
+    const result =
+      authMode === "signup"
+        ? await signUp(email, password, {
+            cgvAccepted: acceptCgv,
+            marketingOptIn,
+          })
+        : await signIn(email, password);
 
-      if (
-        message.includes("already registered") ||
-        message.includes("already been registered")
-      ) {
-        setError("Ce compte existe déjà. Connectez-vous ci-dessous.");
+    if (result.error) {
+      setError(result.error);
+      if (result.error.includes("existe déjà")) {
         setAuthMode("login");
-      } else if (message.includes("Invalid login")) {
-        setError("Email ou mot de passe incorrect.");
-      } else if (message.includes("Email not confirmed")) {
-        setError(
-          "Votre email n'est pas encore confirmé. Vérifiez votre boîte de réception."
-        );
-      } else {
-        setError(message);
       }
-    } finally {
-      setAuthSubmitting(false);
+    } else {
+      setStep("format");
     }
+
+    setAuthSubmitting(false);
   }
 
   async function handleForgotPassword(e?: React.FormEvent) {
@@ -218,28 +194,17 @@ export default function FillAndDownloadModal({
     }
 
     setForgotSubmitting(true);
-
-    try {
-      const redirectTo = `${window.location.origin}/reset-password`;
-      const { error: resetError } = await supabase.auth.resetPasswordForEmail(
-        forgotEmail,
-        { redirectTo }
-      );
-      if (resetError) throw resetError;
+    const { error: resetError } = await resetPassword(forgotEmail);
+    if (resetError) {
+      setError(resetError);
+    } else {
       setStep("forgot_sent");
-    } catch (err: unknown) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Une erreur est survenue. Réessayez."
-      );
-    } finally {
-      setForgotSubmitting(false);
     }
+    setForgotSubmitting(false);
   }
 
   function openForgot() {
-    setForgotEmail(email); // pre-rempli avec l'email saisi a l'etape precedente
+    setForgotEmail(email);
     setError(null);
     setStep("forgot");
   }
@@ -321,15 +286,12 @@ export default function FillAndDownloadModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
       <div
         className="absolute inset-0 bg-neutral-900/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Modal */}
       <div className="relative flex max-h-[90vh] w-full max-w-2xl flex-col rounded-2xl bg-white shadow-2xl">
-        {/* Header */}
         <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-primary-600">
@@ -348,9 +310,7 @@ export default function FillAndDownloadModal({
           </button>
         </div>
 
-        {/* Body */}
         <div className="flex-1 overflow-y-auto px-6 py-5">
-          {/* STEP 1 — FORM */}
           {step === "form" && (
             <>
               <p className="text-sm leading-relaxed text-neutral-600">
@@ -408,7 +368,6 @@ export default function FillAndDownloadModal({
             </>
           )}
 
-          {/* STEP 2 — ACCOUNT */}
           {step === "account" && (
             <form onSubmit={handleAuth}>
               <p className="text-sm leading-relaxed text-neutral-600">
@@ -562,7 +521,6 @@ export default function FillAndDownloadModal({
             </form>
           )}
 
-          {/* STEP — FORGOT PASSWORD */}
           {step === "forgot" && (
             <form onSubmit={handleForgotPassword}>
               <p className="text-sm leading-relaxed text-neutral-600">
@@ -592,7 +550,6 @@ export default function FillAndDownloadModal({
             </form>
           )}
 
-          {/* STEP — FORGOT SENT */}
           {step === "forgot_sent" && (
             <div className="flex flex-col items-center py-8 text-center">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-success-50">
@@ -624,7 +581,6 @@ export default function FillAndDownloadModal({
             </div>
           )}
 
-          {/* STEP 3 — FORMAT */}
           {step === "format" && (
             <>
               <p className="text-sm leading-relaxed text-neutral-600">
@@ -677,7 +633,6 @@ export default function FillAndDownloadModal({
             </>
           )}
 
-          {/* STEP 4 — SENDING */}
           {step === "sending" && (
             <div className="flex flex-col items-center py-12">
               <Loader2 className="h-10 w-10 animate-spin text-primary-600" />
@@ -690,7 +645,6 @@ export default function FillAndDownloadModal({
             </div>
           )}
 
-          {/* STEP 5 — DONE */}
           {step === "done" && (
             <div className="flex flex-col items-center py-8 text-center">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-success-50">
@@ -718,7 +672,6 @@ export default function FillAndDownloadModal({
           )}
         </div>
 
-        {/* Footer */}
         {step !== "sending" && step !== "done" && step !== "forgot_sent" && (
           <div className="flex items-center justify-between gap-3 border-t border-neutral-200 bg-neutral-50 px-6 py-4">
             <button

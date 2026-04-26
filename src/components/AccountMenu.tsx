@@ -12,46 +12,14 @@ import {
   Loader2,
 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-);
-
-type Plan = "free" | "premium";
 
 export default function AccountMenu() {
-  const { user, loading } = useAuth();
+  const { user, loading, plan, signOut } = useAuth();
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [plan, setPlan] = useState<Plan>("free");
   const [signingOut, setSigningOut] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Fetch plan depuis profiles
-  useEffect(() => {
-    if (!user) {
-      setPlan("free");
-      return;
-    }
-    let cancelled = false;
-    (async () => {
-      const { data } = await supabase
-        .from("profiles")
-        .select("plan")
-        .eq("id", user.id)
-        .single();
-      if (!cancelled && data?.plan) {
-        setPlan(data.plan as Plan);
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [user]);
-
-  // Click outside pour fermer
   useEffect(() => {
     if (!open) return;
     function handleClick(e: MouseEvent) {
@@ -65,7 +33,7 @@ export default function AccountMenu() {
 
   async function handleSignOut() {
     setSigningOut(true);
-    await supabase.auth.signOut();
+    await signOut();
     setOpen(false);
     setSigningOut(false);
     router.push("/");
@@ -78,7 +46,6 @@ export default function AccountMenu() {
     );
   }
 
-  // Déconnecté
   if (!user) {
     return (
       <Link
@@ -91,7 +58,6 @@ export default function AccountMenu() {
     );
   }
 
-  // Connecté
   const initial = (user.email ?? "?").charAt(0).toUpperCase();
   const isPremium = plan === "premium";
 
@@ -127,7 +93,6 @@ export default function AccountMenu() {
           role="menu"
           className="absolute right-0 mt-2 w-64 origin-top-right overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-lg"
         >
-          {/* User info */}
           <div className="border-b border-neutral-100 px-4 py-3">
             <p className="truncate text-sm font-medium text-neutral-800">
               {user.email}
@@ -148,7 +113,6 @@ export default function AccountMenu() {
             </div>
           </div>
 
-          {/* Links */}
           <div className="py-1">
             <Link
               href="/compte"
@@ -168,7 +132,6 @@ export default function AccountMenu() {
             </Link>
           </div>
 
-          {/* Sign out */}
           <div className="border-t border-neutral-100 py-1">
             <button
               onClick={handleSignOut}

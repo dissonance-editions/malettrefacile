@@ -14,15 +14,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
-import { createClient } from "@supabase/supabase-js";
+import { getSupabaseBrowserClient } from "@/lib/supabase";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-);
-
-type Plan = "free" | "premium";
 
 interface Lead {
   id: string;
@@ -32,43 +25,36 @@ interface Lead {
 }
 
 export default function ComptePage() {
-  const { user, loading: authLoading } = useAuth();
+  const { user, loading: authLoading, plan, signOut } = useAuth();
   const router = useRouter();
-  const [plan, setPlan] = useState<Plan>("free");
   const [leads, setLeads] = useState<Lead[]>([]);
-  const [loadingData, setLoadingData] = useState(true);
+  const [loadingLeads, setLoadingLeads] = useState(true);
   const [signingOut, setSigningOut] = useState(false);
 
-  // Redirect si non connecté
   useEffect(() => {
     if (!authLoading && !user) {
       router.push("/login?next=/compte");
     }
   }, [authLoading, user, router]);
 
-  // Fetch profile + leads
   useEffect(() => {
     if (!user) return;
     let cancelled = false;
 
     (async () => {
-      setLoadingData(true);
-
-      const [{ data: profile }, { data: leadsData }] = await Promise.all([
-        supabase.from("profiles").select("plan").eq("id", user.id).single(),
-        supabase
+      setLoadingLeads(true);
+      try {
+        const supabase = getSupabaseBrowserClient();
+        const { data: leadsData } = await supabase
           .from("leads")
           .select("id, letter_slug, format, created_at")
           .eq("email", user.email)
           .order("created_at", { ascending: false })
-          .limit(50),
-      ]);
-
-      if (cancelled) return;
-
-      if (profile?.plan) setPlan(profile.plan as Plan);
-      if (leadsData) setLeads(leadsData as Lead[]);
-      setLoadingData(false);
+          .limit(50);
+        if (!cancelled && leadsData) setLeads(leadsData as Lead[]);
+      } finally {
+        if (!cancelled) setLoadingLeads(false);
+      }
     })();
 
     return () => {
@@ -78,7 +64,7 @@ export default function ComptePage() {
 
   async function handleSignOut() {
     setSigningOut(true);
-    await supabase.auth.signOut();
+    await signOut();
     router.push("/");
     router.refresh();
   }
@@ -103,7 +89,6 @@ export default function ComptePage() {
   }
 
   function formatLetterSlug(slug: string) {
-    // "resiliation/mutuelle-sante" -> "Résiliation - Mutuelle santé"
     const parts = slug.split("/");
     return parts
       .map((p) =>
@@ -120,7 +105,6 @@ export default function ComptePage() {
         items={[{ label: "Accueil", href: "/" }, { label: "Mon compte" }]}
       />
 
-      {/* En-tête compte */}
       <header className="mt-6 flex items-start justify-between gap-4">
         <div className="flex items-center gap-4">
           <span
@@ -155,7 +139,6 @@ export default function ComptePage() {
         </button>
       </header>
 
-      {/* Statut du plan */}
       <section className="mt-8">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
           Votre formule
@@ -208,13 +191,12 @@ export default function ComptePage() {
         )}
       </section>
 
-      {/* Historique des lettres */}
       <section id="historique" className="mt-12 scroll-mt-8">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
           Mes lettres téléchargées
         </h2>
 
-        {loadingData ? (
+        {loadingLeads ? (
           <div className="mt-4 flex justify-center py-8">
             <Loader2 className="h-5 w-5 animate-spin text-neutral-400" />
           </div>

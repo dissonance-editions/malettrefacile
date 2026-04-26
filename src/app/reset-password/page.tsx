@@ -11,31 +11,25 @@ import {
   Check,
   AlertCircle,
 } from "lucide-react";
-import { createClient } from "@supabase/supabase-js";
+import { useAuth } from "@/lib/auth";
+import { getSupabaseBrowserClient } from "@/lib/supabase";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-);
 
 type Status = "checking" | "ready" | "invalid" | "submitting" | "success";
 
 export default function ResetPasswordPage() {
   const router = useRouter();
+  const { updatePassword } = useAuth();
   const [status, setStatus] = useState<Status>("checking");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Quand l'utilisateur clique sur le lien dans l'email, Supabase
-  // l'authentifie automatiquement via le hash de l'URL et declenche
-  // un evenement PASSWORD_RECOVERY. On l'ecoute pour autoriser le form.
   useEffect(() => {
     let mounted = true;
+    const supabase = getSupabaseBrowserClient();
 
-    // Cas 1 : Supabase emet l'event en parsant l'URL
     const { data: subscription } = supabase.auth.onAuthStateChange(
       (event) => {
         if (!mounted) return;
@@ -45,17 +39,12 @@ export default function ResetPasswordPage() {
       }
     );
 
-    // Cas 2 : la page a ete rechargee, mais une session valide existe deja
-    // (par exemple le user a ouvert le lien il y a quelques secondes).
-    // On verifie apres un court delai pour laisser le temps a Supabase
-    // de parser le hash.
     const timer = setTimeout(async () => {
       if (!mounted) return;
       const { data } = await supabase.auth.getSession();
       if (data.session) {
         setStatus("ready");
       } else {
-        // Pas de session = lien invalide ou expire
         setStatus((s) => (s === "checking" ? "invalid" : s));
       }
     }, 1500);
@@ -82,22 +71,13 @@ export default function ResetPasswordPage() {
 
     setStatus("submitting");
 
-    try {
-      const { error: updateError } = await supabase.auth.updateUser({
-        password,
-      });
-      if (updateError) throw updateError;
-      setStatus("success");
-
-      // Redirection automatique apres 3 secondes vers la home
-      setTimeout(() => router.push("/"), 3000);
-    } catch (err: unknown) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Impossible de mettre à jour le mot de passe."
-      );
+    const { error: updateError } = await updatePassword(password);
+    if (updateError) {
+      setError(updateError);
       setStatus("ready");
+    } else {
+      setStatus("success");
+      setTimeout(() => router.push("/"), 3000);
     }
   }
 
@@ -111,7 +91,6 @@ export default function ResetPasswordPage() {
       />
 
       <div className="mt-8 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
-        {/* CHECKING */}
         {status === "checking" && (
           <div className="flex flex-col items-center py-8 text-center">
             <Loader2 className="h-8 w-8 animate-spin text-primary-600" />
@@ -121,7 +100,6 @@ export default function ResetPasswordPage() {
           </div>
         )}
 
-        {/* INVALID */}
         {status === "invalid" && (
           <div className="flex flex-col items-center py-8 text-center">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-50">
@@ -143,7 +121,6 @@ export default function ResetPasswordPage() {
           </div>
         )}
 
-        {/* READY / SUBMITTING */}
         {(status === "ready" || status === "submitting") && (
           <>
             <div className="flex items-center gap-3">
@@ -226,7 +203,6 @@ export default function ResetPasswordPage() {
           </>
         )}
 
-        {/* SUCCESS */}
         {status === "success" && (
           <div className="flex flex-col items-center py-8 text-center">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-success-50">
