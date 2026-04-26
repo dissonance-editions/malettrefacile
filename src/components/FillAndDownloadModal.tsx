@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, Mail, Loader2, Check, Eye, EyeOff } from "lucide-react";
+import { X, Mail, Loader2, Check, Eye, EyeOff, Info } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
@@ -15,7 +15,6 @@ interface LetterVariable {
   name: string;
   label: string;
   placeholder: string;
-  /** Si défini, override l'heuristique d'auto-detection */
   required?: boolean;
 }
 
@@ -33,27 +32,19 @@ type Format = "pdf" | "docx";
 type AuthMode = "signup" | "login";
 
 /**
- * Determine si un champ est obligatoire.
- * Si la variable a `required: true` ou `required: false` -> on respecte.
- * Sinon heuristique sur le label : champs perso de base toujours requis.
+ * Detecte si la valeur saisie correspond a "non applicable".
+ * Gere : N/A, n/a, NA, na, N.A., non applicable, -, sans objet, .
  */
-function isRequiredField(variable: LetterVariable): boolean {
-  if (typeof variable.required === "boolean") return variable.required;
-
-  const label = variable.label.toLowerCase().trim();
-
-  // Liste des labels typiquement obligatoires (heuristique)
-  const requiredPatterns: RegExp[] = [
-    /^pr[eé]nom(\s*(et|\/|\s)\s*nom)?$/,
-    /^nom(\s*(et|\/|\s)\s*pr[eé]nom)?$/,
-    /^nom\s*complet$/,
-    /^adresse$/,
-    /^code\s*postal(\s*[-—–\s]\s*ville)?$/,
-    /^ville$/,
-    /^date(\s*du\s*courrier)?$/,
-  ];
-
-  return requiredPatterns.some((p) => p.test(label));
+function isNotApplicable(value: string): boolean {
+  // Filtre points, espaces, slashes (pour N/A, N.A., n / a, etc.)
+  const v = value.trim().toLowerCase().replace(/[./\\\s]/g, "");
+  return (
+    v === "" ||
+    v === "na" ||
+    v === "nonapplicable" ||
+    v === "-" ||
+    v === "sansobjet"
+  );
 }
 
 export default function FillAndDownloadModal({
@@ -78,10 +69,6 @@ export default function FillAndDownloadModal({
   const [acceptCgv, setAcceptCgv] = useState(false);
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [authSubmitting, setAuthSubmitting] = useState(false);
-
-  // Split variables required / optional (memoise via derivation simple)
-  const requiredVariables = variables.filter(isRequiredField);
-  const optionalVariables = variables.filter((v) => !isRequiredField(v));
 
   useEffect(() => {
     if (open) {
@@ -119,21 +106,21 @@ export default function FillAndDownloadModal({
     setValues((v) => ({ ...v, [name]: value }));
   }
 
-  function getMissingRequiredLabels(): string[] {
-    return requiredVariables
+  function getEmptyLabels(): string[] {
+    return variables
       .filter((v) => !values[v.name]?.trim())
       .map((v) => v.label);
   }
 
   function handleNextFromForm() {
-    const missing = getMissingRequiredLabels();
-    if (missing.length > 0) {
+    const empty = getEmptyLabels();
+    if (empty.length > 0) {
       const list =
-        missing.length === 1
-          ? `« ${missing[0]} »`
-          : missing.map((m) => `« ${m} »`).join(", ");
+        empty.length <= 3
+          ? empty.map((m) => `« ${m} »`).join(", ")
+          : `${empty.length} champs`;
       setError(
-        `Merci de renseigner les champs essentiels : ${list}.`
+        `Merci de renseigner tous les champs (${list}). Si un champ ne s'applique pas à votre situation, indiquez « N/A » : il sera retiré de la lettre.`
       );
       return;
     }
@@ -271,34 +258,6 @@ export default function FillAndDownloadModal({
     }
   }
 
-  // Helper render input
-  function renderInput(variable: LetterVariable, isRequired: boolean) {
-    return (
-      <div key={variable.name}>
-        <label className="flex items-center gap-1 text-xs font-medium text-neutral-700">
-          {variable.label}
-          {isRequired && (
-            <span className="text-red-500" aria-label="champ obligatoire">
-              *
-            </span>
-          )}
-        </label>
-        <input
-          type="text"
-          value={values[variable.name] || ""}
-          onChange={(e) => handleChange(variable.name, e.target.value)}
-          placeholder={variable.placeholder}
-          required={isRequired}
-          className={`mt-1 w-full rounded-lg border bg-white px-3 py-2 text-sm text-neutral-800 placeholder-neutral-400 outline-none transition-colors focus:ring-1 ${
-            isRequired
-              ? "border-neutral-300 focus:border-primary-500 focus:ring-primary-500"
-              : "border-neutral-200 focus:border-primary-500 focus:ring-primary-500"
-          }`}
-        />
-      </div>
-    );
-  }
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
@@ -334,49 +293,58 @@ export default function FillAndDownloadModal({
           {step === "form" && (
             <>
               <p className="text-sm leading-relaxed text-neutral-600">
-                Renseignez vos informations. Les champs marqués d&apos;un{" "}
-                <span className="font-medium text-red-500">*</span> sont
-                indispensables. Les autres sont optionnels — laissez-les vides
-                s&apos;ils ne s&apos;appliquent pas à votre situation.
+                Renseignez vos informations pour personnaliser votre lettre.
+                Tous les champs sont obligatoires.
               </p>
 
-              {/* Section : Informations essentielles */}
-              {requiredVariables.length > 0 && (
-                <div className="mt-6">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="text-xs font-semibold uppercase tracking-wide text-neutral-700">
-                      Informations essentielles
-                    </h3>
-                    <span className="text-[11px] text-red-500">
-                      Champs requis
-                    </span>
-                  </div>
-                  <div className="mt-3 grid gap-4 rounded-xl border border-primary-100 bg-primary-50/40 p-4 sm:grid-cols-2">
-                    {requiredVariables.map((v) => renderInput(v, true))}
-                  </div>
-                </div>
-              )}
+              {/* Note N/A */}
+              <div className="mt-4 flex items-start gap-2 rounded-lg border border-primary-100 bg-primary-50/60 px-3 py-2.5">
+                <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />
+                <p className="text-xs leading-relaxed text-primary-900">
+                  Un champ ne s&apos;applique pas à votre situation ? Tapez{" "}
+                  <code className="rounded bg-white px-1.5 py-0.5 font-mono text-[11px] font-semibold text-primary-700">
+                    N/A
+                  </code>{" "}
+                  : la ligne correspondante sera automatiquement retirée de
+                  votre lettre.
+                </p>
+              </div>
 
-              {/* Section : Informations complémentaires */}
-              {optionalVariables.length > 0 && (
-                <div className="mt-6">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
-                      Informations complémentaires
-                    </h3>
-                    <span className="text-[11px] text-neutral-400">
-                      Optionnel
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-neutral-500">
-                    Ajoutez ces informations si elles vous concernent. Sinon
-                    elles seront simplement omises de la lettre.
-                  </p>
-                  <div className="mt-3 grid gap-4 sm:grid-cols-2">
-                    {optionalVariables.map((v) => renderInput(v, false))}
-                  </div>
-                </div>
-              )}
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {variables.map((variable) => {
+                  const value = values[variable.name] || "";
+                  const isNa = isNotApplicable(value) && value.trim() !== "";
+                  return (
+                    <div key={variable.name}>
+                      <label className="flex items-center gap-1 text-xs font-medium text-neutral-700">
+                        {variable.label}
+                        <span className="text-red-500" aria-label="obligatoire">
+                          *
+                        </span>
+                      </label>
+                      <input
+                        type="text"
+                        value={value}
+                        onChange={(e) =>
+                          handleChange(variable.name, e.target.value)
+                        }
+                        placeholder={variable.placeholder}
+                        required
+                        className={`mt-1 w-full rounded-lg border bg-white px-3 py-2 text-sm outline-none transition-colors focus:ring-1 focus:ring-primary-500 ${
+                          isNa
+                            ? "border-neutral-300 italic text-neutral-400"
+                            : "border-neutral-300 text-neutral-800 placeholder-neutral-400 focus:border-primary-500"
+                        }`}
+                      />
+                      {isNa && (
+                        <p className="mt-1 text-[11px] text-neutral-500">
+                          Cette ligne sera retirée de la lettre.
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </>
           )}
 

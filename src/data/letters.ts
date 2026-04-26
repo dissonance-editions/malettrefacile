@@ -56,6 +56,14 @@ export const letterIcons: Record<string, string> = {
   "demande-augmentation": "TrendingUp",
   "conge-parental": "Baby",
   "conge-sans-solde": "CalendarOff",
+  // Immobilier
+  "preavis-1-mois": "DoorOpen",
+  "preavis-3-mois": "DoorClosed",
+  "restitution-caution": "Wallet",
+  "contestation-charges": "Receipt",
+  "demande-travaux-proprietaire": "Wrench",
+  "contestation-etat-des-lieux": "ClipboardCheck",
+  "demande-logement-social": "Building2",
 };
 
 // === RÉSILIATION ===
@@ -79,6 +87,15 @@ import demandeAugmentation from "@/content/lettres/emploi/demande-augmentation.j
 import congeParental from "@/content/lettres/emploi/conge-parental.json";
 import congeSansSolde from "@/content/lettres/emploi/conge-sans-solde.json";
 
+// === IMMOBILIER ===
+import preavis1Mois from "@/content/lettres/immobilier/preavis-1-mois.json";
+import preavis3Mois from "@/content/lettres/immobilier/preavis-3-mois.json";
+import restitutionCaution from "@/content/lettres/immobilier/restitution-caution.json";
+import contestationCharges from "@/content/lettres/immobilier/contestation-charges.json";
+import demandeTravauxProprietaire from "@/content/lettres/immobilier/demande-travaux-proprietaire.json";
+import contestationEtatDesLieux from "@/content/lettres/immobilier/contestation-etat-des-lieux.json";
+import demandeLogementSocial from "@/content/lettres/immobilier/demande-logement-social.json";
+
 const allLetters: Letter[] = [
   // Résiliation
   resiliationMutuelle as Letter,
@@ -99,6 +116,14 @@ const allLetters: Letter[] = [
   demandeAugmentation as Letter,
   congeParental as Letter,
   congeSansSolde as Letter,
+  // Immobilier
+  preavis1Mois as Letter,
+  preavis3Mois as Letter,
+  restitutionCaution as Letter,
+  contestationCharges as Letter,
+  demandeTravauxProprietaire as Letter,
+  contestationEtatDesLieux as Letter,
+  demandeLogementSocial as Letter,
 ];
 
 export function getLetterBySlug(

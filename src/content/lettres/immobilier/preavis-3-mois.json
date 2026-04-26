@@ -1,0 +1,54 @@
+{
+  "slug": "preavis-3-mois",
+  "category": "immobilier",
+  "title": "Lettre de préavis de départ (3 mois)",
+  "metaTitle": "Modèle de lettre de préavis 3 mois pour quitter un logement (2026)",
+  "metaDescription": "Modèle de lettre de préavis classique de 3 mois pour quitter un logement loué vide. Loi du 6 juillet 1989, mentions obligatoires, prêt à personnaliser.",
+  "context": "Le préavis de 3 mois est la durée standard pour quitter un logement loué vide hors zone tendue et hors situation particulière. Il s'applique pour la majorité des baux d'habitation classiques régis par la loi du 6 juillet 1989.\n\nLa lettre de congé doit être notifiée au bailleur par recommandé avec accusé de réception, par remise en main propre contre récépissé, ou par acte de commissaire de justice. Le délai court à compter de la date de réception de la notification. Pendant ces trois mois, vous restez redevable du loyer et des charges, sauf si le logement est reloué avant la fin du préavis (dans ce cas, vous ne payez que jusqu'à l'entrée du nouveau locataire).",
+  "legalBasis": "Art. 15 de la loi n°89-462 du 6 juillet 1989",
+  "sendingMethod": "Lettre recommandée avec accusé de réception, remise en main propre contre récépissé ou acte de commissaire de justice (anciennement huissier)",
+  "template": "[Prénom Nom]\n[Adresse du logement loué]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du bailleur ou de l'agence]\n[Adresse du bailleur]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Préavis de départ — résiliation du bail d'habitation\nLettre recommandée avec accusé de réception\n\nMadame, Monsieur,\n\nLocataire du logement situé au [Adresse du logement loué] depuis le [Date d'entrée dans les lieux] en vertu du bail signé le [Date du bail], je vous notifie par la présente mon intention de mettre fin à mon contrat de location.\n\nConformément à l'article 15 de la loi du 6 juillet 1989, je respecte le préavis légal de trois mois. La date de fin de mon préavis sera donc fixée au [Date de fin du préavis], soit trois mois après réception de ce courrier.\n\nJe me tiendrai à votre disposition pour réaliser un état des lieux de sortie contradictoire à une date qui vous conviendra et pour vous restituer les clés du logement.\n\nJe vous saurais gré de bien vouloir m'indiquer les modalités pratiques de cette restitution, ainsi que la procédure à suivre pour le solde du compte locatif et la restitution du dépôt de garantie.\n\nJe vous remercie par ailleurs pour notre collaboration durant ces années et vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse_logement", "label": "Adresse du logement loué", "placeholder": "12 rue de la Paix, apt 4B" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "21000 — Dijon" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_bailleur", "label": "Nom du bailleur ou de l'agence", "placeholder": "Monsieur Martin / Agence SQUARE" },
+    { "name": "adresse_bailleur", "label": "Adresse du bailleur", "placeholder": "" },
+    { "name": "date_entree", "label": "Date d'entrée dans les lieux", "placeholder": "01/09/2022" },
+    { "name": "date_bail", "label": "Date du bail", "placeholder": "25/08/2022" },
+    { "name": "date_fin_preavis", "label": "Date de fin du préavis", "placeholder": "12/07/2026" },
+    { "name": "ville", "label": "Ville", "placeholder": "Dijon" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Le préavis de 3 mois s'applique-t-il aux locations meublées ?",
+      "a": "Non. Pour une location meublée, le préavis du locataire est de 1 mois en toute circonstance, sans condition de zone ni de motif (art. 25-8 de la loi du 6 juillet 1989)."
+    },
+    {
+      "q": "Puis-je passer du préavis 3 mois au préavis 1 mois en cours de route ?",
+      "a": "Oui, si vous obtenez en cours de préavis un motif éligible au préavis réduit (mutation, perte d'emploi, attribution logement social...), vous pouvez envoyer une nouvelle lettre demandant la réduction. Le préavis devient alors d'un mois à compter de cette nouvelle notification."
+    },
+    {
+      "q": "Que se passe-t-il si je pars avant la fin du préavis ?",
+      "a": "Le loyer est dû jusqu'à la fin du préavis, sauf si le bailleur trouve un nouveau locataire avant. Dans ce cas, vous ne payez que jusqu'à l'entrée effective du successeur."
+    },
+    {
+      "q": "Dois-je obligatoirement envoyer la lettre en recommandé ?",
+      "a": "Non, mais c'est fortement recommandé pour conserver une preuve de la date de réception. Vous pouvez aussi remettre la lettre en main propre contre récépissé signé ou faire intervenir un commissaire de justice."
+    },
+    {
+      "q": "À quelle date le préavis commence-t-il ?",
+      "a": "À la date de première présentation du courrier recommandé par La Poste (et non la date d'envoi), ou à la date de remise en main propre contre récépissé."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Loi du 6 juillet 1989 (Légifrance)", "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006069108/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F1168" },
+    { "label": "ANIL — préavis du locataire", "url": "https://www.anil.org/votre-projet/vous-etes-locataire/conge/" }
+  ],
+  "estimatedSearchVolume": 18000,
+  "difficulty": "low"
+}

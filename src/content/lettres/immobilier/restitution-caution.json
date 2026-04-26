@@ -1,0 +1,61 @@
+{
+  "slug": "restitution-caution",
+  "category": "immobilier",
+  "title": "Lettre de mise en demeure pour restitution de la caution",
+  "metaTitle": "Modèle de lettre restitution dépôt de garantie / caution (2026)",
+  "metaDescription": "Modèle de mise en demeure pour récupérer votre caution non restituée par le propriétaire. Délais légaux, pénalités de 10 % par mois de retard incluses.",
+  "context": "Le bailleur dispose d'un délai légal pour restituer le dépôt de garantie après la sortie du locataire : un mois si l'état des lieux de sortie est conforme à l'état des lieux d'entrée, deux mois sinon. Au-delà de ce délai, la somme due au locataire est majorée d'une pénalité de 10 % du loyer mensuel hors charges par mois de retard entamé.\n\nSi votre bailleur ne restitue pas le dépôt dans les temps ou retient des sommes que vous estimez injustifiées, la première étape est l'envoi d'une mise en demeure par lettre recommandée avec accusé de réception. En l'absence de réponse sous 8 jours, vous pouvez saisir la commission départementale de conciliation (gratuite) ou directement le tribunal judiciaire.",
+  "legalBasis": "Art. 22 de la loi n°89-462 du 6 juillet 1989, modifié par la loi ALUR du 24 mars 2014",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (obligatoire pour la mise en demeure)",
+  "template": "[Prénom Nom]\n[Nouvelle adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du bailleur ou de l'agence]\n[Adresse du bailleur]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Mise en demeure — restitution du dépôt de garantie\nLettre recommandée avec accusé de réception\n\nMadame, Monsieur,\n\nJ'étais locataire du logement situé au [Adresse du logement loué] dont j'ai libéré les lieux le [Date de sortie], après réalisation d'un état des lieux de sortie contradictoire signé ce même jour.\n\nÀ ce jour, soit plus de [Délai écoulé : 1 mois / 2 mois] après mon départ, je n'ai toujours pas reçu la restitution de mon dépôt de garantie d'un montant de [Montant du dépôt] €, en violation de l'article 22 de la loi du 6 juillet 1989.\n\nPar la présente, je vous mets en demeure de me restituer cette somme dans un délai de huit jours à compter de la réception de la présente, par virement bancaire sur le compte dont vous trouverez les coordonnées ci-dessous :\n\n[Coordonnées bancaires : IBAN]\n[BIC]\n[Titulaire du compte]\n\nJe vous rappelle qu'en application du même article, le dépôt de garantie non restitué dans les délais est majoré d'une pénalité de 10 % du loyer mensuel hors charges par mois de retard commencé. À ce titre, je suis fondé(e) à réclamer une majoration de [Montant pénalité] €, soit [Nombre mois retard] mois de retard à raison de [Loyer mensuel] € de loyer mensuel.\n\nÀ défaut de paiement dans le délai imparti, je me verrai contraint(e) de saisir la commission départementale de conciliation, puis le tribunal judiciaire compétent, et de réclamer le paiement intégral des sommes dues, intérêts légaux et frais de procédure inclus.\n\nDans l'attente de votre règlement, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "nouvelle_adresse", "label": "Nouvelle adresse", "placeholder": "5 rue Voltaire" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75011 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_bailleur", "label": "Nom du bailleur ou de l'agence", "placeholder": "Agence SQUARE" },
+    { "name": "adresse_bailleur", "label": "Adresse du bailleur", "placeholder": "" },
+    { "name": "adresse_logement", "label": "Adresse du logement loué", "placeholder": "12 rue de la Paix, apt 4B" },
+    { "name": "date_sortie", "label": "Date de sortie", "placeholder": "31/01/2026" },
+    { "name": "delai_ecoule", "label": "Délai écoulé (1 mois / 2 mois)", "placeholder": "2 mois" },
+    { "name": "montant_depot", "label": "Montant du dépôt", "placeholder": "1 200" },
+    { "name": "iban", "label": "Coordonnées bancaires (IBAN)", "placeholder": "FR76 1234 5678 9012 3456 7890 123" },
+    { "name": "bic", "label": "BIC", "placeholder": "AGRIFRPP" },
+    { "name": "titulaire_compte", "label": "Titulaire du compte", "placeholder": "Jean Dupont" },
+    { "name": "montant_penalite", "label": "Montant pénalité", "placeholder": "120" },
+    { "name": "nb_mois_retard", "label": "Nombre mois retard", "placeholder": "1" },
+    { "name": "loyer_mensuel", "label": "Loyer mensuel", "placeholder": "1 200" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quel est le délai légal pour restituer la caution ?",
+      "a": "Un mois si l'état des lieux de sortie est conforme à celui d'entrée, deux mois s'il y a des dégradations ou différences. Le délai court à partir de la remise des clés."
+    },
+    {
+      "q": "Comment calculer la pénalité de retard ?",
+      "a": "10 % du loyer mensuel hors charges par mois de retard commencé. Exemple : pour un loyer de 800 €, la pénalité est de 80 € par mois entamé. Le 1er jour du 3e mois après votre départ, vous pouvez exiger 80 € en plus du dépôt."
+    },
+    {
+      "q": "Le bailleur peut-il retenir une partie de la caution ?",
+      "a": "Oui, mais uniquement pour des dégradations imputables au locataire (et non l'usure normale), des loyers ou charges impayés, ou un solde de régularisation. Le bailleur doit fournir des justificatifs (factures, devis)."
+    },
+    {
+      "q": "Que faire si le bailleur ne répond pas à la mise en demeure ?",
+      "a": "Saisissez la commission départementale de conciliation (procédure gratuite, environ 2 mois). En cas d'échec, vous pouvez saisir le tribunal judiciaire (procédure sans avocat sous 5 000 €)."
+    },
+    {
+      "q": "Faut-il un avocat pour récupérer sa caution ?",
+      "a": "Non. Pour les sommes inférieures à 5 000 €, vous pouvez saisir le tribunal judiciaire seul(e) via une déclaration au greffe. La commission départementale de conciliation peut aussi suffire."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Loi du 6 juillet 1989 — art. 22 (Légifrance)", "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000028778538/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F31269" },
+    { "label": "Commission de conciliation (ANIL)", "url": "https://www.anil.org/lexique-vos-droits/definition/commission-departementale-de-conciliation/" }
+  ],
+  "estimatedSearchVolume": 10000,
+  "difficulty": "medium"
+}

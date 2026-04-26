@@ -1,0 +1,59 @@
+{
+  "slug": "demande-logement-social",
+  "category": "immobilier",
+  "title": "Lettre de demande de logement social",
+  "metaTitle": "Modèle de lettre de demande de logement social HLM (2026)",
+  "metaDescription": "Modèle de lettre pour appuyer votre demande de logement social ou solliciter un relogement prioritaire. Plafonds de ressources, DALO, prêt à personnaliser.",
+  "context": "L'attribution d'un logement social repose sur un dossier de demande déposé auprès du portail unique demande-logement-social.gouv.fr ou directement auprès d'un bailleur social. Une fois le numéro unique d'enregistrement obtenu, vous pouvez accompagner votre demande d'un courrier au préfet, à un bailleur social ciblé ou à votre mairie pour expliquer votre situation et demander un examen prioritaire.\n\nLes critères d'attribution prennent en compte les ressources (plafonds variables selon la zone et la composition du foyer), la situation familiale, l'urgence (mal-logement, expulsion, violences). Les ménages reconnus prioritaires au titre du DALO (Droit au logement opposable) bénéficient d'un examen accéléré : la commission de médiation peut imposer au préfet de proposer un logement dans un délai contraint.",
+  "legalBasis": "Code de la construction et de l'habitation, art. L441-1 et suivants ; loi DALO du 5 mars 2007",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (recommandé pour conserver une trace)",
+  "template": "[Prénom Nom]\n[Adresse actuelle]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n[Numéro unique d'enregistrement]\n\n[Destinataire : Préfecture / Bailleur social / Mairie]\n[Adresse du destinataire]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Demande de logement social — examen prioritaire de mon dossier\n\nMadame, Monsieur,\n\nJ'ai déposé une demande de logement social enregistrée sous le numéro unique [Numéro unique d'enregistrement] le [Date de dépôt de la demande]. Par la présente, je sollicite un examen attentif et, dans la mesure du possible, prioritaire de ma situation, dont les éléments sont les suivants :\n\nSituation familiale et professionnelle :\n[Composition du foyer : nombre de personnes, enfants à charge, situation matrimoniale]\n[Situation professionnelle : profession, employeur, type de contrat, revenus mensuels nets du foyer]\n\nSituation actuelle de logement :\n[Description du logement actuel : type, surface, montant du loyer, charges]\n[Difficultés rencontrées : suroccupation, insalubrité, loyer trop élevé par rapport aux ressources, fin de bail, fin d'hébergement chez un tiers, séparation, violences, etc.]\n\nMes besoins :\n[Type de logement recherché : T2, T3, etc. — Localisation souhaitée — Toute autre contrainte (rez-de-chaussée, école à proximité, etc.)]\n\nVous trouverez ci-joint les pièces justificatives suivantes : [Liste des pièces : copie carte d'identité, avis d'imposition, bulletins de salaire, attestation employeur, justificatif de la situation actuelle, etc.].\n\nJe me tiens à votre disposition pour tout complément d'information et pour un éventuel rendez-vous. Vous pouvez me joindre par téléphone au [Téléphone] ou par email à [Email].\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations respectueuses.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse_actuelle", "label": "Adresse actuelle", "placeholder": "12 rue de la Paix, apt 4B" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "numero_unique", "label": "Numéro unique d'enregistrement", "placeholder": "075-2026-XXXXXX" },
+    { "name": "destinataire", "label": "Destinataire", "placeholder": "Monsieur le Préfet de Paris" },
+    { "name": "adresse_destinataire", "label": "Adresse du destinataire", "placeholder": "" },
+    { "name": "date_depot", "label": "Date de dépôt de la demande", "placeholder": "15/01/2026" },
+    { "name": "composition_foyer", "label": "Composition du foyer", "placeholder": "Foyer composé de 3 personnes : moi-même, ma compagne et notre fille de 4 ans." },
+    { "name": "situation_pro", "label": "Situation professionnelle", "placeholder": "Salarié en CDI depuis 3 ans, ma compagne en CDD. Revenus nets cumulés : 2 400 € / mois." },
+    { "name": "logement_actuel", "label": "Description du logement actuel", "placeholder": "T2 de 38 m² loué 950 € charges comprises, hors plafond de ressources." },
+    { "name": "difficultes", "label": "Difficultés rencontrées", "placeholder": "Suroccupation manifeste : 38 m² pour 3 personnes. Loyer représentant 40 % de nos revenus. Fin de bail prévue le 30/09/2026 sans solution alternative à ce jour." },
+    { "name": "besoins", "label": "Besoins exprimés", "placeholder": "Logement T3 minimum, idéalement dans le 11e, 12e ou 20e arrondissement, à proximité d'une école maternelle." },
+    { "name": "pieces_jointes", "label": "Liste des pièces", "placeholder": "carte d'identité, avis d'imposition 2025, 3 derniers bulletins de salaire, attestation employeur, copie du bail actuel, copie du préavis de fin de bail" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Comment déposer une demande de logement social ?",
+      "a": "En ligne sur demande-logement-social.gouv.fr (recommandé) ou via un guichet enregistreur (mairie, préfecture, bailleur social). Un numéro unique vous est attribué, à conserver pour toutes vos démarches."
+    },
+    {
+      "q": "Quels sont les plafonds de ressources ?",
+      "a": "Variables selon la zone (Île-de-France, Paris/proche couronne, autres) et la composition du foyer. À titre indicatif en 2026 : pour une personne seule en zone A bis, environ 25 800 € de revenu fiscal. Consultez le simulateur officiel."
+    },
+    {
+      "q": "Combien de temps pour obtenir un logement ?",
+      "a": "Très variable selon la zone : 3 à 6 mois en zone détendue, 1 à 3 ans en zone tendue, jusqu'à 5-10 ans à Paris. Les ménages prioritaires (DALO, expulsion, violence) sont examinés plus rapidement."
+    },
+    {
+      "q": "Qu'est-ce que le DALO ?",
+      "a": "Le Droit Au Logement Opposable permet à certains ménages prioritaires (sans logement, expulsés sans solution, mal logés) de saisir une commission de médiation. Si elle vous reconnaît prioritaire, le préfet doit proposer un logement dans un délai contraint sous peine de recours contentieux."
+    },
+    {
+      "q": "Faut-il renouveler la demande chaque année ?",
+      "a": "Oui. La demande est valable 1 an. Pensez à la renouveler chaque année avant la date anniversaire pour conserver votre ancienneté, qui pèse dans l'attribution."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Portail demande de logement social", "url": "https://www.demande-logement-social.gouv.fr/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F869" },
+    { "label": "DALO — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F18005" }
+  ],
+  "estimatedSearchVolume": 8000,
+  "difficulty": "medium"
+}

@@ -29,7 +29,7 @@ export const categories: Category[] = [
     description:
       "Préavis de départ, restitution de caution, contestation de charges, mise en demeure travaux.",
     icon: "🏠",
-    letterCount: 0,
+    letterCount: 7,
   },
   {
     slug: "administratif",

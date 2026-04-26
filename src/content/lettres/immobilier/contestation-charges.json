@@ -1,0 +1,56 @@
+{
+  "slug": "contestation-charges",
+  "category": "immobilier",
+  "title": "Lettre de contestation des charges locatives",
+  "metaTitle": "Modèle de lettre contestation des charges locatives gratuit (2026)",
+  "metaDescription": "Modèle de lettre pour contester une régularisation de charges locatives. Demande de justificatifs, charges récupérables, base juridique du décret de 1987.",
+  "context": "Les charges locatives, dites « charges récupérables », sont les dépenses payées initialement par le bailleur mais que celui-ci peut refacturer au locataire. La liste limitative est fixée par le décret du 26 août 1987 : entretien des parties communes, ascenseur, eau froide, chauffage collectif, taxe d'ordures ménagères, etc.\n\nChaque année, le bailleur doit transmettre au locataire un décompte des charges réelles. Si la provision sur charges versée mensuellement est inférieure aux dépenses, un complément vous est demandé ; dans le cas contraire, un trop-perçu vous est restitué. Vous avez le droit de demander les justificatifs (factures, contrats d'entretien, relevés de consommation) et de contester toute somme qui ne figure pas dans la liste légale ou qui n'est pas justifiée.",
+  "legalBasis": "Décret n°87-713 du 26 août 1987, art. 23 de la loi n°89-462 du 6 juillet 1989",
+  "sendingMethod": "Lettre recommandée avec accusé de réception",
+  "template": "[Prénom Nom]\n[Adresse du logement]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du bailleur ou de l'agence]\n[Adresse du bailleur]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Contestation de la régularisation de charges locatives [Période concernée]\nLettre recommandée avec accusé de réception\n\nMadame, Monsieur,\n\nLocataire du logement situé au [Adresse du logement] depuis le [Date d'entrée dans les lieux], j'ai bien reçu votre courrier du [Date du décompte de charges] me notifiant une régularisation de charges d'un montant de [Montant réclamé] € au titre de la période du [Période concernée].\n\nAprès examen attentif de ce décompte, je conteste les éléments suivants :\n\n[Détail des points contestés : poste de charges, montant, raison]\n\nConformément à l'article 23 de la loi du 6 juillet 1989 et au décret du 26 août 1987, je vous demande de bien vouloir me transmettre, dans les meilleurs délais :\n\n— Le décompte détaillé poste par poste des charges réelles ;\n— Les justificatifs comptables correspondants (factures, contrats d'entretien, relevés de consommation) ;\n— Le mode de répartition des charges entre les locataires de l'immeuble, notamment les tantièmes appliqués pour les charges communes.\n\nDans cette attente, je suspends le paiement de la somme réclamée jusqu'à éclaircissement des éléments contestés. Je reste bien entendu disposé(e) à régler tout montant qui s'avérerait justifié au vu des pièces transmises.\n\nÀ défaut de réponse dans un délai d'un mois, je me réserve la possibilité de saisir la commission départementale de conciliation, puis le tribunal judiciaire compétent.\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse_logement", "label": "Adresse du logement", "placeholder": "12 rue de la Paix, apt 4B" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_bailleur", "label": "Nom du bailleur ou de l'agence", "placeholder": "Agence SQUARE" },
+    { "name": "adresse_bailleur", "label": "Adresse du bailleur", "placeholder": "" },
+    { "name": "date_entree", "label": "Date d'entrée dans les lieux", "placeholder": "01/09/2022" },
+    { "name": "date_decompte", "label": "Date du décompte de charges", "placeholder": "15/03/2026" },
+    { "name": "montant_reclame", "label": "Montant réclamé", "placeholder": "420" },
+    { "name": "periode", "label": "Période concernée", "placeholder": "01/01/2025 au 31/12/2025" },
+    { "name": "details_contestes", "label": "Détail des points contestés", "placeholder": "Frais de gardiennage : 280 € — la résidence ne dispose pas de gardien." },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quelles charges peut-on me facturer en tant que locataire ?",
+      "a": "Uniquement les charges figurant dans le décret du 26 août 1987 : entretien des parties communes, eau froide et chaude, électricité des communs, ascenseur, taxe d'enlèvement des ordures ménagères, etc. Tout ce qui n'est pas listé n'est pas récupérable."
+    },
+    {
+      "q": "Le bailleur doit-il fournir les justificatifs ?",
+      "a": "Oui. Pendant six mois après l'envoi du décompte annuel, vous pouvez consulter sur place les pièces justificatives (factures, contrats). Le bailleur ne peut pas refuser cette consultation."
+    },
+    {
+      "q": "Combien de temps pour contester des charges ?",
+      "a": "Trois ans à compter du jour où vous avez eu connaissance du décompte (art. 7-1 de la loi du 6 juillet 1989). Au-delà, la prescription est acquise."
+    },
+    {
+      "q": "Puis-je suspendre le paiement pendant la contestation ?",
+      "a": "Vous pouvez suspendre le paiement de la régularisation contestée, mais pas le loyer ni les provisions courantes. Mieux vaut suspendre uniquement la part contestée pour ne pas vous exposer à un risque."
+    },
+    {
+      "q": "Que faire en cas de refus du bailleur ?",
+      "a": "Saisissez la commission départementale de conciliation (gratuite). En cas d'échec, le tribunal judiciaire est compétent (procédure simplifiée sous 5 000 €, sans avocat obligatoire)."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Décret du 26 août 1987 (Légifrance)", "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000332980/" },
+    { "label": "Guide service-public.fr — charges locatives", "url": "https://www.service-public.fr/particuliers/vosdroits/F947" },
+    { "label": "ANIL — charges locatives", "url": "https://www.anil.org/votre-projet/vous-etes-locataire/charges-locatives/" }
+  ],
+  "estimatedSearchVolume": 4000,
+  "difficulty": "medium"
+}

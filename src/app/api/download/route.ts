@@ -9,23 +9,11 @@ import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
-// Client admin Supabase (service role) — bypass RLS pour insert dans leads
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
-
-// Client Resend pour envoi email transactionnel
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Adresse expéditrice : domain verifie en prod, onboarding@resend.dev en dev
-const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-
 interface LetterVariable {
   name: string;
   label: string;
   placeholder: string;
+  required?: boolean;
 }
 
 interface RequestBody {
@@ -39,20 +27,113 @@ interface RequestBody {
   format: "pdf" | "docx";
 }
 
+/**
+ * Detecte si une valeur correspond a "non applicable".
+ * Doit rester aligne avec isNotApplicable() cote client (FillAndDownloadModal).
+ */
+function isNotApplicable(value: string): boolean {
+  // Filtre points, espaces, slashes (pour N/A, N.A., n / a, etc.)
+  const v = value.trim().toLowerCase().replace(/[./\\\s]/g, "");
+  return (
+    v === "" ||
+    v === "na" ||
+    v === "nonapplicable" ||
+    v === "-" ||
+    v === "sansobjet"
+  );
+}
+
+/**
+ * Resoud le template :
+ *  - remplace [Label] par les valeurs reelles
+ *  - les lignes dont la SEULE substance est un placeholder N/A sont supprimees
+ *  - dans les lignes mixtes (texte + placeholder N/A), le placeholder est juste
+ *    remplace par une chaine vide et la ligne est conservee si elle reste utile
+ *  - les lignes vides consecutives sont compressees pour eviter les trous
+ */
 function fillTemplate(
   template: string,
   variables: LetterVariable[],
   values: Record<string, string>
 ): string {
-  let result = template;
-  for (const variable of variables) {
-    const value = values[variable.name]?.trim();
-    if (!value) continue;
-    const escaped = variable.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const regex = new RegExp(`\\[${escaped}\\]`, "g");
-    result = result.replace(regex, value);
+  // Map label -> { value, isNa }
+  const replacements = new Map<string, { value: string; isNa: boolean }>();
+  for (const v of variables) {
+    const raw = values[v.name] ?? "";
+    const isNa = isNotApplicable(raw);
+    replacements.set(v.label.toLowerCase(), {
+      value: isNa ? "" : raw.trim(),
+      isNa,
+    });
   }
-  return result;
+
+  const sourceLines = template.split("\n");
+  const out: string[] = [];
+
+  for (const line of sourceLines) {
+    // Trouver tous les placeholders [xxx] de la ligne
+    const placeholders = [...line.matchAll(/\[([^\]]+)\]/g)];
+
+    if (placeholders.length === 0) {
+      // Pas de placeholder = ligne fixe, on garde
+      out.push(line);
+      continue;
+    }
+
+    // Compter combien de placeholders sont N/A
+    const naCount = placeholders.filter((m) => {
+      const r = replacements.get(m[1].toLowerCase());
+      return r?.isNa === true;
+    }).length;
+
+    // Si TOUS les placeholders de la ligne sont N/A,
+    // on supprime la ligne entiere (pas juste son contenu)
+    if (naCount === placeholders.length) {
+      continue;
+    }
+
+    // Sinon, on remplace chaque placeholder
+    let result = line;
+    for (const match of placeholders) {
+      const label = match[1];
+      const r = replacements.get(label.toLowerCase());
+      if (!r) continue;
+
+      const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`\\[${escaped}\\]`, "g");
+
+      if (r.isNa) {
+        // Placeholder N/A dans une ligne mixte -> remplacer par chaine vide
+        result = result.replace(regex, "");
+      } else if (r.value) {
+        result = result.replace(regex, r.value);
+      }
+      // Si pas de valeur du tout (cas non cense arriver puisque tout est requis cote front),
+      // on laisse [Label] tel quel par securite
+    }
+
+    // Nettoyer espaces multiples laisses par les substitutions vides
+    result = result.replace(/[ \t]{2,}/g, " ").replace(/\s+([,;.!?])/g, "$1").trimEnd();
+
+    // Si apres tout ca la ligne est vide / juste de la ponctuation, on la supprime aussi
+    if (!result.trim() || /^[\s,;.:—-]+$/.test(result)) {
+      continue;
+    }
+
+    out.push(result);
+  }
+
+  // Compresser les sauts de lignes multiples (max 1 ligne vide consecutive)
+  const compressed: string[] = [];
+  let prevEmpty = false;
+  for (const l of out) {
+    const empty = l.trim() === "";
+    if (empty && prevEmpty) continue;
+    compressed.push(l);
+    prevEmpty = empty;
+  }
+
+  return compressed.join("\n");
 }
 
 async function generateDocx(
@@ -188,8 +269,7 @@ function buildEmailHtml(letterTitle: string, format: "pdf" | "docx"): string {
                 au format <strong>${format.toUpperCase()}</strong>, prête à imprimer ou à modifier.
               </p>
               <p style="margin:0 0 16px;">
-                Pensez à compléter les champs entre crochets <code style="background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:13px;">[ ... ]</code>
-                qui n'auraient pas été renseignés, et à signer votre lettre avant de l'envoyer.
+                Pensez à signer votre lettre avant de l'envoyer.
               </p>
               <p style="margin:0;">À bientôt,<br>L'équipe MaLettreFacile</p>
             </td>
@@ -215,6 +295,29 @@ function buildEmailHtml(letterTitle: string, format: "pdf" | "docx"): string {
 }
 
 export async function POST(request: NextRequest) {
+  // Lazy init pour passer le build sans env vars
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const fromEmail =
+    process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+
+  if (!supabaseUrl || !supabaseServiceKey) {
+    return NextResponse.json(
+      { error: "Configuration Supabase manquante côté serveur." },
+      { status: 500 }
+    );
+  }
+  if (!resendApiKey) {
+    return NextResponse.json(
+      { error: "Configuration Resend manquante côté serveur." },
+      { status: 500 }
+    );
+  }
+
+  const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+  const resend = new Resend(resendApiKey);
+
   try {
     const body = (await request.json()) as RequestBody;
     const {
@@ -228,7 +331,6 @@ export async function POST(request: NextRequest) {
       format,
     } = body;
 
-    // Validation
     if (!email || !email.includes("@")) {
       return NextResponse.json({ error: "Email invalide" }, { status: 400 });
     }
@@ -251,7 +353,6 @@ export async function POST(request: NextRequest) {
       console.error("Lead insert error (non-blocking):", leadErr);
     }
 
-    // Generation du fichier
     const filled = fillTemplate(template, variables, values);
     let fileBuffer: Buffer;
     if (format === "docx") {
@@ -261,9 +362,8 @@ export async function POST(request: NextRequest) {
       fileBuffer = Buffer.from(pdfBytes);
     }
 
-    // Envoi email avec piece jointe
     const { error: sendError } = await resend.emails.send({
-      from: FROM_EMAIL,
+      from: fromEmail,
       to: email,
       subject: `Votre lettre est prête : ${letterTitle}`,
       html: buildEmailHtml(letterTitle, format),
@@ -279,7 +379,8 @@ export async function POST(request: NextRequest) {
       console.error("Resend error:", sendError);
       return NextResponse.json(
         {
-          error: "L'email n'a pas pu être envoyé. Vérifiez votre adresse et réessayez.",
+          error:
+            "L'email n'a pas pu être envoyé. Vérifiez votre adresse et réessayez.",
           detail: sendError.message,
         },
         { status: 500 }

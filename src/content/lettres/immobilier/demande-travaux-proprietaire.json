@@ -1,0 +1,54 @@
+{
+  "slug": "demande-travaux-proprietaire",
+  "category": "immobilier",
+  "title": "Lettre de demande de travaux au propriétaire",
+  "metaTitle": "Modèle de lettre demande de travaux au propriétaire (2026)",
+  "metaDescription": "Modèle de lettre pour demander à votre bailleur la réalisation de travaux indispensables : décence, gros entretien, mise aux normes. Base légale incluse.",
+  "context": "Le bailleur a l'obligation de remettre au locataire un logement décent, c'est-à-dire en bon état d'usage et de réparation, et d'y entretenir tous les éléments de gros œuvre, de toiture, de chauffage, et tout ce qui n'est pas considéré comme entretien locatif courant. Les fuites au plafond, infiltrations, chaudière en panne, fenêtres défaillantes, problèmes électriques majeurs ou présence de moisissures relèvent de la responsabilité du propriétaire.\n\nLa demande doit être formulée par écrit, idéalement par lettre recommandée avec accusé de réception, en décrivant précisément les désordres constatés. Si le bailleur ne réagit pas dans un délai raisonnable, vous pouvez saisir la commission départementale de conciliation, voire le tribunal judiciaire pour obtenir l'exécution forcée des travaux. En cas d'urgence (logement insalubre ou dangereux), vous pouvez aussi alerter la mairie ou l'ARS.",
+  "legalBasis": "Art. 6 de la loi n°89-462 du 6 juillet 1989, décret n°2002-120 du 30 janvier 2002 sur le logement décent",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (fortement recommandé)",
+  "template": "[Prénom Nom]\n[Adresse du logement]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du bailleur ou de l'agence]\n[Adresse du bailleur]\n[Code postal — Ville]\n\nÀ [Ville], le [Date]\n\nObjet : Demande de réalisation de travaux dans le logement\nLettre recommandée avec accusé de réception\n\nMadame, Monsieur,\n\nLocataire du logement situé au [Adresse du logement] depuis le [Date d'entrée dans les lieux], je vous informe par la présente de la nécessité d'intervenir sur les désordres suivants, qui relèvent de votre responsabilité de bailleur en application de l'article 6 de la loi du 6 juillet 1989 :\n\n[Description précise des désordres : nature, localisation, date d'apparition, conséquences sur l'usage du logement]\n\n[Mention si pièces jointes : photos, devis, constats d'huissier, certificats médicaux]\n\nCes désordres affectent la jouissance paisible du logement et, si rien n'est fait, risquent de s'aggraver. Je vous demande, en conséquence, de bien vouloir faire procéder aux réparations nécessaires dans les meilleurs délais.\n\nJe me tiens à votre disposition pour permettre l'accès au logement aux entreprises que vous mandaterez. Vous pouvez me joindre par téléphone au [Téléphone] ou par email à [Email] pour convenir des dates d'intervention.\n\nÀ défaut de prise en compte de ma demande dans un délai de [Délai accordé : un mois / deux mois], je me verrai contraint(e) de saisir la commission départementale de conciliation, puis le tribunal judiciaire pour obtenir l'exécution forcée des travaux et, le cas échéant, des dommages et intérêts.\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse_logement", "label": "Adresse du logement", "placeholder": "12 rue de la Paix, apt 4B" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_bailleur", "label": "Nom du bailleur ou de l'agence", "placeholder": "Agence SQUARE" },
+    { "name": "adresse_bailleur", "label": "Adresse du bailleur", "placeholder": "" },
+    { "name": "date_entree", "label": "Date d'entrée dans les lieux", "placeholder": "01/09/2022" },
+    { "name": "description_desordres", "label": "Description précise des désordres", "placeholder": "Infiltration d'eau au plafond du salon, apparue le 15 mars suite à des pluies importantes. Auréole de moisissures de 2 m² environ, peinture cloquée. La fuite semble provenir de la toiture." },
+    { "name": "delai_accorde", "label": "Délai accordé (un mois / deux mois)", "placeholder": "un mois" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quels travaux sont à la charge du propriétaire ?",
+      "a": "Les grosses réparations, la mise aux normes, l'entretien de la toiture, des murs, du chauffage central, de la chaudière (sauf entretien annuel à la charge du locataire), de la robinetterie en cas de vétusté. À l'inverse, l'entretien courant (joints, ampoules, peintures) reste à votre charge."
+    },
+    {
+      "q": "Quel délai laisser au bailleur pour intervenir ?",
+      "a": "Cela dépend de l'urgence. Pour des travaux non urgents (rénovation peinture, remplacement vétuste) : 2 mois. Pour des travaux urgents (fuite, chauffage en panne en hiver, électricité dangereuse) : 15 jours à 1 mois maximum."
+    },
+    {
+      "q": "Puis-je faire les travaux moi-même et déduire du loyer ?",
+      "a": "Pas sans autorisation. Faire les travaux à votre initiative et déduire du loyer est risqué : le bailleur peut considérer cela comme un loyer impayé. Mieux vaut passer par le tribunal pour obtenir une décision."
+    },
+    {
+      "q": "Que faire si le bailleur ne répond pas ?",
+      "a": "Saisissez la commission départementale de conciliation (gratuite, environ 2 mois). Si elle échoue ou est ignorée, saisissez le tribunal judiciaire. En cas d'urgence sanitaire, contactez l'ARS ou le service d'hygiène de la mairie."
+    },
+    {
+      "q": "Le logement est-il considéré comme indécent ?",
+      "a": "Le décret du 30 janvier 2002 fixe les critères de décence : surface minimale de 9 m² et 2,20 m sous plafond, eau potable, électricité aux normes, chauffage, absence de plomb et amiante accessibles. Si l'un manque, le logement est non décent et le bailleur doit obligatoirement intervenir."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Loi du 6 juillet 1989 — art. 6 (Légifrance)", "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000028777953/" },
+    { "label": "Décret logement décent (Légifrance)", "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000593408/" },
+    { "label": "Guide service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F31269" }
+  ],
+  "estimatedSearchVolume": 6000,
+  "difficulty": "medium"
+}
