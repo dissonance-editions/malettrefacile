@@ -19,35 +19,44 @@ type Status = "checking" | "ready" | "invalid" | "submitting" | "success";
 
 export default function ResetPasswordPage() {
   const router = useRouter();
-  const { updatePassword } = useAuth();
+  const { updatePassword, signOut } = useAuth();
   const [status, setStatus] = useState<Status>("checking");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Detection : si l'utilisateur arrive sur cette page, c'est qu'il vient
+  // de cliquer sur le lien de reset. Supabase JS l'authentifie automatiquement
+  // a l'arrivee. On verifie juste qu'une session existe.
+  //
+  // L'event PASSWORD_RECOVERY n'est plus emis avec le flow PKCE par defaut,
+  // donc on s'appuie uniquement sur la presence d'une session valide.
   useEffect(() => {
     let mounted = true;
     const supabase = getSupabaseBrowserClient();
 
-    const { data: subscription } = supabase.auth.onAuthStateChange(
-      (event) => {
-        if (!mounted) return;
-        if (event === "PASSWORD_RECOVERY") {
-          setStatus("ready");
-        }
-      }
-    );
-
+    // Petit delai pour laisser a Supabase le temps de parser l'URL
     const timer = setTimeout(async () => {
       if (!mounted) return;
       const { data } = await supabase.auth.getSession();
       if (data.session) {
         setStatus("ready");
       } else {
-        setStatus((s) => (s === "checking" ? "invalid" : s));
+        setStatus("invalid");
       }
-    }, 1500);
+    }, 800);
+
+    // Si jamais l'event PASSWORD_RECOVERY est emis (anciens flows),
+    // on l'ecoute aussi par securite
+    const { data: subscription } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (!mounted) return;
+        if (event === "PASSWORD_RECOVERY" || (event === "SIGNED_IN" && session)) {
+          setStatus("ready");
+        }
+      }
+    );
 
     return () => {
       mounted = false;
@@ -75,10 +84,15 @@ export default function ResetPasswordPage() {
     if (updateError) {
       setError(updateError);
       setStatus("ready");
-    } else {
-      setStatus("success");
-      setTimeout(() => router.push("/"), 3000);
+      return;
     }
+
+    // On deconnecte pour forcer une vraie reconnexion avec le nouveau mdp
+    // (sinon l'utilisateur reste connecte avec la session du lien email,
+    // ce qui peut induire en erreur)
+    await signOut();
+    setStatus("success");
+    setTimeout(() => router.push("/login"), 3000);
   }
 
   return (
@@ -113,10 +127,10 @@ export default function ResetPasswordPage() {
               expirent après 1 heure pour des raisons de sécurité.
             </p>
             <Link
-              href="/"
+              href="/login"
               className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700 transition-colors"
             >
-              Retour à l&apos;accueil
+              Demander un nouveau lien
             </Link>
           </div>
         )}
@@ -216,13 +230,13 @@ export default function ResetPasswordPage() {
               maintenant vous connecter avec votre nouveau mot de passe.
             </p>
             <p className="mt-3 text-xs text-neutral-400">
-              Redirection vers l&apos;accueil dans quelques secondes...
+              Redirection vers la connexion dans quelques secondes...
             </p>
             <Link
-              href="/"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition-colors"
+              href="/login"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700 transition-colors"
             >
-              Aller à l&apos;accueil maintenant
+              Se connecter maintenant
             </Link>
           </div>
         )}
