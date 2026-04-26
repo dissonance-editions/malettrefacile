@@ -1,0 +1,54 @@
+{
+  "slug": "mise-en-demeure-sav",
+  "category": "consommation",
+  "title": "Mise en demeure du SAV (réparation ou remplacement)",
+  "metaTitle": "Modèle de mise en demeure SAV produit défectueux gratuit (2026)",
+  "metaDescription": "Mettez en demeure un SAV qui ne répond pas avec ce modèle gratuit. Garantie légale de conformité, bases légales et délais expliqués.",
+  "context": "Lorsqu'un produit présente un défaut de conformité dans les deux ans suivant son achat (pour un bien neuf), le vendeur est tenu de procéder à sa réparation ou son remplacement sans frais pour l'acheteur, conformément à la garantie légale de conformité prévue aux articles L217-4 et suivants du Code de la consommation.\n\nSi le service après-vente (SAV) tarde à intervenir, oppose un refus ou propose une solution insatisfaisante, l'acheteur peut adresser une mise en demeure formelle. Celle-ci, envoyée par lettre recommandée avec accusé de réception, fait courir le délai à partir duquel des dommages et intérêts peuvent être réclamés (art. 1231-1 du Code civil) et constitue un préalable indispensable à toute action judiciaire.\n\nAttention : si la réparation ou le remplacement s'avèrent impossibles ou si le SAV n'a pas répondu dans le délai fixé dans la mise en demeure, vous pouvez exiger le remboursement intégral du prix ou une réduction du prix de vente (art. L217-12 du Code de la consommation).",
+  "legalBasis": "Art. L217-4, L217-9 et L217-12 du Code de la consommation ; Art. 1231-1 et 1217 du Code civil",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (obligatoire pour faire courir les délais légaux de mise en demeure)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du vendeur / service SAV]\n[Adresse du vendeur]\n[Code postal — Ville du vendeur]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : MISE EN DEMEURE — Exécution de la garantie légale de conformité — Facture n°[Numéro de facture]\n\nMadame, Monsieur,\n\nJ'ai acquis auprès de vos services, le [Date d'achat], le produit suivant : [Désignation du produit] (facture n°[Numéro de facture]).\n\nCe produit présente le défaut de conformité suivant : [Nature du défaut]. J'ai contacté votre service après-vente pour la première fois le [Date du premier contact SAV], sans qu'aucune solution satisfaisante n'ait été apportée à ce jour.\n\nPar la présente, je vous mets formellement en demeure, conformément aux articles L217-4 et L217-9 du Code de la consommation et à l'article 1231-1 du Code civil, de procéder à la réparation ou au remplacement du produit dans un délai de [Délai accordé] jours à compter de la réception de la présente.\n\nÀ défaut d'exécution dans ce délai, je me réserve le droit :\n- d'exiger le remboursement intégral du prix payé, conformément à l'article L217-12 du Code de la consommation,\n- d'engager une procédure judiciaire aux fins d'obtenir réparation,\n- de saisir le médiateur de la consommation compétent pour votre secteur.\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_sav", "label": "Nom du vendeur / service SAV", "placeholder": "Électroménager Dupuis SAS — Service après-vente" },
+    { "name": "adresse_vendeur", "label": "Adresse du vendeur", "placeholder": "22 rue du Commerce" },
+    { "name": "code_postal_ville_vendeur", "label": "Code postal — Ville du vendeur", "placeholder": "33000 — Bordeaux" },
+    { "name": "numero_facture", "label": "Numéro de facture", "placeholder": "FAC-2025-00789" },
+    { "name": "date_achat", "label": "Date d'achat", "placeholder": "15/01/2026" },
+    { "name": "designation_produit", "label": "Désignation du produit", "placeholder": "Lave-linge modèle WX1200, référence LM-4567" },
+    { "name": "nature_defaut", "label": "Nature du défaut", "placeholder": "tambour bloqué en milieu de cycle, code erreur E5 affiché" },
+    { "name": "date_premier_contact", "label": "Date du premier contact SAV", "placeholder": "20/03/2026" },
+    { "name": "delai_accorde", "label": "Délai accordé", "placeholder": "15" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Combien de temps le SAV a-t-il pour réparer un produit défectueux ?",
+      "a": "La loi ne fixe pas de délai précis, mais impose que la réparation soit effectuée « sans retard notable » (art. L217-9). En pratique, une mise en demeure fixant 8 à 15 jours est raisonnable. Au-delà, vous pouvez demander le remboursement."
+    },
+    {
+      "q": "Que faire si le SAV refuse de réparer sous prétexte que la garantie commerciale est expirée ?",
+      "a": "La garantie légale de conformité (2 ans pour les biens neufs) est distincte de la garantie commerciale et obligatoire. Le vendeur ne peut pas l'exclure contractuellement. Rappelez-lui qu'elle s'applique indépendamment de toute garantie commerciale."
+    },
+    {
+      "q": "La mise en demeure est-elle payante ?",
+      "a": "Non. Envoyer une mise en demeure par vous-même n'engendre que les frais d'envoi postal (LRAR : environ 5 €). Seul le recours à un huissier ou un avocat pour rédiger une mise en demeure formelle peut engager des coûts supplémentaires."
+    },
+    {
+      "q": "Puis-je saisir le médiateur de la consommation sans mise en demeure préalable ?",
+      "a": "Oui, mais la médiation est subordonnée à une démarche préalable auprès du professionnel (art. L612-2 du Code de la consommation). Une mise en demeure constitue une bonne preuve de cette démarche. Pour trouver le médiateur compétent : médiation-conso.fr."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. L217-4 Code de la consommation (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044138681/" },
+    { "label": "Garantie légale de conformité — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F11094" },
+    { "label": "Trouver un médiateur — médiation-conso.fr", "url": "https://www.mediation-conso.fr/" }
+  ],
+  "estimatedSearchVolume": 8000,
+  "difficulty": "medium"
+}

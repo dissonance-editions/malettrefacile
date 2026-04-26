@@ -1,0 +1,51 @@
+{
+  "slug": "retractation-demarchage",
+  "category": "consommation",
+  "title": "Lettre de rétractation après démarchage à domicile",
+  "metaTitle": "Modèle de lettre rétractation démarchage à domicile gratuit (2026)",
+  "metaDescription": "Rétractez-vous d'un contrat signé lors d'un démarchage à domicile avec ce modèle gratuit. 14 jours, bases légales et remboursement expliqués.",
+  "context": "Le démarchage à domicile est encadré par les mêmes dispositions que la vente à distance : tout consommateur démarché à son domicile, sur son lieu de travail ou hors d'un établissement commercial dispose d'un délai de rétractation de 14 jours calendaires à compter de la conclusion du contrat, sans avoir à justifier sa décision (art. L221-18 du Code de la consommation).\n\nLe professionnel a l'obligation de remettre au consommateur un formulaire type de rétractation et de l'informer de son droit de rétractation (art. L221-5). S'il ne l'a pas fait, le délai de rétractation est prolongé de 12 mois supplémentaires.\n\nImportant : le professionnel ne peut pas commencer l'exécution de la prestation (travaux, installation) avant l'expiration du délai de rétractation de 14 jours, sauf demande expresse écrite du consommateur (art. L221-23). Si des travaux ont commencé sans cette demande, le consommateur peut se rétracter sans frais.",
+  "legalBasis": "Art. L221-18, L221-21, L221-23 et L221-28 du Code de la consommation ; Art. L242-10 (sanctions pénales en cas de non-respect)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour conserver une preuve datée de l'exercice du droit dans le délai de 14 jours)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du professionnel]\n[Adresse du professionnel]\n[Code postal — Ville du professionnel]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Exercice du droit de rétractation — Contrat du [Date du contrat]\n\nMadame, Monsieur,\n\nConformément à l'article L221-18 du Code de la consommation, je vous notifie par la présente ma décision de me rétracter du contrat conclu le [Date du contrat] lors d'un démarchage à domicile, portant sur : [Désignation du produit ou service], pour un montant de [Montant du contrat] euros.\n\nJe vous demande en conséquence de bien vouloir procéder au remboursement intégral de la somme déjà versée, le cas échéant, dans un délai maximum de 14 jours à compter de la réception de la présente, conformément à l'article L221-24 du Code de la consommation.\n\nJe vous rappelle qu'en application de l'article L221-23 du même code, vous ne pouviez pas commencer l'exécution de la prestation avant l'expiration du délai de rétractation sans ma demande expresse écrite. Toute prestation commencée sans cette demande ne pourra donc pas vous être facturée.\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_professionnel", "label": "Nom du professionnel", "placeholder": "Isolation Éco Habitat SAS" },
+    { "name": "adresse_professionnel", "label": "Adresse du professionnel", "placeholder": "12 avenue de l'Industrie" },
+    { "name": "code_postal_ville_professionnel", "label": "Code postal — Ville du professionnel", "placeholder": "44000 — Nantes" },
+    { "name": "date_contrat", "label": "Date du contrat", "placeholder": "05/04/2026" },
+    { "name": "designation_produit_service", "label": "Désignation du produit ou service", "placeholder": "isolation des combles perdus (100 m²), devis n°DEV-2026-123" },
+    { "name": "montant_contrat", "label": "Montant du contrat", "placeholder": "3 500" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Le droit de rétractation s'applique-t-il à tous les démarchages ?",
+      "a": "Non. Il s'applique aux contrats hors établissement (à domicile, sur le lieu de travail, dans la rue, dans un lieu public). Les exceptions sont les mêmes que pour la vente à distance : biens sur mesure, denrées périssables, etc. (art. L221-28 du Code de la consommation)."
+    },
+    {
+      "q": "Le vendeur peut-il refuser ma rétractation si les travaux ont déjà commencé ?",
+      "a": "Non, si les travaux ont commencé sans votre demande expresse écrite avant la fin du délai de 14 jours. Dans ce cas, le professionnel a enfreint la loi et ne peut pas vous facturer les travaux déjà réalisés (art. L242-10, passible de 2 ans d'emprisonnement et 150 000 € d'amende)."
+    },
+    {
+      "q": "Que se passe-t-il si le professionnel ne m'a pas informé de mon droit de rétractation ?",
+      "a": "Le délai de 14 jours est prorogé de 12 mois supplémentaires (soit jusqu'à 12 mois + 14 jours) à compter de la conclusion du contrat. Vous pouvez donc vous rétracter bien après la signature si vous n'avez pas reçu le formulaire de rétractation (art. L221-20)."
+    },
+    {
+      "q": "Le remboursement doit-il intervenir en espèces ou sur le même moyen de paiement ?",
+      "a": "Le remboursement doit être effectué sur le même moyen de paiement que le paiement initial, sauf accord exprès du consommateur pour un autre mode. Il doit intervenir dans les 14 jours suivant la réception de votre rétractation ou la récupération du bien."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. L221-18 Code de la consommation (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226842/" },
+    { "label": "Démarchage à domicile — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F10485" },
+    { "label": "Signaler un démarchage abusif — signal.conso.gouv.fr", "url": "https://signal.conso.gouv.fr/" }
+  ],
+  "estimatedSearchVolume": 4000,
+  "difficulty": "low"
+}

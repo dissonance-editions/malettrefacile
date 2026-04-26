@@ -45,7 +45,7 @@ export const categories: Category[] = [
     description:
       "Rétractation, mise en demeure, contestation de facture, réclamation livraison, remboursement.",
     icon: "🛒",
-    letterCount: 0,
+    letterCount: 7,
   },
   {
     slug: "voisinage",

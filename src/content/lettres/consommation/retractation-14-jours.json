@@ -1,0 +1,52 @@
+{
+  "slug": "retractation-14-jours",
+  "category": "consommation",
+  "title": "Lettre de rétractation 14 jours (achat à distance)",
+  "metaTitle": "Modèle de lettre de rétractation 14 jours achat en ligne gratuit (2026)",
+  "metaDescription": "Exercez votre droit de rétractation de 14 jours pour un achat à distance avec ce modèle gratuit. Procédure, délais et remboursement expliqués.",
+  "context": "Pour tout achat effectué à distance (internet, téléphone, catalogue), le consommateur dispose d'un délai de rétractation de 14 jours calendaires à compter de la réception du bien (ou de la conclusion du contrat pour les services) pour se rétracter sans avoir à justifier sa décision et sans pénalité, conformément à l'article L221-18 du Code de la consommation.\n\nLe professionnel est tenu de rembourser l'intégralité des sommes versées, y compris les frais de livraison standard, dans un délai de 14 jours suivant la réception de votre rétractation ou de l'avis de réexpédition du bien (selon le premier des deux). Les frais de retour restent en principe à votre charge, sauf mention contraire du vendeur.\n\nPour exercer ce droit, vous pouvez utiliser le formulaire type annexé à l'article R221-1 du Code de la consommation (dont ce modèle s'inspire) ou toute autre déclaration exprimant sans ambiguïté votre volonté de vous rétracter.",
+  "legalBasis": "Art. L221-18 à L221-28 du Code de la consommation ; Art. R221-1 (formulaire type de rétractation)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour conserver une preuve datée de l'exercice du droit dans le délai légal)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du vendeur]\n[Adresse du vendeur]\n[Code postal — Ville du vendeur]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Exercice du droit de rétractation — Commande n°[Numéro de commande]\n\nMadame, Monsieur,\n\nConformément à l'article L221-18 du Code de la consommation, je vous notifie par la présente ma décision de me rétracter du contrat portant sur l'achat de : [Désignation du produit ou service], commandé le [Date de commande] (commande n°[Numéro de commande]).\n\nJe vous demande en conséquence de bien vouloir procéder au remboursement intégral de la somme de [Montant payé] euros dans un délai maximum de 14 jours à compter de la réception de la présente, conformément à l'article L221-24 du Code de la consommation.\n\nJe suis disponible pour convenir des modalités de retour du produit dans ce même délai.\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_vendeur", "label": "Nom du vendeur", "placeholder": "Boutique En Ligne SAS" },
+    { "name": "adresse_vendeur", "label": "Adresse du vendeur", "placeholder": "15 avenue du Commerce" },
+    { "name": "code_postal_ville_vendeur", "label": "Code postal — Ville du vendeur", "placeholder": "69001 — Lyon" },
+    { "name": "numero_commande", "label": "Numéro de commande", "placeholder": "CMD-2026-45678" },
+    { "name": "designation_produit", "label": "Désignation du produit ou service", "placeholder": "Smartphone modèle XZ-10, coloris noir" },
+    { "name": "date_commande", "label": "Date de commande", "placeholder": "01/04/2026" },
+    { "name": "montant_paye", "label": "Montant payé", "placeholder": "249" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quel est le délai exact de rétractation pour un achat en ligne ?",
+      "a": "14 jours calendaires à compter du lendemain de la réception du bien pour un produit physique (ou de la conclusion du contrat pour un service). Si le délai expire un samedi, dimanche ou jour férié, il est prorogé jusqu'au premier jour ouvrable suivant."
+    },
+    {
+      "q": "À partir de quand commence le délai de 14 jours ?",
+      "a": "Pour un bien physique : à partir du lendemain de la réception. Pour une commande de plusieurs biens livrés séparément : à partir de la réception du dernier article. Pour un service : à partir du lendemain de la conclusion du contrat."
+    },
+    {
+      "q": "Le vendeur est-il obligé de rembourser les frais de livraison ?",
+      "a": "Oui, le vendeur doit rembourser le prix du produit ET les frais de livraison aller (frais standard). Il peut cependant déduire les frais supplémentaires si vous aviez choisi une livraison express non standard. Les frais de retour restent à votre charge, sauf si le vendeur précise le contraire."
+    },
+    {
+      "q": "Le vendeur peut-il refuser ma rétractation ?",
+      "a": "Non, sauf exceptions légales : biens confectionnés sur mesure, denrées périssables, logiciels déscellés, enregistrements audio/vidéo déscellés, journaux/périodiques, prestations d'hébergement/voyage à date fixe (art. L221-28 du Code de la consommation)."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. L221-18 Code de la consommation (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226842/" },
+    { "label": "Droit de rétractation — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F10485" },
+    { "label": "Formulaire type de rétractation (R221-1)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032810882/" }
+  ],
+  "estimatedSearchVolume": 20000,
+  "difficulty": "low"
+}

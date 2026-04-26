@@ -64,6 +64,14 @@ export const letterIcons: Record<string, string> = {
   "demande-travaux-proprietaire": "Wrench",
   "contestation-etat-des-lieux": "ClipboardCheck",
   "demande-logement-social": "Building2",
+  // Consommation
+  "retractation-14-jours": "RotateCcw",
+  "livraison-non-recue": "PackageX",
+  "garantie-legale-conformite": "BadgeCheck",
+  "mise-en-demeure-sav": "AlertTriangle",
+  "opposition-prelevement": "Ban",
+  "contestation-facture": "FileX",
+  "retractation-demarchage": "ShoppingBag",
   // Administratif
   "contestation-amende": "ShieldAlert",
   "delai-paiement-impots": "Calculator",
@@ -94,6 +102,15 @@ import candidatureSpontanee from "@/content/lettres/emploi/candidature-spontanee
 import demandeAugmentation from "@/content/lettres/emploi/demande-augmentation.json";
 import congeParental from "@/content/lettres/emploi/conge-parental.json";
 import congeSansSolde from "@/content/lettres/emploi/conge-sans-solde.json";
+
+// === CONSOMMATION ===
+import retractation14Jours from "@/content/lettres/consommation/retractation-14-jours.json";
+import livraisonNonRecue from "@/content/lettres/consommation/livraison-non-recue.json";
+import miseEnDemeureSav from "@/content/lettres/consommation/mise-en-demeure-sav.json";
+import garantieLegaleConformite from "@/content/lettres/consommation/garantie-legale-conformite.json";
+import contestationFacture from "@/content/lettres/consommation/contestation-facture.json";
+import oppositionPrelevement from "@/content/lettres/consommation/opposition-prelevement.json";
+import retractationDemarchage from "@/content/lettres/consommation/retractation-demarchage.json";
 
 // === ADMINISTRATIF ===
 import contestationAmende from "@/content/lettres/administratif/contestation-amende.json";
@@ -133,6 +150,14 @@ const allLetters: Letter[] = [
   demandeAugmentation as Letter,
   congeParental as Letter,
   congeSansSolde as Letter,
+  // Consommation
+  retractation14Jours as Letter,
+  livraisonNonRecue as Letter,
+  miseEnDemeureSav as Letter,
+  garantieLegaleConformite as Letter,
+  contestationFacture as Letter,
+  oppositionPrelevement as Letter,
+  retractationDemarchage as Letter,
   // Administratif
   contestationAmende as Letter,
   demandeActeNaissance as Letter,
