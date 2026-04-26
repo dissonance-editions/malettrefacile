@@ -1,19 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { FileText } from "lucide-react";
+import Image from "next/image";
 import AccountMenu from "./AccountMenu";
 
 export default function Header() {
   return (
     <header className="border-b border-neutral-200 bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors"
+          className="flex items-center gap-2 transition-opacity hover:opacity-80"
+          aria-label="MaLettreFacile - Accueil"
         >
-          <FileText className="h-7 w-7" strokeWidth={1.8} />
+          <Image
+            src="/logo.png"
+            alt="MaLettreFacile"
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10 shrink-0"
+          />
           <span className="text-xl font-semibold tracking-tight text-neutral-900">
             MaLettreFacile
           </span>
