@@ -1,7 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, Mail, Loader2, Check, Eye, EyeOff, Info } from "lucide-react";
+import {
+  X,
+  Mail,
+  Loader2,
+  Check,
+  Eye,
+  EyeOff,
+  Info,
+  ArrowLeft,
+} from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
@@ -27,16 +36,18 @@ interface Props {
   variables: LetterVariable[];
 }
 
-type Step = "form" | "account" | "format" | "sending" | "done";
+type Step =
+  | "form"
+  | "account"
+  | "forgot"
+  | "forgot_sent"
+  | "format"
+  | "sending"
+  | "done";
 type Format = "pdf" | "docx";
 type AuthMode = "signup" | "login";
 
-/**
- * Detecte si la valeur saisie correspond a "non applicable".
- * Gere : N/A, n/a, NA, na, N.A., non applicable, -, sans objet, .
- */
 function isNotApplicable(value: string): boolean {
-  // Filtre points, espaces, slashes (pour N/A, N.A., n / a, etc.)
   const v = value.trim().toLowerCase().replace(/[./\\\s]/g, "");
   return (
     v === "" ||
@@ -70,12 +81,17 @@ export default function FillAndDownloadModal({
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [authSubmitting, setAuthSubmitting] = useState(false);
 
+  // Forgot password state
+  const [forgotEmail, setForgotEmail] = useState("");
+  const [forgotSubmitting, setForgotSubmitting] = useState(false);
+
   useEffect(() => {
     if (open) {
       setStep("form");
       setValues({});
       setEmail("");
       setPassword("");
+      setForgotEmail("");
       setAcceptCgv(false);
       setMarketingOptIn(false);
       setAuthMode("signup");
@@ -192,6 +208,42 @@ export default function FillAndDownloadModal({
     }
   }
 
+  async function handleForgotPassword(e?: React.FormEvent) {
+    e?.preventDefault();
+    setError(null);
+
+    if (!forgotEmail || !forgotEmail.includes("@")) {
+      setError("Veuillez saisir une adresse email valide.");
+      return;
+    }
+
+    setForgotSubmitting(true);
+
+    try {
+      const redirectTo = `${window.location.origin}/reset-password`;
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(
+        forgotEmail,
+        { redirectTo }
+      );
+      if (resetError) throw resetError;
+      setStep("forgot_sent");
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Une erreur est survenue. Réessayez."
+      );
+    } finally {
+      setForgotSubmitting(false);
+    }
+  }
+
+  function openForgot() {
+    setForgotEmail(email); // pre-rempli avec l'email saisi a l'etape precedente
+    setError(null);
+    setStep("forgot");
+  }
+
   async function handleSendEmail() {
     setStep("sending");
     setError(null);
@@ -233,6 +285,10 @@ export default function FillAndDownloadModal({
         return "Étape 1/3 — Personnalisation";
       case "account":
         return "Étape 2/3 — Votre compte";
+      case "forgot":
+        return "Mot de passe oublié";
+      case "forgot_sent":
+        return "Email envoyé";
       case "format":
         return "Étape 3/3 — Format";
       case "sending":
@@ -248,6 +304,11 @@ export default function FillAndDownloadModal({
         return onClose;
       case "account":
         return () => setStep("form");
+      case "forgot":
+        return () => {
+          setError(null);
+          setStep("account");
+        };
       case "format":
         return () => {
           if (user) setStep("form");
@@ -297,7 +358,6 @@ export default function FillAndDownloadModal({
                 Tous les champs sont obligatoires.
               </p>
 
-              {/* Note N/A */}
               <div className="mt-4 flex items-start gap-2 rounded-lg border border-primary-100 bg-primary-50/60 px-3 py-2.5">
                 <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />
                 <p className="text-xs leading-relaxed text-primary-900">
@@ -374,9 +434,20 @@ export default function FillAndDownloadModal({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-neutral-700">
-                    Mot de passe
-                  </label>
+                  <div className="flex items-center justify-between">
+                    <label className="block text-xs font-medium text-neutral-700">
+                      Mot de passe
+                    </label>
+                    {authMode === "login" && (
+                      <button
+                        type="button"
+                        onClick={openForgot}
+                        className="text-xs font-medium text-primary-600 hover:text-primary-700 hover:underline"
+                      >
+                        Mot de passe oublié ?
+                      </button>
+                    )}
+                  </div>
                   <div className="relative mt-1">
                     <input
                       type={showPassword ? "text" : "password"}
@@ -491,6 +562,68 @@ export default function FillAndDownloadModal({
             </form>
           )}
 
+          {/* STEP — FORGOT PASSWORD */}
+          {step === "forgot" && (
+            <form onSubmit={handleForgotPassword}>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                Indiquez votre adresse email. Si un compte existe, nous vous
+                enverrons un lien pour réinitialiser votre mot de passe.
+              </p>
+
+              <div className="mt-5">
+                <label className="block text-xs font-medium text-neutral-700">
+                  Adresse email
+                </label>
+                <input
+                  type="email"
+                  value={forgotEmail}
+                  onChange={(e) => setForgotEmail(e.target.value)}
+                  placeholder="vous@email.fr"
+                  required
+                  autoFocus
+                  className="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 text-sm text-neutral-800 placeholder-neutral-400 outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
+                />
+              </div>
+
+              <p className="mt-4 text-xs text-neutral-500">
+                Vous recevrez un email contenant un lien sécurisé valable
+                pendant 1 heure. Pensez à vérifier votre dossier spam.
+              </p>
+            </form>
+          )}
+
+          {/* STEP — FORGOT SENT */}
+          {step === "forgot_sent" && (
+            <div className="flex flex-col items-center py-8 text-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-success-50">
+                <Check className="h-6 w-6 text-success-500" />
+              </div>
+              <p className="mt-4 text-base font-semibold text-neutral-900">
+                Email envoyé
+              </p>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-neutral-500">
+                Si un compte existe pour <strong>{forgotEmail}</strong>, vous
+                recevrez un lien de réinitialisation dans les prochaines
+                minutes.
+              </p>
+              <p className="mt-4 max-w-md text-xs text-neutral-400">
+                💡 Si vous ne voyez rien, vérifiez votre dossier{" "}
+                <strong>spam</strong> ou <strong>courrier indésirable</strong>.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setError(null);
+                  setStep("account");
+                }}
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Retour à la connexion
+              </button>
+            </div>
+          )}
+
           {/* STEP 3 — FORMAT */}
           {step === "format" && (
             <>
@@ -586,7 +719,7 @@ export default function FillAndDownloadModal({
         </div>
 
         {/* Footer */}
-        {step !== "sending" && step !== "done" && (
+        {step !== "sending" && step !== "done" && step !== "forgot_sent" && (
           <div className="flex items-center justify-between gap-3 border-t border-neutral-200 bg-neutral-50 px-6 py-4">
             <button
               onClick={getBackAction()}
@@ -614,6 +747,19 @@ export default function FillAndDownloadModal({
                   <Loader2 className="h-4 w-4 animate-spin" />
                 )}
                 {authMode === "signup" ? "Créer mon compte" : "Me connecter"}
+              </button>
+            )}
+
+            {step === "forgot" && (
+              <button
+                onClick={() => handleForgotPassword()}
+                disabled={forgotSubmitting}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 transition-colors disabled:opacity-60"
+              >
+                {forgotSubmitting && (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                )}
+                Envoyer le lien
               </button>
             )}
 
