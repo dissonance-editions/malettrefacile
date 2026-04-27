@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { getSupabaseBrowserClient } from "@/lib/supabase";
@@ -13,7 +13,7 @@ import { getSupabaseBrowserClient } from "@/lib/supabase";
  * et etablit la session. On attend que l'event SIGNED_IN se declenche
  * puis on redirige vers la destination finale.
  */
-export default function AuthCallbackPage() {
+function CallbackContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get("next") || "/compte";
@@ -59,9 +59,22 @@ export default function AuthCallbackPage() {
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-md flex-col items-center justify-center px-4 text-center">
       <Loader2 className="h-8 w-8 animate-spin text-primary-600" />
-      <p className="mt-4 text-sm text-neutral-500">
-        Connexion en cours...
-      </p>
+      <p className="mt-4 text-sm text-neutral-500">Connexion en cours...</p>
     </div>
+  );
+}
+
+export default function AuthCallbackPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="mx-auto flex min-h-[60vh] max-w-md flex-col items-center justify-center px-4 text-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary-600" />
+          <p className="mt-4 text-sm text-neutral-500">Connexion en cours...</p>
+        </div>
+      }
+    >
+      <CallbackContent />
+    </Suspense>
   );
 }
