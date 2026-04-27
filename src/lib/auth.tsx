@@ -24,6 +24,8 @@ interface AuthContextValue {
     password: string,
     options: SignUpOptions
   ) => Promise<{ error: string | null }>;
+  /** Connexion / inscription avec Google OAuth (redirige le navigateur) */
+  signInWithGoogle: () => Promise<{ error: string | null }>;
   /** Envoi du lien de reinitialisation de mot de passe par email */
   resetPassword: (email: string) => Promise<{ error: string | null }>;
   /** Mise a jour du mot de passe (utilise sur /reset-password apres clic sur lien) */
@@ -162,6 +164,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
+  async function signInWithGoogle() {
+    try {
+      const supabase = getSupabaseBrowserClient();
+      const redirectTo =
+        typeof window !== "undefined"
+          ? `${window.location.origin}/auth/callback`
+          : undefined;
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo,
+          queryParams: {
+            access_type: "offline",
+            prompt: "consent",
+          },
+        },
+      });
+      return { error: error ? translateError(error.message) : null };
+    } catch (err) {
+      return {
+        error: err instanceof Error ? err.message : "Auth indisponible",
+      };
+    }
+  }
+
   async function resetPassword(email: string) {
     try {
       const supabase = getSupabaseBrowserClient();
@@ -217,6 +244,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         plan,
         signIn,
         signUp,
+        signInWithGoogle,
         resetPassword,
         updatePassword,
         signOut,
