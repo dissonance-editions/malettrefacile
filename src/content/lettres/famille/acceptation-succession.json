@@ -1,0 +1,56 @@
+{
+  "slug": "acceptation-succession",
+  "category": "famille",
+  "title": "Lettre d'acceptation ou de renonciation à une succession",
+  "metaTitle": "Modèle de lettre acceptation renonciation succession gratuit (2026)",
+  "metaDescription": "Acceptez ou renoncez à une succession avec ce modèle gratuit. Options successorales, délais légaux et rôle du notaire expliqués.",
+  "context": "À la suite du décès d'un proche, chaque héritier doit exercer son option successorale dans un délai de 4 mois à compter du décès (art. 771 du Code civil). Passé ce délai, tout intéressé peut sommer l'héritier de prendre parti dans les 2 mois supplémentaires. Sans réponse, l'acceptation pure et simple est présumée.\n\nTrois options sont possibles : (1) l'acceptation pure et simple — l'héritier recueille l'actif et supporte le passif sans limitation ; (2) l'acceptation à concurrence de l'actif net (anciennement « sous bénéfice d'inventaire ») — l'héritier ne paie les dettes que dans la limite des biens recueillis (art. 787 CC) ; (3) la renonciation — l'héritier est censé n'avoir jamais été héritier, avec possibilité de revenir sur sa décision dans les 10 ans.\n\nCette lettre est adressée au notaire chargé de la succession (ou au greffe du tribunal judiciaire pour la renonciation, qui doit être enregistrée). Pour la renonciation, la déclaration doit être faite au greffe du TJ du dernier domicile du défunt (formulaire spécifique).",
+  "legalBasis": "Art. 768 à 811-3 du Code civil (options successorales) ; Art. 771 CC (délai de 4 mois) ; Art. 787 CC (acceptation à concurrence de l'actif net)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception au notaire (pour l'acceptation), ou déclaration au greffe du tribunal judiciaire (pour la renonciation — formulaire Cerfa obligatoire)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du notaire ou greffe]\n[Adresse du notaire ou greffe]\n[Code postal — Ville du notaire ou greffe]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Exercice de l'option successorale — Succession de [Prénom et nom du défunt]\n\nMaître / Madame / Monsieur,\n\nJe soussigné(e) [Prénom et nom], agissant en qualité de [Qualité de l'héritier] dans la succession de [Prénom et nom du défunt], décédé(e) le [Date du décès], vous informe par la présente de ma décision d'exercer l'option successorale suivante :\n\n[Option successorale choisie]\n\nJe vous prie de bien vouloir prendre acte de cette décision et de m'indiquer les démarches à accomplir pour régulariser ma situation dans le cadre de cette succession.\n\nDans l'attente de votre réponse, je vous prie d'agréer, Maître / Madame / Monsieur, l'expression de mes respectueuses salutations.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_notaire_greffe", "label": "Nom du notaire ou greffe", "placeholder": "Me Sophie Bernard — Notaire" },
+    { "name": "adresse_notaire", "label": "Adresse du notaire ou greffe", "placeholder": "18 avenue du Palais" },
+    { "name": "code_postal_ville_notaire", "label": "Code postal — Ville du notaire ou greffe", "placeholder": "75001 — Paris" },
+    { "name": "prenom_nom_defunt", "label": "Prénom et nom du défunt", "placeholder": "Pierre Dupont" },
+    { "name": "qualite_heritier", "label": "Qualité de l'héritier", "placeholder": "fils du défunt et héritier légal en ligne directe" },
+    { "name": "date_deces", "label": "Date du décès", "placeholder": "01/04/2026" },
+    { "name": "option_successorale", "label": "Option successorale choisie", "placeholder": "J'accepte la succession purement et simplement, conformément à l'article 782 du Code civil." },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Dans quel délai doit-on accepter ou refuser une succession ?",
+      "a": "Le délai légal est de 4 mois à compter du décès (art. 771 CC). Au-delà, tout intéressé peut sommer l'héritier de prendre parti : il dispose alors de 2 mois supplémentaires. Sans décision dans ce délai, l'acceptation pure et simple est présumée."
+    },
+    {
+      "q": "Peut-on changer d'avis après avoir accepté une succession ?",
+      "a": "En cas d'acceptation pure et simple, le retour en arrière est impossible sauf en cas de dol, violence ou erreur (art. 778 CC). En cas de renonciation, l'héritier peut revenir sur sa décision dans les 10 ans si personne d'autre n'a accepté entre-temps (art. 807 CC)."
+    },
+    {
+      "q": "Quand faut-il choisir l'acceptation à concurrence de l'actif net ?",
+      "a": "Lorsque vous suspectez que le passif (dettes) du défunt pourrait dépasser l'actif (biens), ou que vous n'avez pas encore une vision complète de la succession. Cette option protège votre patrimoine personnel : vous ne paierez les dettes que dans la limite des biens recueillis."
+    },
+    {
+      "q": "Que se passe-t-il si on ne répond pas dans les délais légaux ?",
+      "a": "Passé le délai de 4 mois sans décision, et après sommation d'un intéressé, l'héritier qui ne répond pas dans les 2 mois supplémentaires est réputé avoir accepté purement et simplement la succession (art. 772 CC). Il sera alors tenu du passif."
+    },
+    {
+      "q": "La renonciation à une succession est-elle gratuite ?",
+      "a": "Oui. La déclaration de renonciation au greffe du tribunal judiciaire est gratuite. En revanche, si vous passez par un notaire pour formaliser l'option successorale, des émoluments peuvent s'appliquer (tarif réglementé, généralement modeste pour cette formalité)."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. 768 Code civil — options successorales (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006428543/" },
+    { "label": "Succession : accepter ou renoncer — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F1199" },
+    { "label": "Trouver un notaire — notaires.fr", "url": "https://www.notaires.fr/fr/annuaire-des-notaires" }
+  ],
+  "estimatedSearchVolume": 5000,
+  "difficulty": "medium"
+}

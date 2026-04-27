@@ -1,0 +1,55 @@
+{
+  "slug": "pension-alimentaire",
+  "category": "famille",
+  "title": "Lettre de demande ou révision de pension alimentaire",
+  "metaTitle": "Modèle de lettre demande pension alimentaire gratuit (2026)",
+  "metaDescription": "Demandez ou révisez une pension alimentaire avec ce modèle gratuit. Code civil, barème indicatif et saisine du JAF expliqués.",
+  "context": "La pension alimentaire est une obligation légale destinée à assurer l'entretien et l'éducation des enfants mineurs (et dans certains cas majeurs) après une séparation. Elle est fixée par le juge aux affaires familiales (JAF) en tenant compte des besoins de l'enfant et des ressources de chaque parent (art. 371-2 et 373-2-2 du Code civil).\n\nUne demande de révision est possible à tout moment si les circonstances ont changé de manière significative : hausse ou baisse des revenus d'un parent, changement de garde, nouveaux besoins de l'enfant, remariage ou naissance d'un autre enfant. La révision peut être demandée à l'amiable (par accord entre les parents) ou judiciairement (par saisine du JAF).\n\nCette lettre constitue une démarche amiable préalable adressée à l'autre parent. Si aucun accord n'est trouvé, la saisine du JAF par requête simple (formulaire Cerfa n°11530) est nécessaire. En cas de non-paiement, le créancier peut recourir à la procédure de paiement direct (art. L3252-1 du Code du travail) ou à l'Agence de recouvrement des impayés de pensions alimentaires (ARIPA).",
+  "legalBasis": "Art. 371-2, 373-2-2 et 371-4 du Code civil ; Art. 1180 et suivants du Code de procédure civile (saisine du JAF)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour constituer une preuve de la démarche amiable préalable à la saisine du JAF)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Prénom et nom de l'autre parent]\n[Adresse de l'autre parent]\n[Code postal — Ville de l'autre parent]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Demande de [fixation / révision] de la pension alimentaire pour [Prénom de l'enfant]\n\nMadame / Monsieur,\n\nJe vous adresse la présente concernant la situation financière de notre enfant [Prénom de l'enfant], né(e) le [Date de naissance de l'enfant].\n\n[Demande ou motif de révision]\n\nConformément à l'article 371-2 du Code civil, chaque parent doit contribuer à l'entretien et à l'éducation de l'enfant à proportion de ses ressources et des besoins de celui-ci.\n\nJe vous propose de vous rencontrer ou d'échanger afin de trouver un accord amiable sur ce sujet. À défaut d'accord dans un délai de 30 jours, je me verrai contraint(e) de saisir le juge aux affaires familiales afin qu'il statue sur ce point.\n\nDans l'attente de votre réponse, je vous adresse mes cordiales salutations.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "prenom_nom_autre_parent", "label": "Prénom et nom de l'autre parent", "placeholder": "Marie Martin" },
+    { "name": "adresse_autre_parent", "label": "Adresse de l'autre parent", "placeholder": "5 avenue des Fleurs" },
+    { "name": "code_postal_ville_autre_parent", "label": "Code postal — Ville de l'autre parent", "placeholder": "69001 — Lyon" },
+    { "name": "prenom_enfant", "label": "Prénom de l'enfant", "placeholder": "Lucas" },
+    { "name": "date_naissance_enfant", "label": "Date de naissance de l'enfant", "placeholder": "15/06/2018" },
+    { "name": "demande_motif_revision", "label": "Demande ou motif de révision", "placeholder": "Suite à la perte de mon emploi en mars 2026 et à la réduction significative de mes revenus, je vous demande de réexaminer le montant de la pension alimentaire fixé à 350 € par mois. Je propose de la réviser à 200 € dans l'attente d'un retour à l'emploi." },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Qui fixe le montant de la pension alimentaire ?",
+      "a": "Le juge aux affaires familiales (JAF), en tenant compte du barème indicatif du ministère de la Justice, des ressources de chaque parent, des besoins de l'enfant et du mode de garde. Les parents peuvent aussi fixer eux-mêmes le montant par accord homologué par le JAF."
+    },
+    {
+      "q": "Peut-on réviser la pension alimentaire à l'amiable ?",
+      "a": "Oui. Si les deux parents se mettent d'accord sur un nouveau montant, ils peuvent le formaliser par écrit (courrier cosigné ou acte notarié). Pour être opposable aux tiers, l'accord doit être homologué par le JAF. Un accord non homologué reste valable entre les parties."
+    },
+    {
+      "q": "Existe-t-il un barème indicatif pour calculer la pension alimentaire ?",
+      "a": "Oui. Le ministère de la Justice a publié un barème indicatif prenant en compte les revenus des parents et le nombre d'enfants. Vous pouvez simuler le montant sur le site justice.fr (simulateur de pension alimentaire). Ce barème n'est pas contraignant pour le juge."
+    },
+    {
+      "q": "Que faire si la pension alimentaire n'est pas payée ?",
+      "a": "Vous pouvez recourir à : (1) la procédure de paiement direct auprès de l'employeur (art. L3252-1 Code du travail) ; (2) l'ARIPA (Agence de recouvrement des impayés de pensions alimentaires) via CAF.fr ou MSA.fr ; (3) le dépôt d'une plainte pour abandon de famille (art. 227-3 Code pénal — délit)."
+    },
+    {
+      "q": "La pension alimentaire est-elle imposable ?",
+      "a": "Pour le parent qui la verse, elle est déductible du revenu imposable (dans certaines limites). Pour le parent qui la reçoit, elle est en principe imposable comme revenu. Cependant, les règles varient selon les situations — consultez le site impots.gouv.fr pour votre cas précis."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. 371-2 Code civil (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006426080/" },
+    { "label": "Simulateur pension alimentaire — justice.fr", "url": "https://www.justice.fr/simulateurs/pension-alimentaire" },
+    { "label": "ARIPA — recouvrement des impayés", "url": "https://www.caf.fr/allocataires/droits-et-prestations/s-informer-sur-les-aides/enfance-et-jeunesse/l-agence-de-recouvrement-des-impayes-de-pensions-alimentaires-aripa" }
+  ],
+  "estimatedSearchVolume": 8000,
+  "difficulty": "medium"
+}

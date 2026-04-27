@@ -1,0 +1,55 @@
+{
+  "slug": "changement-nom",
+  "category": "famille",
+  "title": "Lettre de demande de changement de nom de famille",
+  "metaTitle": "Modèle de lettre demande changement de nom gratuit (2026)",
+  "metaDescription": "Demandez un changement de nom de famille à la mairie avec ce modèle gratuit. Procédure simplifiée 2022, conditions et effets expliqués.",
+  "context": "Depuis la loi n°2022-301 du 2 mars 2022, tout majeur peut changer de nom de famille par une simple déclaration à la mairie de son lieu de naissance ou de son domicile, sans avoir à justifier d'un motif particulier. Cette procédure simplifiée permet de prendre le nom du parent qui ne lui a pas été transmis à la naissance, ou de porter les deux noms dans l'ordre choisi.\n\nCette faculté ne peut être utilisée qu'une seule fois dans sa vie. Si le demandeur a des enfants mineurs, le changement s'étend à eux sous condition d'accord de l'autre parent (ou autorisation du JAF). Le changement de nom d'un mineur seul requiert l'accord des deux parents ou du juge.\n\nLa procédure se déroule en deux temps : (1) déclaration d'intention auprès d'une mairie, (2) confirmation de la déclaration 1 mois après. Le changement est définitif à compter de la confirmation. Cette lettre accompagne ou prépare la démarche auprès de la mairie compétente.",
+  "legalBasis": "Art. 61-3-1 du Code civil (issu de la loi n°2022-301 du 2 mars 2022 relative au choix du nom issu de la filiation)",
+  "sendingMethod": "Remise en main propre ou courrier simple à la mairie d'état civil du lieu de naissance ou du domicile (la procédure officielle est une démarche en personne)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\nMonsieur / Madame l'Officier d'état civil\nMairie de [Commune de la mairie]\nService de l'état civil\n[Adresse de la mairie]\n[Code postal — Ville de la mairie]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Déclaration de choix de nom — Art. 61-3-1 du Code civil\n\nMadame, Monsieur l'Officier d'état civil,\n\nJe soussigné(e) [Prénom et nom], né(e) le [Date de naissance], vous adresse la présente afin d'exprimer mon souhait de changer de nom de famille conformément à l'article 61-3-1 du Code civil issu de la loi n°2022-301 du 2 mars 2022.\n\nNom actuel : [Nom actuel]\nNom souhaité : [Nom souhaité]\n\nJe vous informe que cette demande est effectuée pour la première fois (cette faculté ne pouvant être utilisée qu'une seule fois au cours de ma vie).\n\nJe joins à ce courrier les pièces justificatives suivantes :\n- Pièce d'identité en cours de validité\n- Acte de naissance de moins de 3 mois\n- Justificatif de domicile\n\nJe reste à votre disposition pour accomplir les formalités nécessaires et vous prie d'agréer, Madame, Monsieur, l'expression de mes respectueuses salutations.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "commune_mairie", "label": "Commune de la mairie", "placeholder": "Lyon" },
+    { "name": "adresse_mairie", "label": "Adresse de la mairie", "placeholder": "1 place de la Comédie" },
+    { "name": "code_postal_ville_mairie", "label": "Code postal — Ville de la mairie", "placeholder": "69001 — Lyon" },
+    { "name": "date_naissance", "label": "Date de naissance", "placeholder": "15/06/1985" },
+    { "name": "nom_actuel", "label": "Nom actuel", "placeholder": "Dupont" },
+    { "name": "nom_souhaite", "label": "Nom souhaité", "placeholder": "Dupont-Martin ou Martin" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Quelles sont les conditions pour changer de nom depuis la loi de 2022 ?",
+      "a": "Être majeur (ou mineur si les deux parents sont d'accord). Utiliser cette faculté pour la première fois. Le nom souhaité doit figurer dans la filiation directe (noms des parents). Il est possible de prendre le nom du père, de la mère, ou d'accoler les deux dans l'ordre choisi."
+    },
+    {
+      "q": "Peut-on changer de nom pour n'importe quel nom ?",
+      "a": "Non. La procédure simplifiée de 2022 ne permet de prendre que le nom d'un parent (ou les deux accolés). Pour tout autre changement (nom d'usage, nom fantaisiste, etc.), il faut passer par la procédure classique devant le ministère de la Justice (décret en Conseil d'État), qui exige un motif légitime."
+    },
+    {
+      "q": "Quel est le délai de traitement d'un changement de nom en mairie ?",
+      "a": "La procédure se déroule en deux étapes : déclaration d'intention, puis confirmation après un délai minimum d'1 mois. Le changement est définitif à la confirmation. La mairie transmet ensuite les informations aux services de l'état civil pour mise à jour des registres."
+    },
+    {
+      "q": "Le changement de nom s'applique-t-il aux enfants mineurs ?",
+      "a": "Oui, si les deux parents sont d'accord. Un acte de consentement de l'autre parent est requis. Si l'enfant a plus de 13 ans, son consentement personnel est aussi nécessaire. En cas de désaccord, il faut saisir le JAF."
+    },
+    {
+      "q": "Quels documents administratifs sont à mettre à jour après le changement de nom ?",
+      "a": "Carte nationale d'identité, passeport, permis de conduire, carte Vitale, acte de mariage (si marié), titres de propriété, comptes bancaires, employeur, impôts, sécurité sociale, mutuelles et assurances. Prévoyez plusieurs semaines de démarches administratives."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. 61-3-1 Code civil (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000045312817/" },
+    { "label": "Changement de nom — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F1656" },
+    { "label": "Loi n°2022-301 du 2 mars 2022 (Légifrance)", "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000045307613/" }
+  ],
+  "estimatedSearchVolume": 10000,
+  "difficulty": "low"
+}

@@ -61,7 +61,7 @@ export const categories: Category[] = [
     description:
       "Déclaration de décès, succession, pension alimentaire, changement de nom.",
     icon: "👨‍👩‍👧‍👦",
-    letterCount: 0,
+    letterCount: 5,
   },
 ];
 

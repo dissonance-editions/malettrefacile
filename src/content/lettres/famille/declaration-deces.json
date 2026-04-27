@@ -1,0 +1,56 @@
+{
+  "slug": "declaration-deces",
+  "category": "famille",
+  "title": "Lettre de déclaration de décès à un organisme",
+  "metaTitle": "Modèle de lettre déclaration de décès organisme gratuit (2026)",
+  "metaDescription": "Informez un organisme (banque, assurance, retraite...) d'un décès avec ce modèle gratuit. Documents à joindre, délais et démarches expliqués.",
+  "context": "Suite au décès d'un proche, les héritiers et proches sont tenus d'informer de nombreux organismes : banques, assurances, mutuelles, caisses de retraite, organismes sociaux (CAF, CPAM, CARSAT), fournisseurs d'énergie, bailleur le cas échéant, etc. Ces démarches doivent être effectuées dans les meilleurs délais pour éviter des prélèvements injustifiés et permettre la gestion de la succession.\n\nConcernant les comptes bancaires, la banque doit être informée immédiatement : les comptes individuels du défunt sont bloqués dans l'attente du règlement de la succession. Les comptes joints restent accessibles au co-titulaire. Pour l'assurance-vie, elle est transmise directement au(x) bénéficiaire(s) désigné(s) et ne fait pas partie de la succession.\n\nCe modèle est une lettre générique adaptable à tout organisme. Il convient de l'adapter selon la nature du contrat ou du compte concerné et de joindre systématiquement une copie de l'acte de décès.",
+  "legalBasis": "Art. 78 et 79 du Code civil (déclaration d'état civil) ; Art. L312-1-7 du Code monétaire et financier (comptes bancaires du défunt) ; Art. L132-8 du Code des assurances (assurance-vie)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour conserver une preuve de notification et interrompre les prélèvements automatiques)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom de l'organisme]\n[Adresse de l'organisme]\n[Code postal — Ville de l'organisme]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Déclaration de décès — [Prénom et nom du défunt]\n\nMadame, Monsieur,\n\nJ'ai l'honneur de vous informer du décès de [Prénom et nom du défunt], survenu le [Date du décès].\n\nJe vous transmets par la présente les informations relatives au(x) contrat(s) / compte(s) dont il/elle était titulaire auprès de votre organisme : [Nature du contrat ou compte].\n\nJe vous adresse en pièce jointe une copie de l'acte de décès et d'une pièce d'identité du défunt. Je me tiens à votre disposition pour vous fournir tout document complémentaire nécessaire.\n\nJe vous demande de bien vouloir :\n- procéder à la clôture / résiliation du contrat ou compte concerné,\n- m'informer des démarches à effectuer dans le cadre de la succession,\n- cesser tout prélèvement automatique à compter de la réception de la présente.\n\nAgissant en qualité de [Qualité du déclarant], je vous prie d'agréer, Madame, Monsieur, l'expression de mes respectueuses salutations.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_organisme", "label": "Nom de l'organisme", "placeholder": "Crédit Agricole — Agence Paris République" },
+    { "name": "adresse_organisme", "label": "Adresse de l'organisme", "placeholder": "15 boulevard Voltaire" },
+    { "name": "code_postal_ville_organisme", "label": "Code postal — Ville de l'organisme", "placeholder": "75011 — Paris" },
+    { "name": "prenom_nom_defunt", "label": "Prénom et nom du défunt", "placeholder": "Pierre Dupont" },
+    { "name": "date_deces", "label": "Date du décès", "placeholder": "01/04/2026" },
+    { "name": "nature_contrat_compte", "label": "Nature du contrat ou compte", "placeholder": "compte courant n°FR76 1234 5678 9012 3456 7890 123" },
+    { "name": "qualite_declarant", "label": "Qualité du déclarant", "placeholder": "fils du défunt et héritier légal" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Dans quel délai faut-il informer les organismes après un décès ?",
+      "a": "Dès que possible. Pour la banque : immédiatement (les comptes seront bloqués). Pour les caisses de retraite : dans les 30 jours (risque de trop-perçu à rembourser). Pour la CAF : dans le mois. Pour les assurances : généralement dans les 30 jours après le décès."
+    },
+    {
+      "q": "Que se passe-t-il avec le compte bancaire du défunt ?",
+      "a": "Le compte individuel est bloqué dès que la banque est informée du décès. Les fonds sont ensuite remis aux héritiers après règlement de la succession. Les comptes joints restent accessibles au co-titulaire survivant. Les prélèvements automatiques doivent être arrêtés."
+    },
+    {
+      "q": "L'assurance-vie fait-elle partie de la succession ?",
+      "a": "Non. L'assurance-vie est transmise directement au(x) bénéficiaire(s) désigné(s) dans le contrat, hors succession et hors droits de succession (sous certains plafonds). L'assureur doit être informé du décès par courrier recommandé avec l'acte de décès."
+    },
+    {
+      "q": "Quels organismes faut-il obligatoirement prévenir après un décès ?",
+      "a": "À titre principal : banque(s), assurance(s), mutuelle santé, CPAM, CARSAT ou caisse de retraite, CAF, employeur (si la personne travaillait encore), impôts, bailleur (si locataire), fournisseurs d'énergie. Un service en ligne (Service-Public.fr) permet de notifier plusieurs organismes simultanément."
+    },
+    {
+      "q": "Qui peut accéder aux comptes bancaires du défunt ?",
+      "a": "Avant règlement de la succession, uniquement pour les frais funéraires (jusqu'à 5 000 €, sur présentation de la facture). Après notariat ou déclaration de succession : les héritiers, à proportion de leurs droits. Le notaire peut aussi demander un état des comptes directement à la banque."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Décès — démarches administratives — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/N31089" },
+    { "label": "Prévenir les organismes après un décès — demarches.gouv.fr", "url": "https://www.demarches.gouv.fr/" },
+    { "label": "Art. L132-8 Code des assurances (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006795022/" }
+  ],
+  "estimatedSearchVolume": 6000,
+  "difficulty": "low"
+}

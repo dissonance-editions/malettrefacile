@@ -64,6 +64,12 @@ export const letterIcons: Record<string, string> = {
   "demande-travaux-proprietaire": "Wrench",
   "contestation-etat-des-lieux": "ClipboardCheck",
   "demande-logement-social": "Building2",
+  // Famille
+  "changement-nom": "UserCog",
+  "pension-alimentaire": "Coins",
+  "declaration-deces": "HeartCrack",
+  "acceptation-succession": "Archive",
+  "reconnaissance-enfant": "UserPlus",
   // Voisinage
   "nuisances-sonores": "Volume2",
   "empietement-terrain": "Map",
@@ -108,6 +114,13 @@ import candidatureSpontanee from "@/content/lettres/emploi/candidature-spontanee
 import demandeAugmentation from "@/content/lettres/emploi/demande-augmentation.json";
 import congeParental from "@/content/lettres/emploi/conge-parental.json";
 import congeSansSolde from "@/content/lettres/emploi/conge-sans-solde.json";
+
+// === FAMILLE ===
+import changementNom from "@/content/lettres/famille/changement-nom.json";
+import pensionAlimentaire from "@/content/lettres/famille/pension-alimentaire.json";
+import declarationDeces from "@/content/lettres/famille/declaration-deces.json";
+import acceptationSuccession from "@/content/lettres/famille/acceptation-succession.json";
+import reconnaissanceEnfant from "@/content/lettres/famille/reconnaissance-enfant.json";
 
 // === VOISINAGE ===
 import nuisancesSonores from "@/content/lettres/voisinage/nuisances-sonores.json";
@@ -163,6 +176,12 @@ const allLetters: Letter[] = [
   demandeAugmentation as Letter,
   congeParental as Letter,
   congeSansSolde as Letter,
+  // Famille
+  changementNom as Letter,
+  pensionAlimentaire as Letter,
+  declarationDeces as Letter,
+  acceptationSuccession as Letter,
+  reconnaissanceEnfant as Letter,
   // Voisinage
   nuisancesSonores as Letter,
   empietementTerrain as Letter,
