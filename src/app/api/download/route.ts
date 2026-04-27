@@ -285,7 +285,7 @@ function buildEmailHtml(letterTitle: string, format: "pdf" | "docx"): string {
           </tr>
         </table>
         <p style="margin:16px 0 0;font-size:11px;color:#9ca3af;">
-          MaLettreFacile · MARCANT SAS · Paris, France
+          MaLettreFacile 
         </p>
       </td>
     </tr>
