@@ -6,9 +6,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/generateur/"],
+        disallow: ["/api/", "/compte", "/login", "/reset-password", "/envoi/"],
       },
     ],
     sitemap: "https://malettrefacile.fr/sitemap.xml",
+    host: "https://malettrefacile.fr",
   };
 }

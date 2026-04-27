@@ -1,32 +1,50 @@
 import type { MetadataRoute } from "next";
-import { categories } from "@/data/categories";
 import { getAllLetters } from "@/data/letters";
+import { categories } from "@/data/categories";
 
 const BASE_URL = "https://malettrefacile.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const letters = getAllLetters();
+  const now = new Date();
 
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL, changeFrequency: "weekly", priority: 1 },
-    { url: `${BASE_URL}/lettres`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/generateur`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/tarifs`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/login`, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${BASE_URL}/mentions-legales`, changeFrequency: "yearly", priority: 0.2 },
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: BASE_URL,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/lettres`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/tarifs`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    // À décommenter quand les pages du Sprint 4 seront créées :
+    // { url: `${BASE_URL}/mentions-legales`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    // { url: `${BASE_URL}/confidentialite`,  lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    // { url: `${BASE_URL}/cgu`,              lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
+  const categoryRoutes: MetadataRoute.Sitemap = categories.map((cat) => ({
     url: `${BASE_URL}/lettres/${cat.slug}`,
-    changeFrequency: "weekly" as const,
+    lastModified: now,
+    changeFrequency: "weekly",
     priority: 0.8,
   }));
 
-  const letterPages: MetadataRoute.Sitemap = letters.map((letter) => ({
+  const letterRoutes: MetadataRoute.Sitemap = getAllLetters().map((letter) => ({
     url: `${BASE_URL}/lettres/${letter.category}/${letter.slug}`,
-    changeFrequency: "monthly" as const,
-    priority: 0.9,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...letterPages];
+  return [...staticRoutes, ...categoryRoutes, ...letterRoutes];
 }
