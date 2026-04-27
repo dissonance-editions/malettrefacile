@@ -167,14 +167,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   async function signInWithGoogle() {
     try {
       const supabase = getSupabaseBrowserClient();
-      const redirectTo =
-        typeof window !== "undefined"
-          ? `${window.location.origin}/auth/callback`
-          : undefined;
+      // Toujours utiliser l'URL canonique pour eviter les bugs www vs apex
+      const baseUrl =
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        (typeof window !== "undefined" ? window.location.origin : "");
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo,
+          redirectTo: `${baseUrl}/auth/callback`,
           queryParams: {
             access_type: "offline",
             prompt: "consent",
