@@ -64,6 +64,12 @@ export const letterIcons: Record<string, string> = {
   "demande-travaux-proprietaire": "Wrench",
   "contestation-etat-des-lieux": "ClipboardCheck",
   "demande-logement-social": "Building2",
+  // Voisinage
+  "nuisances-sonores": "Volume2",
+  "empietement-terrain": "Map",
+  "mitoyennete-cloture": "ArrowLeftRight",
+  "signalement-maire": "Megaphone",
+  "troubles-olfactifs": "Wind",
   // Consommation
   "retractation-14-jours": "RotateCcw",
   "livraison-non-recue": "PackageX",
@@ -102,6 +108,13 @@ import candidatureSpontanee from "@/content/lettres/emploi/candidature-spontanee
 import demandeAugmentation from "@/content/lettres/emploi/demande-augmentation.json";
 import congeParental from "@/content/lettres/emploi/conge-parental.json";
 import congeSansSolde from "@/content/lettres/emploi/conge-sans-solde.json";
+
+// === VOISINAGE ===
+import nuisancesSonores from "@/content/lettres/voisinage/nuisances-sonores.json";
+import empietementTerrain from "@/content/lettres/voisinage/empietement-terrain.json";
+import mitoyenneteCloture from "@/content/lettres/voisinage/mitoyennete-cloture.json";
+import signalementMaire from "@/content/lettres/voisinage/signalement-maire.json";
+import troublesOlfactifs from "@/content/lettres/voisinage/troubles-olfactifs.json";
 
 // === CONSOMMATION ===
 import retractation14Jours from "@/content/lettres/consommation/retractation-14-jours.json";
@@ -150,6 +163,12 @@ const allLetters: Letter[] = [
   demandeAugmentation as Letter,
   congeParental as Letter,
   congeSansSolde as Letter,
+  // Voisinage
+  nuisancesSonores as Letter,
+  empietementTerrain as Letter,
+  mitoyenneteCloture as Letter,
+  signalementMaire as Letter,
+  troublesOlfactifs as Letter,
   // Consommation
   retractation14Jours as Letter,
   livraisonNonRecue as Letter,

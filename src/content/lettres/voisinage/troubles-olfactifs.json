@@ -1,0 +1,50 @@
+{
+  "slug": "troubles-olfactifs",
+  "category": "voisinage",
+  "title": "Lettre de mise en demeure pour troubles olfactifs",
+  "metaTitle": "Modèle de lettre troubles olfactifs voisin odeurs gratuit (2026)",
+  "metaDescription": "Mettez en demeure votre voisin pour des odeurs insupportables avec ce modèle gratuit. Troubles anormaux du voisinage, bases légales et recours expliqués.",
+  "context": "Les troubles olfactifs (mauvaises odeurs persistantes provenant d'un voisin) peuvent constituer un trouble anormal du voisinage au sens de l'article 1253 du Code civil et, selon leur intensité, une atteinte à la salubrité publique relevant des articles R1334-30 et suivants du Code de la santé publique.\n\nLe critère d'appréciation est l'anormalité du trouble : une odeur de cuisine occasionnelle ne constitue pas un trouble anormal, mais des odeurs d'élevage, de déchets, de fumée ou de produits chimiques persistantes et récurrentes peuvent l'être. La Cour de cassation a reconnu des troubles olfactifs comme troubles anormaux du voisinage dans plusieurs arrêts.\n\nLa preuve des troubles olfactifs est délicate. Les moyens de preuve recevables sont : un constat d'huissier (le plus solide), des témoignages de voisins, des photos des sources des odeurs, des signalements à la mairie ou à l'ARS (Agence régionale de santé) pour les nuisances liées à l'insalubrité.",
+  "legalBasis": "Art. 1253 du Code civil (troubles anormaux du voisinage, loi n°2024-346 du 15 avril 2024) ; Art. R1334-30 et suivants du Code de la santé publique",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour constituer une preuve de la démarche amiable préalable à tout recours)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du voisin]\n[Adresse du voisin]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Mise en demeure de faire cesser les troubles olfactifs\n\nMadame, Monsieur,\n\nJe me permets de vous adresser la présente afin de vous signaler les troubles olfactifs que vous générez et qui perturbent gravement ma jouissance paisible de mon domicile depuis le [Date du premier constat].\n\nNature des odeurs : [Nature des odeurs]\nFréquence des troubles : [Fréquence des troubles]\n\nCes troubles constituent un trouble anormal du voisinage au sens de l'article 1253 du Code civil et sont susceptibles de porter atteinte à la salubrité publique au sens des articles R1334-30 et suivants du Code de la santé publique.\n\nJe vous mets en demeure de prendre toutes les mesures nécessaires pour faire cesser ces troubles dans un délai de 15 jours à compter de la réception de la présente. À défaut, je me verrai contraint(e) de saisir la mairie, l'Agence régionale de santé et, si nécessaire, le tribunal judiciaire afin d'obtenir la cessation des troubles et réparation du préjudice subi.\n\nDans l'espoir d'un règlement amiable, je vous adresse mes cordiales salutations.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_voisin", "label": "Nom du voisin", "placeholder": "M. et Mme Martin" },
+    { "name": "adresse_voisin", "label": "Adresse du voisin", "placeholder": "14 rue du Moulin" },
+    { "name": "date_premier_constat", "label": "Date du premier constat", "placeholder": "01/02/2026" },
+    { "name": "nature_odeurs", "label": "Nature des odeurs", "placeholder": "odeurs de fumée et de déchets organiques en décomposition provenant de l'arrière de votre propriété" },
+    { "name": "frequence_troubles", "label": "Fréquence des troubles", "placeholder": "quotidiennement depuis début février 2026, notamment en fin de journée entre 17h et 20h" },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Existe-t-il un seuil légal pour les troubles olfactifs ?",
+      "a": "Non, contrairement aux nuisances sonores, il n'existe pas de seuil de mesure légale pour les odeurs. Le critère est l'anormalité du trouble : fréquence, intensité, durée, horaires et contexte sont appréciés par le juge au cas par cas."
+    },
+    {
+      "q": "Un élevage voisin qui sent mauvais constitue-t-il un trouble anormal ?",
+      "a": "Pas automatiquement. Si l'activité agricole est antérieure à l'arrivée du plaignant ou autorisée administrativement, le trouble peut être couvert par la théorie des inconvénients normaux de voisinage. Depuis la loi du 15 avril 2024, l'art. 1253 du Code civil précise ce point."
+    },
+    {
+      "q": "Comment prouver des troubles olfactifs en justice ?",
+      "a": "Les preuves recevables sont : constat d'huissier (le plus efficace), témoignages de voisins, signalements à la mairie ou à l'ARS, photos des sources de nuisance, échanges de courriels avec le voisin. Un rapport de l'ARS ou de la DDPP peut également être un élément de preuve."
+    },
+    {
+      "q": "Quel recours si le voisin ne donne pas suite à la mise en demeure ?",
+      "a": "Vous pouvez : saisir la mairie (police municipale), signaler le problème à l'ARS pour les atteintes à la salubrité, ou saisir le tribunal judiciaire pour obtenir la cessation des troubles et des dommages-intérêts sur le fondement de l'article 1253 du Code civil."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. 1253 Code civil — troubles anormaux (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049329226/" },
+    { "label": "Art. R1334-30 Code de la santé publique (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006911046/" },
+    { "label": "Nuisances olfactives — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F19299" }
+  ],
+  "estimatedSearchVolume": 1000,
+  "difficulty": "low"
+}

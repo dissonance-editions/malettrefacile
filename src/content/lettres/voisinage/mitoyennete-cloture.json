@@ -1,0 +1,50 @@
+{
+  "slug": "mitoyennete-cloture",
+  "category": "voisinage",
+  "title": "Lettre concernant la mitoyenneté d'une clôture ou d'un mur",
+  "metaTitle": "Modèle de lettre mitoyenneté clôture mur gratuit (2026)",
+  "metaDescription": "Réglez un litige de mitoyenneté de clôture ou de mur avec ce modèle gratuit. Code civil, obligations de chaque propriétaire et recours expliqués.",
+  "context": "Un mur ou une clôture est dit(e) mitoyen(ne) lorsqu'il/elle est implanté(e) sur la limite séparative de deux propriétés et appartient conjointement aux deux propriétaires riverains. La mitoyenneté est présumée par la loi sauf preuve contraire (art. 653 du Code civil).\n\nLe régime de la mitoyenneté implique des droits et obligations partagés : les frais d'entretien et de réparation sont répartis à parts égales (art. 655 CC). Chaque propriétaire peut contraindre son voisin à contribuer à ces frais (art. 656 CC). Un voisin peut racheter la mitoyenneté d'une clôture privative moyennant indemnisation (art. 667 CC).\n\nEn cas de litige, il est conseillé de tenter d'abord une résolution amiable. Si le désaccord persiste, le tribunal judiciaire peut être saisi pour fixer les droits et obligations de chacun, ordonner les travaux nécessaires et condamner le voisin récalcitrant à y contribuer financièrement.",
+  "legalBasis": "Art. 653, 655, 656, 663 et 667 du Code civil (mitoyenneté)",
+  "sendingMethod": "Lettre recommandée avec accusé de réception (pour conserver une preuve de la démarche amiable préalable à tout recours judiciaire)",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Nom du voisin]\n[Adresse du voisin]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : [Objet du litige de mitoyenneté]\n\nMadame, Monsieur,\n\nJe me permets de vous adresser la présente concernant la clôture / le mur situé(e) en limite de nos propriétés, dont la description est la suivante : [Description de la clôture ou du mur].\n\nConformément aux articles 653 et suivants du Code civil régissant la mitoyenneté, je vous expose ma position :\n\n[Motifs et demande concernant la mitoyenneté]\n\nJe vous propose de régler ce différend à l'amiable et vous invite à me contacter afin de convenir d'une solution équitable. En l'absence de réponse dans un délai de 30 jours, je me verrai contraint(e) d'engager une procédure judiciaire ou de solliciter une expertise pour faire établir les droits et obligations de chacun.\n\nDans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "nom_voisin", "label": "Nom du voisin", "placeholder": "M. et Mme Martin" },
+    { "name": "adresse_voisin", "label": "Adresse du voisin", "placeholder": "14 allée des Rosiers" },
+    { "name": "objet_litige", "label": "Objet du litige de mitoyenneté", "placeholder": "Demande de contribution aux frais de réfection du mur mitoyen" },
+    { "name": "description_cloture", "label": "Description de la clôture ou du mur", "placeholder": "mur de parpaings d'environ 12 mètres de long sur 1,80 m de hauteur, à la limite de nos parcelles cadastrales AB 1234 et AB 1235" },
+    { "name": "motifs_demande", "label": "Motifs et demande concernant la mitoyenneté", "placeholder": "Ce mur mitoyen présente des fissures importantes et une inclinaison qui le rendent dangereux. Les devis de réfection s'élèvent à 4 200 € TTC. Conformément à l'article 655 du Code civil, je vous demande de contribuer à hauteur de votre quote-part (50 %) soit 2 100 €." },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Qui doit payer pour la réparation d'une clôture mitoyenne ?",
+      "a": "Les frais d'entretien et de réparation d'une clôture mitoyenne sont partagés à parts égales entre les deux propriétaires (art. 655 du Code civil). Si l'un refuse de contribuer, l'autre peut le contraindre en justice à participer (art. 656 CC)."
+    },
+    {
+      "q": "Peut-on forcer son voisin à construire une clôture séparative ?",
+      "a": "En zone urbaine et suburbaine, oui (art. 663 CC) : tout propriétaire peut contraindre son voisin à édifier une clôture pour délimiter les propriétés contigues. Le coût est partagé équitablement. En milieu rural, cette obligation n'existe pas."
+    },
+    {
+      "q": "Quelle est la hauteur minimale légale pour une clôture ?",
+      "a": "Elle dépend de la commune. L'article 663 du Code civil prévoit une hauteur minimale de 3,20 m en ville, mais les règlements locaux d'urbanisme (PLU) peuvent fixer des hauteurs différentes. Renseignez-vous auprès de votre mairie."
+    },
+    {
+      "q": "Comment prouver qu'un mur est mitoyen ou privatif ?",
+      "a": "La mitoyenneté se prouve par : le titre de propriété (mention expresse), le plan cadastral, un géomètre-expert (bornage), ou des présomptions légales (art. 653-654 CC : fossé unilatéral = privatif du côté du fossé ; mur avec chaperon en pente d'un seul côté = privatif de ce côté)."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. 653 à 673 Code civil — mitoyenneté (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070721/LEGISCTA000006150247/" },
+    { "label": "Clôture et mur mitoyen — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F2164" },
+    { "label": "Trouver un géomètre-expert — geometre-expert.fr", "url": "https://www.geometre-expert.fr/" }
+  ],
+  "estimatedSearchVolume": 2500,
+  "difficulty": "medium"
+}

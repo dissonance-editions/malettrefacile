@@ -1,0 +1,53 @@
+{
+  "slug": "signalement-maire",
+  "category": "voisinage",
+  "title": "Lettre de signalement au maire (trouble de voisinage ou salubrité)",
+  "metaTitle": "Modèle de lettre signalement au maire trouble voisinage gratuit (2026)",
+  "metaDescription": "Signalez un trouble de voisinage ou de salubrité au maire avec ce modèle gratuit. Pouvoir de police du maire, délais et recours expliqués.",
+  "context": "Le maire dispose d'un pouvoir de police administrative générale lui permettant d'assurer le bon ordre, la sûreté, la sécurité et la salubrité publiques sur le territoire de sa commune (art. L2212-2 du Code général des collectivités territoriales). Il peut à ce titre intervenir en cas de nuisances sonores répétées, d'insalubrité d'un logement ou d'une propriété, de danger pour la sécurité publique (arbre menaçant, construction dangereuse), ou de troubles persistants au voisinage.\n\nUn signalement écrit au maire est souvent plus efficace qu'une simple plainte verbale : il crée un dossier officiel et engage la responsabilité de la commune si le maire n'agit pas alors qu'il était informé d'un danger. Si le maire ne donne pas suite dans un délai raisonnable, vous pouvez adresser un recours au préfet ou saisir le tribunal administratif.\n\nCe courrier peut être adressé directement au maire ou au service de la police municipale compétent. Il est conseillé de le compléter par toutes les preuves disponibles : photos, témoignages, constats d'huissier.",
+  "legalBasis": "Art. L2212-2 et L2212-4 du Code général des collectivités territoriales (CGCT) ; Art. R1334-30 et suivants du Code de la santé publique",
+  "sendingMethod": "Lettre recommandée avec accusé de réception ou dépôt en main propre à l'accueil de la mairie contre récépissé",
+  "template": "[Prénom et nom]\n[Adresse]\n[Code postal — Ville]\n[Téléphone]\n[Email]\n\n[Titre du maire]\nMairie de [Commune]\n[Adresse de la mairie]\n[Code postal — Ville de la mairie]\n\nÀ [Ville], le [Date du courrier]\n\nObjet : Signalement de [Nature du trouble] — [Adresse du lieu concerné]\n\n[Titre du maire],\n\nJ'ai l'honneur de porter à votre connaissance les faits suivants, dont je suis victime depuis le [Date du premier constat] au [Adresse du lieu concerné] :\n\n[Description détaillée des faits]\n\nCes faits sont susceptibles de constituer un trouble à l'ordre public, à la tranquillité ou à la salubrité publique relevant de votre pouvoir de police administrative en application de l'article L2212-2 du Code général des collectivités territoriales.\n\nJe vous demande de bien vouloir faire diligenter une intervention de vos services afin de remédier à cette situation dans les meilleurs délais.\n\nJe reste à votre disposition pour apporter tout renseignement complémentaire et vous prie d'agréer, [Titre du maire], l'expression de mes respectueuses salutations.\n\n[Signature]",
+  "variables": [
+    { "name": "prenom_nom", "label": "Prénom et nom", "placeholder": "Jean Dupont" },
+    { "name": "adresse", "label": "Adresse", "placeholder": "12 rue de la Paix" },
+    { "name": "code_postal_ville", "label": "Code postal — Ville", "placeholder": "75002 — Paris" },
+    { "name": "telephone", "label": "Téléphone", "placeholder": "06 12 34 56 78" },
+    { "name": "email", "label": "Email", "placeholder": "jean.dupont@email.fr" },
+    { "name": "titre_maire", "label": "Titre du maire", "placeholder": "Monsieur le Maire" },
+    { "name": "commune", "label": "Commune", "placeholder": "Lyon" },
+    { "name": "adresse_mairie", "label": "Adresse de la mairie", "placeholder": "1 place de la Comédie" },
+    { "name": "code_postal_ville_mairie", "label": "Code postal — Ville de la mairie", "placeholder": "69001 — Lyon" },
+    { "name": "nature_trouble", "label": "Nature du trouble", "placeholder": "nuisances sonores et insalubrité" },
+    { "name": "adresse_lieu", "label": "Adresse du lieu concerné", "placeholder": "14 rue de la Paix, 69001 Lyon" },
+    { "name": "date_premier_constat", "label": "Date du premier constat", "placeholder": "01/02/2026" },
+    { "name": "description_faits", "label": "Description détaillée des faits", "placeholder": "musique forte chaque nuit entre 23h et 4h du matin en provenance de l'appartement situé au 14 rue de la Paix. Malgré plusieurs tentatives de contact amiable et deux plaintes déposées au commissariat les 10 et 25 mars 2026, les troubles persistent." },
+    { "name": "ville", "label": "Ville", "placeholder": "Paris" },
+    { "name": "date", "label": "Date du courrier", "placeholder": "12/04/2026" }
+  ],
+  "faq": [
+    {
+      "q": "Que peut faire le maire en cas de trouble de voisinage ?",
+      "a": "Le maire peut envoyer la police municipale constater les faits, délivrer un avertissement ou une mise en demeure au fauteur de trouble, dresser un procès-verbal de contravention, et en cas de danger immédiat, prendre des mesures d'urgence (art. L2212-4 CGCT) sans attendre le conseil municipal."
+    },
+    {
+      "q": "Dans quel délai le maire doit-il répondre à mon signalement ?",
+      "a": "La loi ne fixe pas de délai précis de réponse. En pratique, comptez 1 à 2 mois. Si aucune suite n'est donnée, vous pouvez relancer par courrier recommandé et, si nécessaire, saisir la préfecture (contrôle de légalité) ou le tribunal administratif pour carence fautive."
+    },
+    {
+      "q": "Que faire si le maire ne prend pas de mesures après mon signalement ?",
+      "a": "Vous pouvez saisir le préfet du département qui exerce un contrôle de légalité sur les actes des communes. Vous pouvez également former un recours pour excès de pouvoir devant le tribunal administratif, ou engager la responsabilité de la commune pour carence fautive si vous avez subi un préjudice."
+    },
+    {
+      "q": "Quelle est la différence entre un signalement au maire et une plainte à la police ?",
+      "a": "Le signalement au maire relève du droit administratif (police administrative) et vise à prévenir ou faire cesser un trouble. La plainte à la police relève du droit pénal et vise à sanctionner un comportement délictueux ou contraventionnel (tapage, voie de fait...). Les deux démarches sont complémentaires."
+    }
+  ],
+  "relatedLinks": [
+    { "label": "Art. L2212-2 CGCT (Légifrance)", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033880170/" },
+    { "label": "Pouvoirs de police du maire — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F2109" },
+    { "label": "Signaler un problème de voisinage — service-public.fr", "url": "https://www.service-public.fr/particuliers/vosdroits/F612" }
+  ],
+  "estimatedSearchVolume": 2000,
+  "difficulty": "low"
+}

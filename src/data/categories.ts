@@ -53,7 +53,7 @@ export const categories: Category[] = [
     description:
       "Nuisances sonores, empiètement, clôture mitoyenne, signalement au maire.",
     icon: "🏘️",
-    letterCount: 0,
+    letterCount: 5,
   },
   {
     slug: "famille",
