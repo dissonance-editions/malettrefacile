@@ -14,6 +14,21 @@ import PreavisBailContent, {
 import MiseEnDemeureContent, {
   meta as miseEnDemeureMeta,
 } from "@/content/blog/mise-en-demeure-guide-2026";
+import ContesterAmendeContent, {
+  meta as contesterAmendeMeta,
+} from "@/content/blog/contester-amende-forfait-post-stationnement-2026";
+import AssuranceHamonContent, {
+  meta as assuranceHamonMeta,
+} from "@/content/blog/resiliation-assurance-loi-hamon-chatel-2026";
+import ReclamationContent, {
+  meta as reclamationMeta,
+} from "@/content/blog/reclamation-remboursement-consommation-2026";
+import RetractationContent, {
+  meta as retractationMeta,
+} from "@/content/blog/droit-retractation-14-jours-2026";
+import FaireValoirDroitsContent, {
+  meta as faireValoirDroitsMeta,
+} from "@/content/blog/faire-valoir-ses-droits-par-courrier-2026";
 
 export interface BlogPostMeta {
   slug: string;
@@ -52,6 +67,26 @@ export const posts: BlogPost[] = [
   {
     ...miseEnDemeureMeta,
     Content: MiseEnDemeureContent,
+  },
+  {
+    ...contesterAmendeMeta,
+    Content: ContesterAmendeContent,
+  },
+  {
+    ...assuranceHamonMeta,
+    Content: AssuranceHamonContent,
+  },
+  {
+    ...reclamationMeta,
+    Content: ReclamationContent,
+  },
+  {
+    ...retractationMeta,
+    Content: RetractationContent,
+  },
+  {
+    ...faireValoirDroitsMeta,
+    Content: FaireValoirDroitsContent,
   },
 ];
 
