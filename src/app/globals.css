@@ -89,3 +89,73 @@ input[type="reset"]:disabled {
   content: "›";
   @apply mx-2 text-neutral-400;
 }
+
+/* === Blog article typography === */
+.prose-blog {
+  @apply text-neutral-800;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-blog .lead {
+  @apply text-lg leading-relaxed text-neutral-700;
+  font-weight: 400;
+}
+.prose-blog h2 {
+  @apply mt-10 mb-3 text-2xl font-bold text-neutral-900;
+  scroll-margin-top: 5rem;
+}
+.prose-blog h3 {
+  @apply mt-8 mb-2 text-lg font-semibold text-neutral-900;
+  scroll-margin-top: 5rem;
+}
+.prose-blog p {
+  @apply my-4;
+}
+.prose-blog a {
+  @apply text-primary-700 underline underline-offset-2 hover:text-primary-800;
+}
+.prose-blog strong {
+  @apply font-semibold text-neutral-900;
+}
+.prose-blog ul,
+.prose-blog ol {
+  @apply my-4 space-y-2 pl-6;
+}
+.prose-blog ul {
+  list-style: disc;
+}
+.prose-blog ol {
+  list-style: decimal;
+}
+.prose-blog li {
+  @apply leading-relaxed;
+}
+.prose-blog table {
+  @apply my-6 w-full border-collapse text-sm;
+}
+.prose-blog thead {
+  @apply bg-neutral-50;
+}
+.prose-blog th,
+.prose-blog td {
+  @apply border border-neutral-200 px-3 py-2 text-left align-top;
+}
+.prose-blog th {
+  @apply font-semibold text-neutral-900;
+}
+.prose-blog .letter-block {
+  @apply my-6 whitespace-pre-line rounded-lg border border-neutral-200 bg-neutral-50 p-5 text-sm leading-relaxed text-neutral-800;
+  font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+}
+.prose-blog .cta-box {
+  @apply my-10 rounded-xl border border-primary-200 bg-primary-50 p-6;
+}
+.prose-blog .cta-box h3 {
+  @apply mt-0 text-xl font-bold text-primary-900;
+}
+.prose-blog .cta-box p {
+  @apply text-primary-900/80;
+}
+.prose-blog .cta-button {
+  @apply mt-4 inline-flex items-center rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-primary-700;
+}

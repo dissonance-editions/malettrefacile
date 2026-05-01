@@ -36,6 +36,12 @@ export default function Header() {
             Toutes les lettres
           </Link>
           <Link
+            href="/blog"
+            className="hidden text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors sm:block"
+          >
+            Blog
+          </Link>
+          <Link
             href="/tarifs"
             className="hidden text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors sm:block"
           >
