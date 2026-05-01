@@ -29,6 +29,21 @@ import RetractationContent, {
 import FaireValoirDroitsContent, {
   meta as faireValoirDroitsMeta,
 } from "@/content/blog/faire-valoir-ses-droits-par-courrier-2026";
+import CandidatureSpontaneeContent, {
+  meta as candidatureSpontaneeMeta,
+} from "@/content/blog/lettre-candidature-spontanee-guide-2026";
+import DemandeAugmentationContent, {
+  meta as demandeAugmentationMeta,
+} from "@/content/blog/demande-augmentation-salaire-guide-2026";
+import DepotGarantieContent, {
+  meta as depotGarantieMeta,
+} from "@/content/blog/restitution-depot-garantie-locataire-2026";
+import DeclarationSinistreContent, {
+  meta as declarationSinistreMeta,
+} from "@/content/blog/declaration-sinistre-habitation-2026";
+import LettreSyndicContent, {
+  meta as lettreSyndicMeta,
+} from "@/content/blog/lettre-au-syndic-copropriete-2026";
 
 export interface BlogPostMeta {
   slug: string;
@@ -87,6 +102,26 @@ export const posts: BlogPost[] = [
   {
     ...faireValoirDroitsMeta,
     Content: FaireValoirDroitsContent,
+  },
+  {
+    ...candidatureSpontaneeMeta,
+    Content: CandidatureSpontaneeContent,
+  },
+  {
+    ...demandeAugmentationMeta,
+    Content: DemandeAugmentationContent,
+  },
+  {
+    ...depotGarantieMeta,
+    Content: DepotGarantieContent,
+  },
+  {
+    ...declarationSinistreMeta,
+    Content: DeclarationSinistreContent,
+  },
+  {
+    ...lettreSyndicMeta,
+    Content: LettreSyndicContent,
   },
 ];
 
