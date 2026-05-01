@@ -5,6 +5,15 @@ import ResiliationRecommandeeContent, {
 import RuptureConventionnelleContent, {
   meta as ruptureConventionnelleMeta,
 } from "@/content/blog/rupture-conventionnelle-demande-guide-2026";
+import DemissionCdiContent, {
+  meta as demissionCdiMeta,
+} from "@/content/blog/lettre-demission-cdi-guide-2026";
+import PreavisBailContent, {
+  meta as preavisBailMeta,
+} from "@/content/blog/preavis-bail-locataire-guide-2026";
+import MiseEnDemeureContent, {
+  meta as miseEnDemeureMeta,
+} from "@/content/blog/mise-en-demeure-guide-2026";
 
 export interface BlogPostMeta {
   slug: string;
@@ -31,6 +40,18 @@ export const posts: BlogPost[] = [
   {
     ...ruptureConventionnelleMeta,
     Content: RuptureConventionnelleContent,
+  },
+  {
+    ...demissionCdiMeta,
+    Content: DemissionCdiContent,
+  },
+  {
+    ...preavisBailMeta,
+    Content: PreavisBailContent,
+  },
+  {
+    ...miseEnDemeureMeta,
+    Content: MiseEnDemeureContent,
   },
 ];
 
