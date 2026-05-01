@@ -44,6 +44,9 @@ import DeclarationSinistreContent, {
 import LettreSyndicContent, {
   meta as lettreSyndicMeta,
 } from "@/content/blog/lettre-au-syndic-copropriete-2026";
+import ContesterLicenciementContent, {
+  meta as contesterLicenciementMeta,
+} from "@/content/blog/contester-licenciement-guide-2026";
 
 export interface BlogPostMeta {
   slug: string;
@@ -122,6 +125,10 @@ export const posts: BlogPost[] = [
   {
     ...lettreSyndicMeta,
     Content: LettreSyndicContent,
+  },
+  {
+    ...contesterLicenciementMeta,
+    Content: ContesterLicenciementContent,
   },
 ];
 
