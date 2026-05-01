@@ -2,6 +2,9 @@ import type { ComponentType } from "react";
 import ResiliationRecommandeeContent, {
   meta as resiliationRecommandeeMeta,
 } from "@/content/blog/lettre-resiliation-recommandee-guide-2026";
+import RuptureConventionnelleContent, {
+  meta as ruptureConventionnelleMeta,
+} from "@/content/blog/rupture-conventionnelle-demande-guide-2026";
 
 export interface BlogPostMeta {
   slug: string;
@@ -24,6 +27,10 @@ export const posts: BlogPost[] = [
   {
     ...resiliationRecommandeeMeta,
     Content: ResiliationRecommandeeContent,
+  },
+  {
+    ...ruptureConventionnelleMeta,
+    Content: RuptureConventionnelleContent,
   },
 ];
 
