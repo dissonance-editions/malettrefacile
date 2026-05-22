@@ -86,7 +86,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-10 border-t border-neutral-200 pt-6 text-center text-xs text-neutral-400">
-          <p>© {new Date().getFullYear()} MaLettreFacile — MARCANT SAS. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} MaLettreFacile. Tous droits réservés.</p>
           <p className="mt-1">
             Les modèles sont fournis à titre informatif et ne constituent pas un conseil juridique.
           </p>
